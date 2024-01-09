@@ -8,10 +8,25 @@ interface TypoProps extends HTMLAttributes<HTMLElement> {
   color?: ColorType;
   typo?: TypographyType;
   fontWeight?: keyof typeof fontWeights;
+
+  // Under Line
+  isUnderLine?: boolean;
+  underLineThickness?: number;
+  underlineOffset?: number;
 }
 
 const Typo = forwardRef<HTMLElement, TypoProps>((props, ref) => {
-  const { as = 'span', role, color = 'black', fontWeight = 'regular', typo = 'b9r', ...rest } = props;
+  const {
+    as = 'span',
+    role,
+    color = 'black',
+    fontWeight = 'regular',
+    typo = 'b9',
+    isUnderLine = false,
+    underLineThickness = isUnderLine ? 1 : undefined,
+    underlineOffset = isUnderLine ? 1 : undefined,
+    ...rest
+  } = props;
 
   return (
     <Component
@@ -21,6 +36,9 @@ const Typo = forwardRef<HTMLElement, TypoProps>((props, ref) => {
       role={role ?? (as === 'span' ? 'text' : undefined)}
       ref={ref}
       fontWeight={fontWeight}
+      isUnderLine={isUnderLine}
+      underLineThickness={underLineThickness}
+      underlineOffset={underlineOffset}
       {...rest}
     />
   );
@@ -28,7 +46,15 @@ const Typo = forwardRef<HTMLElement, TypoProps>((props, ref) => {
 
 export default Typo;
 
-const Component = styled.span<{ color: ColorType; typo: TypographyType; fontWeight?: keyof typeof fontWeights }>`
+const Component = styled.span<{
+  color: ColorType;
+  typo: TypographyType;
+  isUnderLine: boolean;
+
+  underLineThickness?: number;
+  underlineOffset?: number;
+  fontWeight?: keyof typeof fontWeights;
+}>`
   color: ${({ color }) => colors[color]};
   ${({ typo }) => typography[typo]}
   ${({ fontWeight }) => getFontFamily(fontWeight)}
@@ -37,4 +63,19 @@ const Component = styled.span<{ color: ColorType; typo: TypographyType; fontWeig
     css`
       font-weight: ${fontWeights[fontWeight]};
     `};
+
+  ${({ isUnderLine, underLineThickness, underlineOffset }) =>
+    isUnderLine &&
+    css`
+      text-decoration-line: underline;
+      text-underline-position: under;
+      text-decoration-thickness: ${underLineThickness}px;
+      text-underline-offset: ${underlineOffset}px;
+    `}
+
+  ${props =>
+    !!props.onClick &&
+    css`
+      cursor: pointer;
+    `}
 `;

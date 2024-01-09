@@ -16,6 +16,12 @@ function MainPage() {
       </Typo>
       <Typo as="p">P MainPage</Typo>
       <Typo>Default MainPage</Typo>
+      <Typo isUnderLine underLineThickness={20} underlineOffset={2}>
+        Under Line 20
+      </Typo>
+      <Typo onClick={() => {}} isUnderLine>
+        Under Line
+      </Typo>
 
       <div>
         <Typo as="h1" typo="h1" fontWeight="bold">

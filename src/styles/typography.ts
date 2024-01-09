@@ -106,138 +106,70 @@ export const typography = {
     line-height: 1.5;
   `,
 
-  // Body medium
-  b1m: css`
+  // Body
+  b1: css`
     font-size: 26px;
     line-height: 1.346;
   `,
-  b2m: css`
+  b2: css`
     font-size: 24px;
     line-height: 1.375;
   `,
-  b3m: css`
+  b3: css`
     font-size: 22px;
     line-height: 1.409;
   `,
-  b4m: css`
+  b4: css`
     font-size: 20px;
     line-height: 1.45;
   `,
-  b5m: css`
+  b5: css`
     font-size: 19px;
     line-height: 1.474;
   `,
-  b6m: css`
+  b6: css`
     font-size: 17px;
     line-height: 1.5;
   `,
-  b7m: css`
+  b7: css`
     font-size: 16px;
     line-height: 1.5;
   `,
-  b8m: css`
+  b8: css`
     font-size: 15px;
     line-height: 1.5;
   `,
-  b9m: css`
+  b9: css`
     font-size: 14px;
     line-height: 1.5;
   `,
-  b10m: css`
+  b10: css`
     font-size: 13px;
     line-height: 1.5;
   `,
-  b11m: css`
+  b11: css`
     font-size: 11px;
     line-height: 1.5;
   `,
 
-  // Body regular
-  b1r: css`
-    font-size: 26px;
-    line-height: 1.346;
-  `,
-  b2r: css`
-    font-size: 24px;
-    line-height: 1.375;
-  `,
-  b3r: css`
-    font-size: 22px;
-    line-height: 1.409;
-  `,
-  b4r: css`
+  // Button
+  btn1: css`
     font-size: 20px;
     line-height: 1.45;
   `,
-  b5r: css`
-    font-size: 19px;
-    line-height: 1.474;
-  `,
-  b6r: css`
+  btn2: css`
     font-size: 17px;
     line-height: 1.5;
   `,
-  b7r: css`
-    font-size: 16px;
-    line-height: 1.5;
-  `,
-  b8r: css`
+  btn3: css`
     font-size: 15px;
     line-height: 1.5;
   `,
-  b9r: css`
-    font-size: 14px;
-    line-height: 1.5;
-  `,
-  b10r: css`
+  btn4: css`
     font-size: 13px;
     line-height: 1.5;
   `,
-  b11r: css`
-    font-size: 11px;
-    line-height: 1.5;
-  `,
-
-  // Button_semibold
-  btn1sb: css`
-    font-size: 20px;
-    line-height: 1.45;
-  `,
-  btn2sb: css`
-    font-size: 17px;
-    line-height: 1.5;
-  `,
-  btn3sb: css`
-    font-size: 15px;
-    line-height: 1.5;
-  `,
-  btn4sb: css`
-    font-size: 13px;
-    line-height: 1.5;
-  `,
-  btn5sb: css`
-    font-size: 11px;
-    line-height: 1.5;
-  `,
-
-  // Button_medium
-  btn1m: css`
-    font-size: 20px;
-    line-height: 1.45;
-  `,
-  btn2m: css`
-    font-size: 17px;
-    line-height: 1.5;
-  `,
-  btn3m: css`
-    font-size: 15px;
-    line-height: 1.5;
-  `,
-  btn4m: css`
-    font-size: 13px;
-    line-height: 1.5;
-  `,
-  btn5m: css`
+  btn5: css`
     font-size: 11px;
     line-height: 1.5;
   `,
