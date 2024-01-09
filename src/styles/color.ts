@@ -1,18 +1,8 @@
 const colorSet = {
-  // blue
-  blue100: '#0B3E91',
-  blue200: '#1150AA',
-  blue300: '#1761C2',
-  blue400: '#166DD7',
-  blue500: '#1479EB',
-  blue600: '#61A3EF',
-  blue700: '#ADCCF3',
-  blue800: '#C9DEF7',
-  blue900: '#D7E7F9',
-  blue950: '#F0F8FF',
+  white: '#ffffff',
+  black: '#000000',
 
   // gray
-  gray100: '#000000',
   gray200: '#222729',
   gray300: '#353C3F',
   gray400: '#4A5256',
@@ -25,14 +15,31 @@ const colorSet = {
   gray990: '#F7F9FA',
 
   // red
-  red100: '#BF4040',
-  red200: '#D64C4C',
-  red300: '#E68686',
-  red400: '#EEA3A3',
-  red500: '#F2B2B2',
-  red600: '#F5C0C0',
-  red700: '#FAD8D8',
-  red800: '#FFEFEF',
+  red100: '#A51926',
+  red200: '#BC1B2A',
+  red300: '#D22030',
+  red400: '#E42939',
+  red500: '#F04452',
+  red600: '#F66570',
+  red700: '#FB8890',
+  red800: '#FEAFB4',
+  red900: '#FFD4D6',
+
+  // pink
+  pink100: '#C2255C',
+  pink200: '#E64980',
+  pink300: '#F783AC',
+  pink400: '#FCC2D7',
+  pink500: '#FFDEEB',
+  pink600: '#FFF0F6',
+
+  // orange
+  orange100: '#E8590C',
+  orange200: '#FD7E14',
+  orange300: '#FFA94D',
+  orange400: '#FFD8A8',
+  orange500: '#FFE8CC',
+  orange600: '#FFF4E6',
 
   // yellow
   yellow100: '#E1AE00',
@@ -42,6 +49,14 @@ const colorSet = {
   yellow500: '#FFF0B3',
   yellow600: '#FFF7D9',
 
+  // lime
+  lime100: '#5C940D',
+  lime200: '#82C91E',
+  lime300: '#C0EB75',
+  lime400: '#D8F5A2',
+  lime500: '#E9FAC8',
+  lime600: '#F4FCE3',
+
   // green
   green100: '#0A9A32',
   green200: '#15BD66',
@@ -50,39 +65,25 @@ const colorSet = {
   green500: '#93EDBF',
   green600: '#EBFAEF',
 
-  // pink
-  pink100: '#c2255c',
-  pink200: '#e64980',
-  pink300: '#f783ac',
-  pink400: '#fcc2d7',
-  pink500: '#ffdeeb',
-  pink600: '#fff0f6',
-
-  // lime
-  lime100: '#5c940d',
-  lime200: '#82c91e',
-  lime300: '#c0eb75',
-  lime400: '#d8f5a2',
-  lime500: '#e9fac8',
-  lime600: '#f4fce3',
+  // blue
+  blue100: '#0B3E91',
+  blue200: '#1150AA',
+  blue300: '#1761C2',
+  blue400: '#166DD7',
+  blue500: '#1479EB',
+  blue600: '#61A3EF',
+  blue700: '#ADCCF3',
+  blue800: '#C9DEF7',
+  blue900: '#D7E7F9',
+  blue950: '#F0F8FF',
 
   // grape
-  grape100: '#862e9c',
-  grape200: '#be4bdb',
-  grape300: '#da77f2',
-  grape400: '#eebefa',
-  grape500: '#f3d9fa',
-  grape600: '#f8f0fc',
-
-  // orange
-  orange100: '#e8590c',
-  orange200: '#fd7e14',
-  orange300: '#ffa94d',
-  orange400: '#ffd8a8',
-  orange500: '#ffe8cc',
-  orange600: '#fff4e6',
-
-  white: '#FFFFFF',
+  grape100: '#862E9C',
+  grape200: '#BE4BDB',
+  grape300: '#DA77F2',
+  grape400: '#EEBEFA',
+  grape500: '#F3D9FA',
+  grape600: '#F8F0FC',
 } as const;
 
 export default colorSet;
