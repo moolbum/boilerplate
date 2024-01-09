@@ -7,9 +7,9 @@
 - 버튼
 - 모달
 
-
 ## `Package`
 
 ```jsx
-style: Styeld-Componet
+style: Styeld Componet;
+util: React Router Dom, dayJS;
 ```
