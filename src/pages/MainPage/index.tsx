@@ -1,3 +1,5 @@
+import LucideIcon from '@/src/components/atom/Icons/LucideIcon';
+import RadixIcon from '@/src/components/atom/Icons/RadixIcon';
 import Typo from '@/src/components/atom/Typo';
 import React from 'react';
 
@@ -12,6 +14,14 @@ const MainPage = () => {
       </Typo>
       <Typo as="p">P MainPage</Typo>
       <Typo>Default MainPage</Typo>
+
+      <div>
+        <Typo as="h1" typo="h1" fontWeight="bold">
+          Icon
+        </Typo>
+        <RadixIcon name="ActivityLogIcon" />
+        <LucideIcon name="ALargeSmall" />
+      </div>
     </div>
   );
 };
