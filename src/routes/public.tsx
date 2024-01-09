@@ -1,14 +1,16 @@
-import { Outlet, RouteObject } from 'react-router-dom';
+import { RouteObject } from 'react-router-dom';
 import PATH from './path';
+import MainPage from '../pages/MainPage';
+import ProtectedPublicRoute from '../components/template/ProtectedPublicRoute';
 
 const publicRoute: RouteObject[] = [
   {
     path: PATH.ROOT,
-    element: <Outlet />,
+    element: <ProtectedPublicRoute />,
     children: [
       {
-        path: PATH.TEST,
-        element: <>TEST</>,
+        path: PATH.MAIN,
+        element: <MainPage />,
       },
     ],
   },
