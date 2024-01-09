@@ -257,5 +257,4 @@ export const typography = {
   `,
 };
 
-type TypographyType = keyof typeof typography;
-export { type TypographyType };
+export type TypographyType = keyof typeof typography;
