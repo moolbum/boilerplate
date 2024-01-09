@@ -12,18 +12,21 @@ yarn start
 
 ## Component
 
-- Text
+- Typo
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Badge 🛠️
 - Button 🛠️
 - Input 🛠️
 - Select 🛠️
 - Radio 🛠️
-- SectionCard 🛠️
 - Stack 🛠️
+- SectionCard 🛠️
+- GridContainer 🛠️
+- GridItem 🛠️
 - Dialog 🛠️
 - Alert Dialog 🛠️
 - Toast 🛠️
+- Form 🛠️
 
 ## Package
 
