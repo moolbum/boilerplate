@@ -35,7 +35,7 @@ Router: react-router-dom
 Date: dayJS
 Code: eslint, prettier, typeScript
 Build: env-cmd, craco
-StateManagement: zustand
+StateManagement: zustand, react-hook-form
 ```
 
 ## Font
