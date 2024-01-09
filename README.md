@@ -13,12 +13,12 @@ yarn start
 ## Component
 
 - Text
+- Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Badge 🛠️
 - Button 🛠️
 - Input 🛠️
 - Select 🛠️
 - Radio 🛠️
-- Icon (radix-icon, lucide-react, local)🛠️
 - SectionCard 🛠️
 - Stack 🛠️
 - Dialog 🛠️
@@ -30,7 +30,7 @@ yarn start
 ```sh
 Fetching: tanstack/react-query, axios
 Style: styled-componet, framer-motion
-Icon: radix-icon, lucide-react, local
+Icon: radix-icon, lucide-react, local(HTMLImageElement)
 Router: react-router-dom
 Date: dayJS
 Code: eslint, prettier, typeScript
