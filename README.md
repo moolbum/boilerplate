@@ -23,10 +23,10 @@ yarn start
 - SectionCard 🛠️
 - GridContainer 🛠️
 - GridItem 🛠️
+- Form 🛠️
 - Dialog 🛠️
 - Alert Dialog 🛠️
 - Toast 🛠️
-- Form 🛠️
 
 ## Package
 
@@ -37,7 +37,7 @@ Icon: radix-icon, lucide-react, local(HTMLImageElement)
 Router: react-router-dom
 Date: dayJS
 Code: eslint, prettier, typeScript
-Build: env-cmd, craco
+Build: yarn, env-cmd, craco
 StateManagement: zustand, react-hook-form
 ```
 
