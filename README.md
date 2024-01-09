@@ -18,7 +18,7 @@ yarn start
 - Input 🛠️
 - Select 🛠️
 - Radio 🛠️
-- Icon 🛠️
+- Icon (radix-icon, lucide-react, local)🛠️
 - SectionCard 🛠️
 - Stack 🛠️
 - Dialog 🛠️
@@ -30,11 +30,12 @@ yarn start
 ```sh
 Fetching: tanstack/react-query, axios
 Style: styled-componet, framer-motion
+Icon: radix-icon, lucide-react, local
 Router: react-router-dom
 Date: dayJS
 Code: eslint, prettier, typeScript
 Build: env-cmd, craco
-State management: zustand
+StateManagement: zustand
 ```
 
 ## Font
