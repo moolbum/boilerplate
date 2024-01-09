@@ -1,6 +1,14 @@
 # 👨‍💻 Boilerplate
 
-자주사용되는 기본적인 Lint, prettier, font, 컴포넌트, 색상, 폴더구조, 패키지의 Repository
+React 애플리케이션을 시작하기 위한 기본 구조와 설정이 미리 구성된 템플릿입니다. <br>
+eslint, prettier, font, 컴포넌트, 색상, 폴더구조, 패키지 템플릿
+
+## Getting started
+
+```sh
+yarn install
+yarn start
+```
 
 ## Component
 
@@ -10,9 +18,9 @@
 
 ## Package
 
-```jsx
-Style: styled componet;
-Router: react router dom
+```sh
+Style: styled-componet;
+Router: react-router-dom
 Date: dayJS;
 Code: eslint, prettier, typeScript
 Build: env-cmd, craco
