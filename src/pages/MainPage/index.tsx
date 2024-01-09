@@ -1,9 +1,11 @@
-import LucideIcon from '@/src/components/atom/Icons/LucideIcon';
-import RadixIcon from '@/src/components/atom/Icons/RadixIcon';
-import Typo from '@/src/components/atom/Typo';
 import React from 'react';
+import LocalIcon from '@/components/atom/Icons/LocalIcon';
+import LucideIcon from '@/components/atom/Icons/LucideIcon';
+import RadixIcon from '@/components/atom/Icons/RadixIcon';
+import Typo from '@/components/atom/Typo';
+import TableSvg from '@/assets/icons/icon-table-placeholder.svg';
 
-const MainPage = () => {
+function MainPage() {
   return (
     <div>
       <Typo as="h1" typo="d2" role="title" fontWeight="semibold" color="red300">
@@ -19,11 +21,12 @@ const MainPage = () => {
         <Typo as="h1" typo="h1" fontWeight="bold">
           Icon
         </Typo>
-        <RadixIcon name="ActivityLogIcon" />
-        <LucideIcon name="ALargeSmall" />
+        <RadixIcon name="ActivityLogIcon" size={16} />
+        <LucideIcon name="ALargeSmall" size={16} />
+        <LocalIcon name={TableSvg} size={16} />
       </div>
     </div>
   );
-};
+}
 
 export default MainPage;

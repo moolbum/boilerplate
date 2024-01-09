@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CracoEnvPlugin = require('craco-plugin-env');
 

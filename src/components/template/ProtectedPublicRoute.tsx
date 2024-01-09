@@ -1,4 +1,4 @@
-import PATH from '@/src/routes/path';
+import PATH from '@/routes/path';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 const ProtectedPublicRoute = () => {

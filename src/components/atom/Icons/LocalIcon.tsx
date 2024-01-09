@@ -7,7 +7,6 @@ interface LocalIconProps extends HTMLAttributes<HTMLImageElement> {
 }
 
 function LocalIcon({ name, size, className, ...rest }: LocalIconProps) {
-  // TODO 이미지 실제 테스트 필요
   return (
     <img
       alt={name}

@@ -1,4 +1,4 @@
-import { ColorType, colors } from '@/src/styles/color';
+import { ColorType, colors } from '@/styles/color';
 import { icons } from 'lucide-react';
 import { HTMLAttributes } from 'react';
 

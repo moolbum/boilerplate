@@ -1,7 +1,7 @@
-import { colors, ColorType } from '@/src/styles/color';
-import { fontWeights, getFontFamily, typography, TypographyType } from '@/src/styles/typography';
 import React, { HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
+import { ColorType, colors } from '@/styles/color';
+import { fontWeights, getFontFamily, typography, TypographyType } from '@/styles/typography';
 
 interface TypoProps extends HTMLAttributes<HTMLElement> {
   as?: keyof HTMLElementTagNameMap;
