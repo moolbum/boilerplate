@@ -14,7 +14,8 @@
 Style: styled componet;
 Router: react router dom
 Date: dayJS;
-Code: eslint, prettier
+Code: eslint, prettier, typeScript
+Build: env-cmd, craco
 ```
 
 ## Font
