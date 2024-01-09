@@ -19,11 +19,13 @@ yarn start
 ## Package
 
 ```sh
-Style: styled-componet;
+Fetching: tanstack/react-query, axios
+Style: styled-componet, framer-motion
 Router: react-router-dom
-Date: dayJS;
+Date: dayJS
 Code: eslint, prettier, typeScript
 Build: env-cmd, craco
+State management: zustand
 ```
 
 ## Font
