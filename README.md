@@ -11,8 +11,8 @@
 ## Package
 
 ```jsx
-Style: Styeld Componet;
-Router: React Router Dom
+Style: styled componet;
+Router: react router dom
 Date: dayJS;
 Code: eslint, prettier
 ```
