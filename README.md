@@ -1,6 +1,6 @@
 # Boilerplate
 
-자주사용되는 기본적인 컴포넌트, 색상, 폴더구조, 패키지의 Repository
+자주사용되는 기본적인 Lint, prettier, 컴포넌트, 색상, 폴더구조, 패키지의 Repository
 
 ## `Component`
 
