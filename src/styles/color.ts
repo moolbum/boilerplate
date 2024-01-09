@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   white: '#ffffff',
   black: '#000000',
 
@@ -86,7 +86,4 @@ const colors = {
   grape600: '#F8F0FC',
 } as const;
 
-export default colors;
-
-type ColorType = keyof typeof colors;
-export { type ColorType };
+export type ColorType = keyof typeof colors;

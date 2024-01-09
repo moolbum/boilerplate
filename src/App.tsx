@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import publicRoute from './routes/public';
 import privateRoute from './routes/private';
 
-const router = createBrowserRouter([...privateRoute, ...publicRoute]);
+const router = createBrowserRouter([...publicRoute, ...privateRoute]);
 
 function App() {
   return (
