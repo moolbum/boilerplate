@@ -15,7 +15,7 @@ interface TypoProps extends HTMLAttributes<HTMLElement> {
   underlineOffset?: number;
 }
 
-const Typo = forwardRef<HTMLElement, TypoProps>((props, ref) => {
+const Typo = forwardRef<HTMLElement, TypoProps>((props, forwardedRef) => {
   const {
     as = 'span',
     role,
@@ -34,7 +34,7 @@ const Typo = forwardRef<HTMLElement, TypoProps>((props, ref) => {
       color={color}
       typo={typo}
       role={role ?? (as === 'span' ? 'text' : undefined)}
-      ref={ref}
+      ref={forwardedRef}
       fontWeight={fontWeight}
       isUnderLine={isUnderLine}
       underLineThickness={underLineThickness}

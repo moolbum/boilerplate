@@ -26,7 +26,7 @@
       "@/routes/*": ["src/routes/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
-      "@src/*": ["/src/*"]
+      "@src/*": ["src/*"]
     }
   },
   "include": ["src/*", "svg.d.ts"]
