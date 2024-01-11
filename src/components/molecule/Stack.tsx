@@ -7,7 +7,7 @@ interface StackProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Stack = forwardRef<HTMLDivElement, StackProps>((props, forwardedRef) => {
-  const { gap = 8, direction, ...rest } = props;
+  const { gap = 8, direction = 'column', ...rest } = props;
 
   return <StackContainer ref={forwardedRef} gap={gap} direction={direction} {...rest} />;
 });
