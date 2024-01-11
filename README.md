@@ -19,7 +19,7 @@ yarn start
 - Input 🛠️
 - Select 🛠️
 - Radio 🛠️
-- Stack 🛠️
+- Stack
 - SectionCard 🛠️
 - GridContainer 🛠️
 - GridItem 🛠️
