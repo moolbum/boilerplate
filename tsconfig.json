@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5", // 코드를 컴파일할 ECMAScript 버전을 지정합니다. 여기서는 ES5로 지정되어 있습니다.
     "lib": ["dom", "dom.iterable", "esnext"], // TypeScript에서 사용할 라이브러리를 지정합니다. DOM 및 ESNext와 같은 라이브러리가 여기에 포함되어 있습니다.
@@ -14,20 +15,7 @@
     "resolveJsonModule": true, // JSON 모듈을 로드할 수 있도록 지원을 활성화합니다.
     "isolatedModules": true, // 각 파일이 독립적인 모듈로 간주되도록 지정합니다.
     "noEmit": true, // 실제로 컴파일된 결과를 생성하지 않도록 설정합니다. 주로 타입 체크만 수행합니다.
-    "jsx": "react-jsx", // JSX를 어떻게 처리할지 지정합니다. 여기서는 React의 JSX 구문을 사용하도록 설정되어 있습니다.
-    "baseUrl": "./", // 상대 모듈을 해결할 때 기본 경로를 설정합니다.
-    "paths": {
-      // 모듈 경로 별칭을 설정합니다. 예를 들어 "@/src/*"는 "src/*"와 대응됩니다.
-      "@/components/*": ["src/components/*"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/page/*": ["src/page/*"],
-      "@/assets/*": ["src/assets/*"],
-      "@/routes/*": ["src/routes/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@utils/*": ["src/utils/*"],
-      "@src/*": ["src/*"]
-    }
+    "jsx": "react-jsx" // JSX를 어떻게 처리할지 지정합니다. 여기서는 React의 JSX 구문을 사용하도록 설정되어 있습니다.
   },
-  "include": ["src/*", "svg.d.ts"]
+  "include": ["src", "svg.d.ts"]
 }

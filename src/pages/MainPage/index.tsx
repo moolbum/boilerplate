@@ -4,6 +4,7 @@ import LucideIcon from '@/components/atom/Icons/LucideIcon';
 import RadixIcon from '@/components/atom/Icons/RadixIcon';
 import Typo from '@/components/atom/Typo';
 import TableSvg from '@/assets/icons/icon-table-placeholder.svg';
+import Stack from '@/components/molecule/Stack';
 
 function MainPage() {
   return (
@@ -23,14 +24,14 @@ function MainPage() {
         Under Line
       </Typo>
 
-      <div>
+      <Stack gap={8}>
         <Typo as="h1" typo="h1" fontWeight="bold">
           Icon
         </Typo>
         <RadixIcon name="ActivityLogIcon" size={16} />
         <LucideIcon name="ALargeSmall" size={16} />
         <LocalIcon name={TableSvg} size={16} />
-      </div>
+      </Stack>
     </div>
   );
 }
