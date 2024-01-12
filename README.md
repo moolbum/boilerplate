@@ -16,7 +16,7 @@ yarn start
 
 - Typo
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
-- Badge 🛠️
+- Badge
 - Button 🛠️
 - Input 🛠️
 - Select 🛠️
@@ -50,3 +50,16 @@ StateManagement: zustand, react-hook-form
 
 - Pretendard
   - [Pretendard 공식 블로그](https://cactus.tistory.com/306)
+
+## Color
+
+Radix UI의 color 디자인 시스템을 참고해서만든 컬러시스템
+
+- Steps 1~2: Backgrounds
+- Steps 3~5: Component backgrounds
+- Steps 6~8: Borders
+- Steps 9~10: Solid backgrounds
+- Steps 11~12: Text
+
+  - [Radix Color Scales](https://www.radix-ui.com/colors/docs/palette-composition/scales)
+  - [Radix Color Understanding the scale](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale#steps-35-component-backgrounds)
