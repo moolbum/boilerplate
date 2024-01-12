@@ -4,11 +4,12 @@ import LucideIcon from '@/components/atom/Icons/LucideIcon';
 import RadixIcon from '@/components/atom/Icons/RadixIcon';
 import Typo from '@/components/atom/Typo';
 import TableSvg from '@/assets/icons/icon-table-placeholder.svg';
-import Stack from '@/components/molecule/Stack';
+import Flex from '@/components/molecule/Flex';
+import Badge from '@/components/atom/Badge';
 
 function MainPage() {
   return (
-    <div>
+    <Flex>
       <Typo as="h1" typo="d2" role="title" fontWeight="semibold" color="red300">
         h1 MainPage
       </Typo>
@@ -17,22 +18,26 @@ function MainPage() {
       </Typo>
       <Typo as="p">P MainPage</Typo>
       <Typo>Default MainPage</Typo>
-      <Typo isUnderLine underLineThickness={20} underlineOffset={2}>
+      <Typo isUnderLine underLineThickness={4} underlineOffset={2}>
         Under Line 20
       </Typo>
       <Typo onClick={() => {}} isUnderLine>
         Under Line
       </Typo>
 
-      <Stack gap={8}>
+      <Flex gap={8}>
         <Typo as="h1" typo="h1" fontWeight="bold">
           Icon
         </Typo>
         <RadixIcon name="ActivityLogIcon" size={16} />
         <LucideIcon name="ALargeSmall" size={16} />
         <LocalIcon name={TableSvg} size={16} />
-      </Stack>
-    </div>
+      </Flex>
+
+      <Flex>
+        <Badge>test</Badge>
+      </Flex>
+    </Flex>
   );
 }
 

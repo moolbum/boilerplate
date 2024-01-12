@@ -1,21 +1,21 @@
 import React, { CSSProperties, HTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
 
-interface StackProps extends HTMLAttributes<HTMLDivElement> {
+interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   gap?: number;
   direction?: CSSProperties['flexDirection'];
   align?: CSSProperties['alignItems'];
 }
 
-const Stack = forwardRef<HTMLDivElement, StackProps>((props, forwardedRef) => {
+const Flex = forwardRef<HTMLDivElement, FlexProps>((props, forwardedRef) => {
   const { gap = 8, direction = 'column', align = 'baseline', ...rest } = props;
 
-  return <StackContainer ref={forwardedRef} gap={gap} align={align} direction={direction} {...rest} />;
+  return <FlexContainer ref={forwardedRef} gap={gap} align={align} direction={direction} {...rest} />;
 });
 
-export default Stack;
+export default Flex;
 
-const StackContainer = styled.div<{
+const FlexContainer = styled.div<{
   gap: number;
   direction?: CSSProperties['flexDirection'];
   align?: CSSProperties['alignItems'];
