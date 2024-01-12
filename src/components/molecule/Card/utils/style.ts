@@ -1,7 +1,7 @@
-import { CommonSizeType } from '@/styles/common';
+import { BadgeSizeType } from '@/styles/size';
 import { css } from 'styled-components';
 
-export const getCardSize = (size?: CommonSizeType) => {
+export const getCardSize = (size?: BadgeSizeType) => {
   switch (size) {
     case 'small':
       return css`

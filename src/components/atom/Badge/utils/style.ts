@@ -1,6 +1,7 @@
 import { AccentColorType, colors } from '@/styles/color';
-import { CommonSizeType, CommonVariantType } from '@/styles/common';
+import { BadgeSizeType } from '@/styles/size';
 import { typography } from '@/styles/typography';
+import { CommonVariantType } from '@/styles/variant';
 import { css } from 'styled-components';
 
 // getBadgeVariant;
@@ -337,7 +338,7 @@ export const getBadgeVariant = (variant: CommonVariantType, color: AccentColorTy
 };
 
 // getBadgeSize
-export const getBadgeSize = (size: Exclude<CommonSizeType, 'large'>) => {
+export const getBadgeSize = (size: Exclude<BadgeSizeType, 'large'>) => {
   switch (size) {
     case 'small':
       return css`

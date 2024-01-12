@@ -1,12 +1,13 @@
 import { AccentColorType } from '@/styles/color';
-import { CommonSizeType, CommonVariantType } from '@/styles/common';
+import { BadgeSizeType } from '@/styles/size';
 import { borderRadius, RadiusType } from '@/styles/radius';
 import React, { HTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
 import { getBadgeSize, getBadgeVariant } from './utils/style';
+import { CommonVariantType } from '@/styles/variant';
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  size?: Exclude<CommonSizeType, 'large'>;
+  size?: Exclude<BadgeSizeType, 'large'>;
   radius?: Exclude<RadiusType, 'full'>;
   variant?: CommonVariantType;
   color?: AccentColorType;
@@ -23,7 +24,7 @@ export default Badge;
 const BadgeComponent = styled.span<{
   color: AccentColorType;
   radius: Exclude<RadiusType, 'full'>;
-  size: Exclude<CommonSizeType, 'large'>;
+  size: Exclude<BadgeSizeType, 'large'>;
   variant: CommonVariantType;
 }>`
   user-select: none;
