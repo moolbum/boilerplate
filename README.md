@@ -28,8 +28,7 @@ yarn start
 **molecule**
 
 - Flex
-- Grid 🛠️
-- GridRow 🛠️
+- Grid
 - Card
 - Form 🛠️
 
