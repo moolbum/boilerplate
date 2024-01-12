@@ -12,6 +12,8 @@ yarn start
 
 ## Component
 
+**atom**
+
 - Typo
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Badge 🛠️
@@ -19,14 +21,17 @@ yarn start
 - Input 🛠️
 - Select 🛠️
 - Radio 🛠️
-- Stack
+- Dialog 🛠️
+- Alert Dialog 🛠️
+- Toast 🛠️
+
+**molecule**
+
+- Flex
 - SectionCard 🛠️
 - GridContainer 🛠️
 - GridItem 🛠️
 - Form 🛠️
-- Dialog 🛠️
-- Alert Dialog 🛠️
-- Toast 🛠️
 
 ## Package
 
