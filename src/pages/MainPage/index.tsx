@@ -6,6 +6,7 @@ import Typo from '@/components/atom/Typo';
 import TableSvg from '@/assets/icons/icon-table-placeholder.svg';
 import Flex from '@/components/molecule/Flex';
 import Badge from '@/components/atom/Badge';
+import SectionCard from '@/components/molecule/Card';
 
 function MainPage() {
   return (
@@ -44,6 +45,8 @@ function MainPage() {
           데일
         </Badge>
       </Flex>
+
+      <SectionCard>SectionCard</SectionCard>
     </Flex>
   );
 }
