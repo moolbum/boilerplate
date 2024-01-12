@@ -21,7 +21,7 @@ const Typo = forwardRef<HTMLElement, TypoProps>((props, forwardedRef) => {
     role,
     color = 'black',
     fontWeight = 'regular',
-    typo = 'b9',
+    typo = 'b2',
     isUnderLine = false,
     underLineThickness = isUnderLine ? 1 : undefined,
     underlineOffset = isUnderLine ? 1 : undefined,

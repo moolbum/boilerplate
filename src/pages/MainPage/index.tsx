@@ -10,7 +10,7 @@ import Badge from '@/components/atom/Badge';
 function MainPage() {
   return (
     <Flex>
-      <Typo as="h1" typo="d2" role="title" fontWeight="semibold" color="red300">
+      <Typo as="h1" role="title" fontWeight="semibold" color="red500">
         h1 MainPage
       </Typo>
       <Typo as="h2" fontWeight="bold">
@@ -35,7 +35,8 @@ function MainPage() {
       </Flex>
 
       <Flex>
-        <Badge>test</Badge>
+        <Badge color="gray">test</Badge>
+        <Badge variant="outline">outline</Badge>
       </Flex>
     </Flex>
   );
