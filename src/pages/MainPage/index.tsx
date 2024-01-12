@@ -7,6 +7,7 @@ import TableSvg from '@/assets/icons/icon-table-placeholder.svg';
 import Flex from '@/components/molecule/Flex';
 import Badge from '@/components/atom/Badge';
 import SectionCard from '@/components/molecule/Card';
+import Grid from '@/components/molecule/Grid';
 
 function MainPage() {
   return (
@@ -47,6 +48,54 @@ function MainPage() {
       </Flex>
 
       <SectionCard>SectionCard</SectionCard>
+
+      <Grid>
+        <Grid.Col columnSpan={4}>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+        <Grid.Col>
+          <Badge color="lime" variant="solid">
+            데일
+          </Badge>
+        </Grid.Col>
+      </Grid>
     </Flex>
   );
 }
