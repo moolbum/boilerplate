@@ -28,9 +28,9 @@ yarn start
 **molecule**
 
 - Flex
-- SectionCard 🛠️
-- GridContainer 🛠️
-- GridItem 🛠️
+- Grid 🛠️
+- GridRow 🛠️
+- Card
 - Form 🛠️
 
 ## Package
