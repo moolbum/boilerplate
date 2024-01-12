@@ -37,6 +37,12 @@ function MainPage() {
       <Flex>
         <Badge color="gray">test</Badge>
         <Badge variant="outline">outline</Badge>
+        <Badge color="lime" variant="outline">
+          outline
+        </Badge>
+        <Badge color="lime" variant="solid">
+          데일
+        </Badge>
       </Flex>
     </Flex>
   );

@@ -7,7 +7,7 @@ import { getBadgeSize, getBadgeVariant } from './utils/style';
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   size?: Exclude<CommonSizeType, 'large'>;
-  radius?: RadiusType;
+  radius?: Exclude<RadiusType, 'full'>;
   variant?: CommonVariantType;
   color?: AccentColorType;
 }
@@ -22,7 +22,7 @@ export default Badge;
 
 const BadgeComponent = styled.span<{
   color: AccentColorType;
-  radius: RadiusType;
+  radius: Exclude<RadiusType, 'full'>;
   size: Exclude<CommonSizeType, 'large'>;
   variant: CommonVariantType;
 }>`
