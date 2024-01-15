@@ -13,48 +13,70 @@ const getSoftButtonStyle = (color: AccentColorType) => {
 
   switch (color) {
     case 'blue':
-      defaultBackground = colors.blue900;
-      fontColor = colors.white;
+      defaultBackground = colors.blue300;
+      hoverBackground = colors.blue400;
+      activeBackground = colors.blue500;
+      fontColor = colors.blue1100;
       break;
     case 'gray':
-      defaultBackground = colors.gray900;
-      fontColor = colors.white;
+      defaultBackground = colors.gray300;
+      hoverBackground = colors.gray400;
+      activeBackground = colors.gray500;
+      fontColor = colors.gray1100;
       break;
     case 'green':
-      defaultBackground = colors.green900;
-      fontColor = colors.white;
+      defaultBackground = colors.green300;
+      hoverBackground = colors.green400;
+      activeBackground = colors.green500;
+      fontColor = colors.green1100;
       break;
     case 'lime':
-      defaultBackground = colors.lime900;
-      fontColor = colors.lime1200;
+      defaultBackground = colors.lime300;
+      hoverBackground = colors.lime400;
+      activeBackground = colors.lime500;
+      fontColor = colors.lime1100;
       break;
     case 'mint':
-      defaultBackground = colors.mint900;
-      fontColor = colors.mint1200;
+      defaultBackground = colors.mint300;
+      hoverBackground = colors.mint400;
+      activeBackground = colors.mint500;
+      fontColor = colors.mint1100;
       break;
     case 'orange':
-      defaultBackground = colors.orange900;
-      fontColor = colors.white;
+      defaultBackground = colors.orange300;
+      hoverBackground = colors.orange400;
+      activeBackground = colors.orange500;
+      fontColor = colors.orange1100;
       break;
     case 'pink':
-      defaultBackground = colors.pink900;
-      fontColor = colors.white;
+      defaultBackground = colors.pink300;
+      hoverBackground = colors.pink400;
+      activeBackground = colors.pink500;
+      fontColor = colors.pink1100;
       break;
     case 'purple':
-      defaultBackground = colors.purple900;
-      fontColor = colors.white;
+      defaultBackground = colors.purple300;
+      hoverBackground = colors.purple400;
+      activeBackground = colors.purple500;
+      fontColor = colors.purple1100;
       break;
     case 'red':
-      defaultBackground = colors.red900;
-      fontColor = colors.white;
+      defaultBackground = colors.red300;
+      hoverBackground = colors.red400;
+      activeBackground = colors.red500;
+      fontColor = colors.red1100;
       break;
     case 'sky':
-      defaultBackground = colors.sky900;
-      fontColor = colors.sky1200;
+      defaultBackground = colors.sky300;
+      hoverBackground = colors.sky400;
+      activeBackground = colors.sky500;
+      fontColor = colors.sky1100;
       break;
     case 'yellow':
-      defaultBackground = colors.yellow900;
-      fontColor = colors.yellow1200;
+      defaultBackground = colors.yellow300;
+      hoverBackground = colors.yellow400;
+      activeBackground = colors.yellow500;
+      fontColor = colors.yellow1100;
       break;
   }
 

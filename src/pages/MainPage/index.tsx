@@ -12,7 +12,7 @@ import Button from '@/components/atom/Button';
 
 function MainPage() {
   return (
-    <Flex>
+    <Flex direction="column">
       <Typo as="h1" role="title" fontWeight="semibold" color="red500">
         h1 MainPage
       </Typo>
@@ -98,39 +98,79 @@ function MainPage() {
         </Grid.Col>
       </Grid>
 
-      <Button size="large" color="blue" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="gray" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="green" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="lime" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="mint" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="orange" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="pink" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="purple" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="red" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="sky" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
-      <Button size="large" color="yellow" isLoading onClick={() => console.log('click')}>
-        button
-      </Button>
+      {/* Button */}
+      <Flex>
+        <Button size="large" color="blue" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="gray" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="green" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="lime" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="mint" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="orange" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="pink" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="purple" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="red" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="sky" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button size="large" color="yellow" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+      </Flex>
+
+      {/* Button */}
+      <Flex>
+        <Button variant="solid" size="large" color="blue" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="gray" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="green" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="lime" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="mint" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="orange" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="pink" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="purple" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="red" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="sky" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+        <Button variant="solid" size="large" color="yellow" isLoading onClick={() => console.log('click')}>
+          button
+        </Button>
+      </Flex>
     </Flex>
   );
 }

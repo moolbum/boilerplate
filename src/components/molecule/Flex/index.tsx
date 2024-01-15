@@ -8,7 +8,7 @@ interface FlexProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Flex = forwardRef<HTMLDivElement, FlexProps>((props, forwardedRef) => {
-  const { gap = 8, direction = 'column', align = 'baseline', ...rest } = props;
+  const { gap = 8, direction = 'row', align = 'baseline', ...rest } = props;
 
   return <FlexContainer ref={forwardedRef} gap={gap} align={align} direction={direction} {...rest} />;
 });
