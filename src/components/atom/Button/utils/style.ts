@@ -13,70 +13,70 @@ const getSoftButtonStyle = (color: AccentColorType) => {
 
   switch (color) {
     case 'blue':
-      defaultBackground = colors.blue300;
-      hoverBackground = colors.blue400;
-      activeBackground = colors.blue500;
-      fontColor = colors.blue1100;
+      defaultBackground = colors.blue200;
+      hoverBackground = colors.blue300;
+      activeBackground = colors.blue400;
+      fontColor = colors.blue1000;
       break;
     case 'gray':
-      defaultBackground = colors.gray300;
-      hoverBackground = colors.gray400;
-      activeBackground = colors.gray500;
-      fontColor = colors.gray1100;
+      defaultBackground = colors.gray200;
+      hoverBackground = colors.gray300;
+      activeBackground = colors.gray400;
+      fontColor = colors.gray1000;
       break;
     case 'green':
-      defaultBackground = colors.green300;
-      hoverBackground = colors.green400;
-      activeBackground = colors.green500;
-      fontColor = colors.green1100;
+      defaultBackground = colors.green200;
+      hoverBackground = colors.green300;
+      activeBackground = colors.green400;
+      fontColor = colors.green1000;
       break;
     case 'lime':
-      defaultBackground = colors.lime300;
-      hoverBackground = colors.lime400;
-      activeBackground = colors.lime500;
-      fontColor = colors.lime1100;
+      defaultBackground = colors.lime200;
+      hoverBackground = colors.lime300;
+      activeBackground = colors.lime400;
+      fontColor = colors.lime1000;
       break;
     case 'mint':
-      defaultBackground = colors.mint300;
-      hoverBackground = colors.mint400;
-      activeBackground = colors.mint500;
-      fontColor = colors.mint1100;
+      defaultBackground = colors.mint200;
+      hoverBackground = colors.mint300;
+      activeBackground = colors.mint400;
+      fontColor = colors.mint1000;
       break;
     case 'orange':
-      defaultBackground = colors.orange300;
-      hoverBackground = colors.orange400;
-      activeBackground = colors.orange500;
-      fontColor = colors.orange1100;
+      defaultBackground = colors.orange200;
+      hoverBackground = colors.orange300;
+      activeBackground = colors.orange400;
+      fontColor = colors.orange1000;
       break;
     case 'pink':
-      defaultBackground = colors.pink300;
-      hoverBackground = colors.pink400;
-      activeBackground = colors.pink500;
-      fontColor = colors.pink1100;
+      defaultBackground = colors.pink200;
+      hoverBackground = colors.pink300;
+      activeBackground = colors.pink400;
+      fontColor = colors.pink1000;
       break;
     case 'purple':
-      defaultBackground = colors.purple300;
-      hoverBackground = colors.purple400;
-      activeBackground = colors.purple500;
-      fontColor = colors.purple1100;
+      defaultBackground = colors.purple200;
+      hoverBackground = colors.purple300;
+      activeBackground = colors.purple400;
+      fontColor = colors.purple1000;
       break;
     case 'red':
-      defaultBackground = colors.red300;
-      hoverBackground = colors.red400;
-      activeBackground = colors.red500;
-      fontColor = colors.red1100;
+      defaultBackground = colors.red200;
+      hoverBackground = colors.red300;
+      activeBackground = colors.red400;
+      fontColor = colors.red1000;
       break;
     case 'sky':
-      defaultBackground = colors.sky300;
-      hoverBackground = colors.sky400;
-      activeBackground = colors.sky500;
-      fontColor = colors.sky1100;
+      defaultBackground = colors.sky200;
+      hoverBackground = colors.sky300;
+      activeBackground = colors.sky400;
+      fontColor = colors.sky1000;
       break;
     case 'yellow':
-      defaultBackground = colors.yellow300;
-      hoverBackground = colors.yellow400;
-      activeBackground = colors.yellow500;
-      fontColor = colors.yellow1100;
+      defaultBackground = colors.yellow200;
+      hoverBackground = colors.yellow300;
+      activeBackground = colors.yellow400;
+      fontColor = colors.yellow1000;
       break;
   }
 
@@ -98,62 +98,74 @@ const getSolidButtonStyle = (color: AccentColorType) => {
   let defaultBackground;
   let activeBackground;
   let hoverBackground;
+  let fontColor;
 
   switch (color) {
     case 'blue':
-      defaultBackground = colors.blue900;
-      activeBackground = colors.blue700;
-      hoverBackground = colors.blue600;
+      defaultBackground = colors.blue800;
+      hoverBackground = colors.blue900;
+      activeBackground = colors.blue1000;
+      fontColor = colors.blue1100;
       break;
     case 'gray':
-      defaultBackground = colors.gray900;
-      activeBackground = colors.gray500;
-      hoverBackground = colors.gray400;
+      defaultBackground = colors.gray800;
+      hoverBackground = colors.gray900;
+      activeBackground = colors.gray1000;
+      fontColor = colors.gray1100;
       break;
     case 'green':
-      defaultBackground = colors.green900;
-      activeBackground = colors.green500;
-      hoverBackground = colors.green400;
+      defaultBackground = colors.green800;
+      hoverBackground = colors.green900;
+      activeBackground = colors.green1000;
+      fontColor = colors.green1100;
       break;
     case 'lime':
-      defaultBackground = colors.lime900;
-      activeBackground = colors.lime500;
-      hoverBackground = colors.lime1100;
+      defaultBackground = colors.lime800;
+      hoverBackground = colors.lime900;
+      activeBackground = colors.lime1000;
+      fontColor = colors.lime1100;
       break;
     case 'mint':
-      defaultBackground = colors.mint900;
-      activeBackground = colors.mint500;
-      hoverBackground = colors.mint1100;
+      defaultBackground = colors.mint800;
+      hoverBackground = colors.mint900;
+      activeBackground = colors.mint1000;
+      fontColor = colors.mint1100;
       break;
     case 'orange':
-      defaultBackground = colors.orange900;
-      activeBackground = colors.orange500;
-      hoverBackground = colors.orange400;
+      defaultBackground = colors.orange800;
+      hoverBackground = colors.orange900;
+      activeBackground = colors.orange1000;
+      fontColor = colors.orange1100;
       break;
     case 'pink':
-      defaultBackground = colors.pink900;
-      activeBackground = colors.pink500;
-      hoverBackground = colors.pink400;
+      defaultBackground = colors.pink800;
+      hoverBackground = colors.pink900;
+      activeBackground = colors.pink1000;
+      fontColor = colors.pink1100;
       break;
     case 'purple':
-      defaultBackground = colors.purple900;
-      activeBackground = colors.purple500;
-      hoverBackground = colors.purple400;
+      defaultBackground = colors.purple800;
+      hoverBackground = colors.purple900;
+      activeBackground = colors.purple1000;
+      fontColor = colors.purple1100;
       break;
     case 'red':
-      defaultBackground = colors.red900;
-      activeBackground = colors.red500;
-      hoverBackground = colors.red400;
+      defaultBackground = colors.red800;
+      hoverBackground = colors.red900;
+      activeBackground = colors.red1000;
+      fontColor = colors.red1100;
       break;
     case 'sky':
-      defaultBackground = colors.sky900;
-      activeBackground = colors.sky500;
-      hoverBackground = colors.sky400;
+      defaultBackground = colors.sky800;
+      hoverBackground = colors.sky900;
+      activeBackground = colors.sky1000;
+      fontColor = colors.sky1100;
       break;
     case 'yellow':
-      defaultBackground = colors.yellow900;
-      activeBackground = colors.yellow500;
-      hoverBackground = colors.yellow400;
+      defaultBackground = colors.yellow800;
+      hoverBackground = colors.yellow900;
+      activeBackground = colors.yellow1000;
+      fontColor = colors.yellow1100;
       break;
   }
 
@@ -161,6 +173,7 @@ const getSolidButtonStyle = (color: AccentColorType) => {
     border: none;
     cursor: pointer;
     background: ${defaultBackground};
+    color: ${fontColor};
 
     &:hover {
       background: ${hoverBackground};
@@ -178,78 +191,78 @@ const getOutlineButtonStyle = (color: AccentColorType) => {
     case 'blue':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.blue800};
-        color: ${colors.blue1100};
+        box-shadow: inset 0 0 0 1px ${colors.blue700};
+        color: ${colors.blue1000};
       `;
       break;
     case 'gray':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.gray800};
-        color: ${colors.gray1100};
+        box-shadow: inset 0 0 0 1px ${colors.gray700};
+        color: ${colors.gray1000};
       `;
       break;
     case 'green':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.green800};
-        color: ${colors.green1100};
+        box-shadow: inset 0 0 0 1px ${colors.green700};
+        color: ${colors.green1000};
       `;
       break;
     case 'lime':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.lime800};
-        color: ${colors.lime1100};
+        box-shadow: inset 0 0 0 1px ${colors.lime700};
+        color: ${colors.lime1000};
       `;
       break;
     case 'mint':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.mint800};
-        color: ${colors.mint1100};
+        box-shadow: inset 0 0 0 1px ${colors.mint700};
+        color: ${colors.mint1000};
       `;
       break;
     case 'orange':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.orange800};
-        color: ${colors.orange1100};
+        box-shadow: inset 0 0 0 1px ${colors.orange700};
+        color: ${colors.orange1000};
       `;
       break;
     case 'pink':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.pink800};
-        color: ${colors.pink1100};
+        box-shadow: inset 0 0 0 1px ${colors.pink700};
+        color: ${colors.pink1000};
       `;
       break;
     case 'purple':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.purple800};
-        color: ${colors.purple1100};
+        box-shadow: inset 0 0 0 1px ${colors.purple700};
+        color: ${colors.purple1000};
       `;
       break;
     case 'red':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.red800};
-        color: ${colors.red1100};
+        box-shadow: inset 0 0 0 1px ${colors.red700};
+        color: ${colors.red1000};
       `;
       break;
     case 'sky':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.sky800};
-        color: ${colors.sky1100};
+        box-shadow: inset 0 0 0 1px ${colors.sky700};
+        color: ${colors.sky1000};
       `;
       break;
     case 'yellow':
       outlineBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.yellow800};
-        color: ${colors.yellow1100};
+        box-shadow: inset 0 0 0 1px ${colors.yellow700};
+        color: ${colors.yellow1000};
       `;
       break;
   }
@@ -263,79 +276,79 @@ const getSurfaceButtonStyle = (color: AccentColorType) => {
   switch (color) {
     case 'blue':
       surfaceBadgeStyle = css`
-        background: ${colors.blue200};
-        box-shadow: inset 0 0 0 1px ${colors.blue700};
-        color: ${colors.blue1100};
+        background: ${colors.blue100};
+        box-shadow: inset 0 0 0 1px ${colors.blue600};
+        color: ${colors.blue1000};
       `;
       break;
     case 'gray':
       surfaceBadgeStyle = css`
-        background: ${colors.gray200};
-        box-shadow: inset 0 0 0 1px ${colors.gray700};
-        color: ${colors.gray1100};
+        background: ${colors.gray100};
+        box-shadow: inset 0 0 0 1px ${colors.gray600};
+        color: ${colors.gray1000};
       `;
       break;
     case 'green':
       surfaceBadgeStyle = css`
-        background: ${colors.green200};
-        box-shadow: inset 0 0 0 1px ${colors.green700};
-        color: ${colors.green1100};
+        background: ${colors.green100};
+        box-shadow: inset 0 0 0 1px ${colors.green600};
+        color: ${colors.green1000};
       `;
       break;
     case 'lime':
       surfaceBadgeStyle = css`
-        background: ${colors.lime200};
-        box-shadow: inset 0 0 0 1px ${colors.lime700};
-        color: ${colors.lime1100};
+        background: ${colors.lime100};
+        box-shadow: inset 0 0 0 1px ${colors.lime600};
+        color: ${colors.lime1000};
       `;
       break;
     case 'mint':
       surfaceBadgeStyle = css`
-        background: ${colors.mint200};
-        box-shadow: inset 0 0 0 1px ${colors.mint700};
-        color: ${colors.mint1100};
+        background: ${colors.mint100};
+        box-shadow: inset 0 0 0 1px ${colors.mint600};
+        color: ${colors.mint1000};
       `;
       break;
     case 'orange':
       surfaceBadgeStyle = css`
         background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.orange700};
-        color: ${colors.orange1100};
+        box-shadow: inset 0 0 0 1px ${colors.orange600};
+        color: ${colors.orange1000};
       `;
       break;
     case 'pink':
       surfaceBadgeStyle = css`
-        background: ${colors.pink200};
-        box-shadow: inset 0 0 0 1px ${colors.pink700};
-        color: ${colors.pink1100};
+        background: ${colors.pink100};
+        box-shadow: inset 0 0 0 1px ${colors.pink600};
+        color: ${colors.pink1000};
       `;
       break;
     case 'purple':
       surfaceBadgeStyle = css`
-        background: ${colors.purple200};
-        box-shadow: inset 0 0 0 1px ${colors.purple700};
-        color: ${colors.purple1100};
+        background: ${colors.purple100};
+        box-shadow: inset 0 0 0 1px ${colors.purple600};
+        color: ${colors.purple1000};
       `;
       break;
     case 'red':
       surfaceBadgeStyle = css`
-        background: ${colors.red200};
-        box-shadow: inset 0 0 0 1px ${colors.red700};
-        color: ${colors.red1100};
+        background: ${colors.red100};
+        box-shadow: inset 0 0 0 1px ${colors.red600};
+        color: ${colors.red1000};
       `;
       break;
     case 'sky':
       surfaceBadgeStyle = css`
-        background: ${colors.sky200};
-        box-shadow: inset 0 0 0 1px ${colors.sky700};
-        color: ${colors.sky1100};
+        background: ${colors.sky100};
+        box-shadow: inset 0 0 0 1px ${colors.sky600};
+        color: ${colors.sky1000};
       `;
       break;
     case 'yellow':
       surfaceBadgeStyle = css`
-        background: ${colors.yellow200};
-        box-shadow: inset 0 0 0 1px ${colors.yellow700};
-        color: ${colors.yellow1100};
+        background: ${colors.yellow100};
+        box-shadow: inset 0 0 0 1px ${colors.yellow600};
+        color: ${colors.yellow1000};
       `;
       break;
   }

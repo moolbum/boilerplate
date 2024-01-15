@@ -54,11 +54,11 @@ StateManagement: zustand, react-hook-form
 
 Radix UI의 color 디자인 시스템을 참고해서만든 컬러시스템
 
-- Steps 1~2: Backgrounds
-- Steps 3~5: Component backgrounds
-- Steps 6~8: Borders
-- Steps 9~10: Solid backgrounds
-- Steps 11~12: Text
+- Steps 0~1: Backgrounds
+- Steps 2~4: Component backgrounds
+- Steps 5~7: Borders
+- Steps 8~9: Solid backgrounds
+- Steps 10~11: Text
 
-  - [Radix Color Scales](https://www.radix-ui.com/colors/docs/palette-composition/scales)
-  - [Radix Color Understanding the scale](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale#steps-35-component-backgrounds)
+- [Radix Color Scales](https://www.radix-ui.com/colors/docs/palette-composition/scales)
+- [Radix Color Understanding the scale](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale#steps-35-component-backgrounds)

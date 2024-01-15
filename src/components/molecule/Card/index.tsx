@@ -23,7 +23,7 @@ export default Card;
 
 const CardComponent = styled.section<{ size?: BadgeSizeType; fullWidth?: boolean }>`
   border-radius: 8px;
-  border: 1px solid ${colors.gray600};
+  border: 1px solid ${colors.gray500};
 
   ${({ size }) => getCardSize(size)}
   ${({ fullWidth }) =>
