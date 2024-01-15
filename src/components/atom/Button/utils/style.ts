@@ -184,179 +184,200 @@ const getSolidButtonStyle = (color: AccentColorType) => {
   `;
 };
 const getOutlineButtonStyle = (color: AccentColorType) => {
-  let defaultBackground;
+  let defaultBackground = colors.white;
+  let defaultBoxShadow;
   let activeBackground;
   let hoverBackground;
   let fontColor;
 
-  let outlineBadgeStyle;
-
   switch (color) {
     case 'blue':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.blue700};
-        color: ${colors.blue1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.blue700}`;
+      hoverBackground = colors.blue100;
+      activeBackground = colors.blue200;
+      fontColor = colors.blue1000;
       break;
+
     case 'gray':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.gray700};
-        color: ${colors.gray1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.gray700}`;
+      hoverBackground = colors.gray100;
+      activeBackground = colors.gray200;
+      fontColor = colors.gray1000;
       break;
     case 'green':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.green700};
-        color: ${colors.green1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.green700}`;
+      hoverBackground = colors.green100;
+      activeBackground = colors.green200;
+      fontColor = colors.green1000;
       break;
     case 'lime':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.lime700};
-        color: ${colors.lime1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.lime700}`;
+      hoverBackground = colors.lime100;
+      activeBackground = colors.lime200;
+      fontColor = colors.lime1000;
       break;
     case 'mint':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.mint700};
-        color: ${colors.mint1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.mint700}`;
+      hoverBackground = colors.mint100;
+      activeBackground = colors.mint200;
+      fontColor = colors.mint1000;
       break;
     case 'orange':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.orange700};
-        color: ${colors.orange1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.orange700}`;
+      hoverBackground = colors.orange100;
+      activeBackground = colors.orange200;
+      fontColor = colors.orange1000;
       break;
     case 'pink':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.pink700};
-        color: ${colors.pink1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.pink700}`;
+      hoverBackground = colors.pink100;
+      activeBackground = colors.pink200;
+      fontColor = colors.pink1000;
       break;
     case 'purple':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.purple700};
-        color: ${colors.purple1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.purple700}`;
+      hoverBackground = colors.purple100;
+      activeBackground = colors.purple200;
+      fontColor = colors.purple1000;
       break;
     case 'red':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.red700};
-        color: ${colors.red1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.red700}`;
+      hoverBackground = colors.red100;
+      activeBackground = colors.red200;
+      fontColor = colors.red1000;
       break;
     case 'sky':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.sky700};
-        color: ${colors.sky1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.sky700}`;
+      hoverBackground = colors.sky100;
+      activeBackground = colors.sky200;
+      fontColor = colors.sky1000;
       break;
     case 'yellow':
-      outlineBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.yellow700};
-        color: ${colors.yellow1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.yellow700}`;
+      hoverBackground = colors.yellow100;
+      activeBackground = colors.yellow200;
+      fontColor = colors.yellow1000;
       break;
   }
 
-  return outlineBadgeStyle;
+  return css`
+    border: none;
+    cursor: pointer;
+    background: ${defaultBackground};
+    color: ${fontColor};
+    box-shadow: ${defaultBoxShadow};
+
+    &:hover {
+      background: ${hoverBackground};
+    }
+    &:active {
+      background: ${activeBackground};
+    }
+  `;
 };
 const getSurfaceButtonStyle = (color: AccentColorType) => {
+  let defaultBackground;
+  let defaultBoxShadow;
+  let activeBackground;
+  let hoverBackground;
+  let fontColor;
+
   let surfaceBadgeStyle;
 
   switch (color) {
     case 'blue':
-      surfaceBadgeStyle = css`
-        background: ${colors.blue100};
-        box-shadow: inset 0 0 0 1px ${colors.blue600};
-        color: ${colors.blue1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.blue700}`;
+      defaultBackground = colors.blue100;
+      hoverBackground = colors.blue200;
+      activeBackground = colors.blue300;
+      fontColor = colors.blue1000;
       break;
     case 'gray':
-      surfaceBadgeStyle = css`
-        background: ${colors.gray100};
-        box-shadow: inset 0 0 0 1px ${colors.gray600};
-        color: ${colors.gray1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.gray700}`;
+      defaultBackground = colors.gray100;
+      hoverBackground = colors.gray200;
+      activeBackground = colors.gray300;
+      fontColor = colors.gray1000;
       break;
     case 'green':
-      surfaceBadgeStyle = css`
-        background: ${colors.green100};
-        box-shadow: inset 0 0 0 1px ${colors.green600};
-        color: ${colors.green1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.green700}`;
+      defaultBackground = colors.green100;
+      hoverBackground = colors.green200;
+      activeBackground = colors.green300;
+      fontColor = colors.green1000;
       break;
     case 'lime':
-      surfaceBadgeStyle = css`
-        background: ${colors.lime100};
-        box-shadow: inset 0 0 0 1px ${colors.lime600};
-        color: ${colors.lime1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.lime700}`;
+      defaultBackground = colors.lime100;
+      hoverBackground = colors.lime200;
+      activeBackground = colors.lime300;
+      fontColor = colors.lime1000;
       break;
     case 'mint':
-      surfaceBadgeStyle = css`
-        background: ${colors.mint100};
-        box-shadow: inset 0 0 0 1px ${colors.mint600};
-        color: ${colors.mint1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.mint700}`;
+      defaultBackground = colors.mint100;
+      hoverBackground = colors.mint200;
+      activeBackground = colors.mint300;
+      fontColor = colors.mint1000;
       break;
     case 'orange':
-      surfaceBadgeStyle = css`
-        background: ${colors.white};
-        box-shadow: inset 0 0 0 1px ${colors.orange600};
-        color: ${colors.orange1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.orange700}`;
+      defaultBackground = colors.orange100;
+      hoverBackground = colors.orange200;
+      activeBackground = colors.orange300;
+      fontColor = colors.orange1000;
       break;
     case 'pink':
-      surfaceBadgeStyle = css`
-        background: ${colors.pink100};
-        box-shadow: inset 0 0 0 1px ${colors.pink600};
-        color: ${colors.pink1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.pink700}`;
+      defaultBackground = colors.pink100;
+      hoverBackground = colors.pink200;
+      activeBackground = colors.pink300;
+      fontColor = colors.pink1000;
       break;
     case 'purple':
-      surfaceBadgeStyle = css`
-        background: ${colors.purple100};
-        box-shadow: inset 0 0 0 1px ${colors.purple600};
-        color: ${colors.purple1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.purple700}`;
+      defaultBackground = colors.purple100;
+      hoverBackground = colors.purple200;
+      activeBackground = colors.purple300;
+      fontColor = colors.purple1000;
       break;
     case 'red':
-      surfaceBadgeStyle = css`
-        background: ${colors.red100};
-        box-shadow: inset 0 0 0 1px ${colors.red600};
-        color: ${colors.red1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.red700}`;
+      defaultBackground = colors.red100;
+      hoverBackground = colors.red200;
+      activeBackground = colors.red300;
+      fontColor = colors.red1000;
       break;
     case 'sky':
-      surfaceBadgeStyle = css`
-        background: ${colors.sky100};
-        box-shadow: inset 0 0 0 1px ${colors.sky600};
-        color: ${colors.sky1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.sky700}`;
+      defaultBackground = colors.sky100;
+      hoverBackground = colors.sky200;
+      activeBackground = colors.sky300;
+      fontColor = colors.sky1000;
       break;
     case 'yellow':
-      surfaceBadgeStyle = css`
-        background: ${colors.yellow100};
-        box-shadow: inset 0 0 0 1px ${colors.yellow600};
-        color: ${colors.yellow1000};
-      `;
+      defaultBoxShadow = `inset 0 0 0 1px ${colors.yellow700}`;
+      defaultBackground = colors.yellow100;
+      hoverBackground = colors.yellow200;
+      activeBackground = colors.yellow300;
+      fontColor = colors.yellow1000;
       break;
   }
 
-  return surfaceBadgeStyle;
+  return css`
+    border: none;
+    cursor: pointer;
+    background: ${defaultBackground};
+    color: ${fontColor};
+    box-shadow: ${defaultBoxShadow};
+
+    &:hover {
+      background: ${hoverBackground};
+    }
+    &:active {
+      background: ${activeBackground};
+    }
+  `;
 };
 
 export const getButtonVariant = (variant: ButtonVariantType, color: AccentColorType) => {
