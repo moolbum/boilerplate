@@ -10,21 +10,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   radius?: RadiusType;
   variant?: CommonVariantType;
   color?: AccentColorType;
-  isFullSize?: boolean;
+  fullWidth?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) => {
-  const { type = 'button', radius = 'small', isFullSize, ...rest } = props;
+  const { type = 'button', radius = 'small', fullWidth, ...rest } = props;
 
-  return <ButtonComponent ref={forwardedRef} radius={radius} isFullSize={isFullSize} type={type} {...rest} />;
+  return <ButtonComponent ref={forwardedRef} radius={radius} fullWidth={fullWidth} type={type} {...rest} />;
 });
 
 export default Button;
 
-const ButtonComponent = styled.button<{ radius: RadiusType; isFullSize?: boolean }>`
+const ButtonComponent = styled.button<{ radius: RadiusType; fullWidth?: boolean }>`
   border-radius: ${({ radius }) => borderRadius[radius]};
-  ${({ isFullSize }) =>
-    isFullSize &&
+  ${({ fullWidth }) =>
+    fullWidth &&
     css`
       width: 100%;
     `}

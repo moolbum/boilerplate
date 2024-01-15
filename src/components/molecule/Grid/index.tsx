@@ -4,12 +4,12 @@ import styled, { css } from 'styled-components';
 // Grid Row
 interface GridRowProps extends HTMLAttributes<HTMLDivElement> {
   columnCount?: number;
-  isFullSize?: boolean;
+  fullWidth?: boolean;
   rowGap?: number;
   columnGap?: number;
 }
 const GridRow = forwardRef<HTMLDivElement, GridRowProps>((props, forwardedRef) => {
-  const { columnCount = 12, rowGap = 8, columnGap = 8, isFullSize, ...rest } = props;
+  const { columnCount = 12, rowGap = 8, columnGap = 8, fullWidth, ...rest } = props;
 
   return (
     <StyledGridRow
@@ -17,7 +17,7 @@ const GridRow = forwardRef<HTMLDivElement, GridRowProps>((props, forwardedRef) =
       columnCount={columnCount}
       rowGap={rowGap}
       columnGap={columnGap}
-      isFullSize={isFullSize}
+      fullWidth={fullWidth}
       {...rest}
     />
   );
@@ -27,7 +27,7 @@ const StyledGridRow = styled.div<{
   columnCount: number;
   rowGap: number;
   columnGap: number;
-  isFullSize?: boolean;
+  fullWidth?: boolean;
 }>`
   display: grid;
   grid-gap: ${({ rowGap, columnGap }) => `${rowGap}px ${columnGap}px`};
@@ -35,8 +35,8 @@ const StyledGridRow = styled.div<{
   ${({ columnCount }) => css`
     grid-template-columns: repeat(${columnCount}, 1fr);
   `};
-  ${({ isFullSize }) =>
-    isFullSize &&
+  ${({ fullWidth }) =>
+    fullWidth &&
     css`
       width: 100%;
     `}

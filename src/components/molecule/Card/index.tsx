@@ -6,14 +6,14 @@ import { colors } from '@/styles/color';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   size?: CommonSizeType;
-  isFullSize?: boolean;
+  fullWidth?: boolean;
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>((props, forwardedRef) => {
-  const { children, isFullSize, ...rest } = props;
+  const { children, fullWidth, ...rest } = props;
 
   return (
-    <CardComponent ref={forwardedRef} isFullSize={isFullSize} {...rest}>
+    <CardComponent ref={forwardedRef} fullWidth={fullWidth} {...rest}>
       {children}
     </CardComponent>
   );
@@ -21,13 +21,13 @@ const Card = forwardRef<HTMLDivElement, CardProps>((props, forwardedRef) => {
 
 export default Card;
 
-const CardComponent = styled.section<{ size?: BadgeSizeType; isFullSize?: boolean }>`
+const CardComponent = styled.section<{ size?: BadgeSizeType; fullWidth?: boolean }>`
   border-radius: 8px;
   border: 1px solid ${colors.gray600};
 
   ${({ size }) => getCardSize(size)}
-  ${({ isFullSize }) =>
-    isFullSize &&
+  ${({ fullWidth }) =>
+    fullWidth &&
     css`
       width: 100%;
     `}
