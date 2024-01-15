@@ -168,7 +168,7 @@ export const colors = {
   purple1000: '#8145b5',
   purple1100: '#402060',
 
-  // grey Opacity
+  // greyOpacity
   greyOpacity50: 'rgba(0, 0, 0, 0.05)',
   greyOpacity100: 'rgba(0, 0, 0, 0.1)',
   greyOpacity200: 'rgba(0, 0, 0, 0.15)',

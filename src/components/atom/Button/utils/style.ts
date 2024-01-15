@@ -183,8 +183,12 @@ const getSolidButtonStyle = (color: AccentColorType) => {
     }
   `;
 };
-// TODO
 const getOutlineButtonStyle = (color: AccentColorType) => {
+  let defaultBackground;
+  let activeBackground;
+  let hoverBackground;
+  let fontColor;
+
   let outlineBadgeStyle;
 
   switch (color) {
@@ -269,7 +273,6 @@ const getOutlineButtonStyle = (color: AccentColorType) => {
 
   return outlineBadgeStyle;
 };
-
 const getSurfaceButtonStyle = (color: AccentColorType) => {
   let surfaceBadgeStyle;
 
@@ -373,26 +376,33 @@ export const getButtonVariant = (variant: ButtonVariantType, color: AccentColorT
 
 // getButtonSize
 export const getButtonSize = (size: ButtonSizeType) => {
+  let paddingSize;
+  let typo;
+
   switch (size) {
     case 'xSmall':
-      return css`
-        padding: 0 8px;
-        ${typography.b6}
-      `;
+      paddingSize = '0 8px';
+      typo = typography.b6;
+      break;
+
     case 'small':
-      return css`
-        padding: 0 12px;
-        ${typography.b5}
-      `;
+      paddingSize = '0 12px';
+      typo = typography.b5;
+      break;
+
     case 'medium':
-      return css`
-        padding: 0 16px;
-        ${typography.b3}
-      `;
+      paddingSize = '0 16px';
+      typo = typography.b3;
+      break;
+
     case 'large':
-      return css`
-        padding: 0 24px;
-        ${typography.b1}
-      `;
+      paddingSize = '0 24px';
+      typo = typography.b1;
+      break;
   }
+
+  return css`
+    padding: ${paddingSize};
+    ${typo}
+  `;
 };
