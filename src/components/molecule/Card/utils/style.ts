@@ -2,23 +2,27 @@ import { BadgeSizeType } from '@/styles/size';
 import { css } from 'styled-components';
 
 export const getCardSize = (size?: BadgeSizeType) => {
+  let paddingSize;
+
   switch (size) {
     case 'small':
-      return css`
-        padding: 12px;
-      `;
+      paddingSize = 12;
+      break;
+
     case 'medium':
-      return css`
-        padding: 16px;
-      `;
+      paddingSize = 16;
+      break;
+
     case 'large':
-      return css`
-        padding: 24px;
-      `;
+      paddingSize = 24;
+      break;
 
     default:
-      return css`
-        padding: 16px;
-      `;
+      paddingSize = 16;
+      break;
   }
+
+  return css`
+    padding: ${paddingSize}px;
+  `;
 };

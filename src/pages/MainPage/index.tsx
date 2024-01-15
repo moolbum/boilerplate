@@ -8,6 +8,7 @@ import Flex from '@/components/molecule/Flex';
 import Badge from '@/components/atom/Badge';
 import SectionCard from '@/components/molecule/Card';
 import Grid from '@/components/molecule/Grid';
+import Button from '@/components/atom/Button';
 
 function MainPage() {
   return (
@@ -96,6 +97,40 @@ function MainPage() {
           </Badge>
         </Grid.Col>
       </Grid>
+
+      <Button size="large" color="blue" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="gray" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="green" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="lime" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="mint" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="orange" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="pink" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="purple" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="red" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="sky" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
+      <Button size="large" color="yellow" isLoading onClick={() => console.log('click')}>
+        button
+      </Button>
     </Flex>
   );
 }

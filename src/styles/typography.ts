@@ -74,7 +74,7 @@ export const typography = {
 
   // Body
   b1: css`
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.474;
   `,
   b2: css`
@@ -94,7 +94,7 @@ export const typography = {
     line-height: 1.5;
   `,
   b6: css`
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.5;
   `,
   b7: css`

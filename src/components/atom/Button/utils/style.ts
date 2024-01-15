@@ -1,85 +1,155 @@
 import { AccentColorType, colors } from '@/styles/color';
-import { BadgeSizeType } from '@/styles/size';
+import { ButtonSizeType } from '@/styles/size';
 import { typography } from '@/styles/typography';
-import { BadgeVariantType } from '@/styles/variant';
+import { ButtonVariantType } from '@/styles/variant';
 import { css } from 'styled-components';
 
-// getBadgeVariant;
-const getSoftBadgeStyle = (color: AccentColorType) => {
-  let softBadgeStyle;
+// getButtonVariant;
+const getSoftButtonStyle = (color: AccentColorType) => {
+  let defaultBackground;
+  let activeBackground;
+  let hoverBackground;
+  let fontColor;
 
   switch (color) {
     case 'blue':
-      softBadgeStyle = css`
-        background: ${colors.blue300};
-        color: ${colors.blue1100};
-      `;
+      defaultBackground = colors.blue900;
+      fontColor = colors.white;
       break;
     case 'gray':
-      softBadgeStyle = css`
-        background: ${colors.gray300};
-        color: ${colors.gray1100};
-      `;
+      defaultBackground = colors.gray900;
+      fontColor = colors.white;
       break;
     case 'green':
-      softBadgeStyle = css`
-        background: ${colors.green300};
-        color: ${colors.green1100};
-      `;
+      defaultBackground = colors.green900;
+      fontColor = colors.white;
       break;
     case 'lime':
-      softBadgeStyle = css`
-        background: ${colors.lime300};
-        color: ${colors.lime1100};
-      `;
+      defaultBackground = colors.lime900;
+      fontColor = colors.lime1200;
       break;
     case 'mint':
-      softBadgeStyle = css`
-        background: ${colors.mint300};
-        color: ${colors.mint1100};
-      `;
+      defaultBackground = colors.mint900;
+      fontColor = colors.mint1200;
       break;
     case 'orange':
-      softBadgeStyle = css`
-        background: ${colors.orange300};
-        color: ${colors.orange1100};
-      `;
+      defaultBackground = colors.orange900;
+      fontColor = colors.white;
       break;
     case 'pink':
-      softBadgeStyle = css`
-        background: ${colors.pink300};
-        color: ${colors.pink1100};
-      `;
+      defaultBackground = colors.pink900;
+      fontColor = colors.white;
       break;
     case 'purple':
-      softBadgeStyle = css`
-        background: ${colors.purple300};
-        color: ${colors.purple1100};
-      `;
+      defaultBackground = colors.purple900;
+      fontColor = colors.white;
       break;
     case 'red':
-      softBadgeStyle = css`
-        background: ${colors.red300};
-        color: ${colors.red1100};
-      `;
+      defaultBackground = colors.red900;
+      fontColor = colors.white;
       break;
     case 'sky':
-      softBadgeStyle = css`
-        background: ${colors.sky300};
-        color: ${colors.sky1100};
-      `;
+      defaultBackground = colors.sky900;
+      fontColor = colors.sky1200;
       break;
     case 'yellow':
-      softBadgeStyle = css`
-        background: ${colors.yellow300};
-        color: ${colors.yellow1100};
-      `;
+      defaultBackground = colors.yellow900;
+      fontColor = colors.yellow1200;
       break;
   }
 
-  return softBadgeStyle;
+  return css`
+    border: none;
+    cursor: pointer;
+    color: ${fontColor};
+    background: ${defaultBackground};
+
+    &:hover {
+      background: ${hoverBackground};
+    }
+    &:active {
+      background: ${activeBackground};
+    }
+  `;
 };
-const getOutlineBadgeStyle = (color: AccentColorType) => {
+const getSolidButtonStyle = (color: AccentColorType) => {
+  let defaultBackground;
+  let activeBackground;
+  let hoverBackground;
+
+  switch (color) {
+    case 'blue':
+      defaultBackground = colors.blue900;
+      activeBackground = colors.blue700;
+      hoverBackground = colors.blue600;
+      break;
+    case 'gray':
+      defaultBackground = colors.gray900;
+      activeBackground = colors.gray500;
+      hoverBackground = colors.gray400;
+      break;
+    case 'green':
+      defaultBackground = colors.green900;
+      activeBackground = colors.green500;
+      hoverBackground = colors.green400;
+      break;
+    case 'lime':
+      defaultBackground = colors.lime900;
+      activeBackground = colors.lime500;
+      hoverBackground = colors.lime1100;
+      break;
+    case 'mint':
+      defaultBackground = colors.mint900;
+      activeBackground = colors.mint500;
+      hoverBackground = colors.mint1100;
+      break;
+    case 'orange':
+      defaultBackground = colors.orange900;
+      activeBackground = colors.orange500;
+      hoverBackground = colors.orange400;
+      break;
+    case 'pink':
+      defaultBackground = colors.pink900;
+      activeBackground = colors.pink500;
+      hoverBackground = colors.pink400;
+      break;
+    case 'purple':
+      defaultBackground = colors.purple900;
+      activeBackground = colors.purple500;
+      hoverBackground = colors.purple400;
+      break;
+    case 'red':
+      defaultBackground = colors.red900;
+      activeBackground = colors.red500;
+      hoverBackground = colors.red400;
+      break;
+    case 'sky':
+      defaultBackground = colors.sky900;
+      activeBackground = colors.sky500;
+      hoverBackground = colors.sky400;
+      break;
+    case 'yellow':
+      defaultBackground = colors.yellow900;
+      activeBackground = colors.yellow500;
+      hoverBackground = colors.yellow400;
+      break;
+  }
+
+  return css`
+    border: none;
+    cursor: pointer;
+    background: ${defaultBackground};
+
+    &:hover {
+      background: ${hoverBackground};
+    }
+    &:active {
+      background: ${activeBackground};
+    }
+  `;
+};
+// TODO
+const getOutlineButtonStyle = (color: AccentColorType) => {
   let outlineBadgeStyle;
 
   switch (color) {
@@ -164,81 +234,8 @@ const getOutlineBadgeStyle = (color: AccentColorType) => {
 
   return outlineBadgeStyle;
 };
-const getSolidBadgeStyle = (color: AccentColorType) => {
-  let solidBadgeStyle;
 
-  switch (color) {
-    case 'blue':
-      solidBadgeStyle = css`
-        background: ${colors.blue900};
-        color: ${colors.white};
-      `;
-      break;
-    case 'gray':
-      solidBadgeStyle = css`
-        background: ${colors.gray900};
-        color: ${colors.white};
-      `;
-      break;
-    case 'green':
-      solidBadgeStyle = css`
-        background: ${colors.green900};
-        color: ${colors.white};
-      `;
-      break;
-    case 'lime':
-      solidBadgeStyle = css`
-        background: ${colors.lime900};
-        color: ${colors.lime1200};
-      `;
-      break;
-    case 'mint':
-      solidBadgeStyle = css`
-        background: ${colors.mint900};
-        color: ${colors.mint1200};
-      `;
-      break;
-    case 'orange':
-      solidBadgeStyle = css`
-        background: ${colors.orange900};
-        color: ${colors.white};
-      `;
-      break;
-    case 'pink':
-      solidBadgeStyle = css`
-        background: ${colors.pink900};
-        color: ${colors.white};
-      `;
-      break;
-    case 'purple':
-      solidBadgeStyle = css`
-        background: ${colors.purple900};
-        color: ${colors.white};
-      `;
-      break;
-    case 'red':
-      solidBadgeStyle = css`
-        background: ${colors.red900};
-        color: ${colors.white};
-      `;
-      break;
-    case 'sky':
-      solidBadgeStyle = css`
-        background: ${colors.sky900};
-        color: ${colors.sky1200};
-      `;
-      break;
-    case 'yellow':
-      solidBadgeStyle = css`
-        background: ${colors.yellow900};
-        color: ${colors.yellow1200};
-      `;
-      break;
-  }
-
-  return solidBadgeStyle;
-};
-const getSurfaceBadgeStyle = (color: AccentColorType) => {
+const getSurfaceButtonStyle = (color: AccentColorType) => {
   let surfaceBadgeStyle;
 
   switch (color) {
@@ -324,31 +321,43 @@ const getSurfaceBadgeStyle = (color: AccentColorType) => {
   return surfaceBadgeStyle;
 };
 
-export const getBadgeVariant = (variant: BadgeVariantType, color: AccentColorType) => {
+export const getButtonVariant = (variant: ButtonVariantType, color: AccentColorType) => {
   switch (variant) {
     case 'soft':
-      return getSoftBadgeStyle(color);
-    case 'outline':
-      return getOutlineBadgeStyle(color);
+      return getSoftButtonStyle(color);
     case 'solid':
-      return getSolidBadgeStyle(color);
+      return getSolidButtonStyle(color);
+    case 'outline':
+      return getOutlineButtonStyle(color);
     case 'surface':
-      return getSurfaceBadgeStyle(color);
+      return getSurfaceButtonStyle(color);
+    case 'ghost':
+      return;
   }
 };
 
-// getBadgeSize
-export const getBadgeSize = (size: Exclude<BadgeSizeType, 'large'>) => {
+// getButtonSize
+export const getButtonSize = (size: ButtonSizeType) => {
   switch (size) {
+    case 'xSmall':
+      return css`
+        padding: 0 8px;
+        ${typography.b6}
+      `;
     case 'small':
       return css`
-        padding: 2px 8px;
-        ${typography.b6};
+        padding: 0 12px;
+        ${typography.b5}
       `;
     case 'medium':
       return css`
-        padding: 6px 16px;
-        ${typography.b4};
+        padding: 0 16px;
+        ${typography.b3}
+      `;
+    case 'large':
+      return css`
+        padding: 0 24px;
+        ${typography.b1}
       `;
   }
 };

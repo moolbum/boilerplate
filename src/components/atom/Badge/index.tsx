@@ -4,12 +4,12 @@ import { borderRadius, RadiusType } from '@/styles/radius';
 import React, { HTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
 import { getBadgeSize, getBadgeVariant } from './utils/style';
-import { CommonVariantType } from '@/styles/variant';
+import { BadgeVariantType } from '@/styles/variant';
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   size?: Exclude<BadgeSizeType, 'large'>;
   radius?: Exclude<RadiusType, 'full'>;
-  variant?: CommonVariantType;
+  variant?: BadgeVariantType;
   color?: AccentColorType;
 }
 
@@ -25,7 +25,7 @@ const BadgeComponent = styled.span<{
   color: AccentColorType;
   radius: Exclude<RadiusType, 'full'>;
   size: Exclude<BadgeSizeType, 'large'>;
-  variant: CommonVariantType;
+  variant: BadgeVariantType;
 }>`
   user-select: none;
   border-radius: ${({ radius }) => borderRadius[radius]};
