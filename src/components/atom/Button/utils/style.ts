@@ -282,8 +282,6 @@ const getSurfaceButtonStyle = (color: AccentColorType) => {
   let hoverBackground;
   let fontColor;
 
-  let surfaceBadgeStyle;
-
   switch (color) {
     case 'blue':
       defaultBoxShadow = `inset 0 0 0 1px ${colors.blue700}`;
