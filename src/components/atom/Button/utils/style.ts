@@ -377,7 +377,6 @@ const getSurfaceButtonStyle = (color: AccentColorType) => {
     }
   `;
 };
-// TODO
 const getGhostButtonStyle = (color: AccentColorType) => {
   let defaultBackground = colors.white;
   let activeBackground;

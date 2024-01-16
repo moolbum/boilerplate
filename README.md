@@ -25,7 +25,7 @@ yarn start
 - Switch 🛠️
 - Select 🛠️
 - Typo
-- TextArea 🛠️
+- TextArea
 - Toast 🛠️
 
 **molecule**

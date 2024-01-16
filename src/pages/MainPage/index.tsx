@@ -10,6 +10,7 @@ import SectionCard from '@/components/molecule/Card';
 import Grid from '@/components/molecule/Grid';
 import Button from '@/components/atom/Button';
 import TextArea from '@/components/atom/TextArea';
+import Callout from '@/components/molecule/Callout';
 
 function MainPage() {
   return (
@@ -246,6 +247,11 @@ function MainPage() {
       </Flex>
 
       <TextArea />
+      <div>
+        <Callout icon={<Typo>Icon</Typo>}>
+          <Typo>test</Typo>
+        </Callout>
+      </div>
     </Flex>
   );
 }
