@@ -98,148 +98,148 @@ function MainPage() {
 
       {/* soft Button */}
       <Flex>
-        <Button size="large" color="blue" isLoading>
+        <Button size="large" color="blue">
           button
         </Button>
-        <Button size="large" color="gray" isLoading>
+        <Button size="large" color="gray">
           button
         </Button>
-        <Button size="large" color="green" isLoading>
+        <Button size="large" color="green">
           button
         </Button>
-        <Button size="large" color="lime" isLoading>
+        <Button size="large" color="lime">
           button
         </Button>
-        <Button size="large" color="mint" isLoading>
+        <Button size="large" color="mint">
           button
         </Button>
-        <Button size="large" color="orange" isLoading>
+        <Button size="large" color="orange">
           button
         </Button>
-        <Button size="large" color="pink" isLoading>
+        <Button size="large" color="pink">
           button
         </Button>
-        <Button size="large" color="purple" isLoading>
+        <Button size="large" color="purple">
           button
         </Button>
-        <Button size="large" color="red" isLoading>
+        <Button size="large" color="red">
           button
         </Button>
-        <Button size="large" color="sky" isLoading>
+        <Button size="large" color="sky">
           button
         </Button>
-        <Button size="large" color="yellow" isLoading>
+        <Button size="large" color="yellow">
           button
         </Button>
       </Flex>
 
       {/* solid Button */}
       <Flex>
-        <Button variant="solid" size="large" color="blue" isLoading>
+        <Button variant="solid" size="large" color="blue">
           button
         </Button>
-        <Button variant="solid" size="large" color="gray" isLoading>
+        <Button variant="solid" size="large" color="gray">
           button
         </Button>
-        <Button variant="solid" size="large" color="green" isLoading>
+        <Button variant="solid" size="large" color="green">
           button
         </Button>
-        <Button variant="solid" size="large" color="lime" isLoading>
+        <Button variant="solid" size="large" color="lime">
           button
         </Button>
-        <Button variant="solid" size="large" color="mint" isLoading>
+        <Button variant="solid" size="large" color="mint">
           button
         </Button>
-        <Button variant="solid" size="large" color="orange" isLoading>
+        <Button variant="solid" size="large" color="orange">
           button
         </Button>
-        <Button variant="solid" size="large" color="pink" isLoading>
+        <Button variant="solid" size="large" color="pink">
           button
         </Button>
-        <Button variant="solid" size="large" color="purple" isLoading>
+        <Button variant="solid" size="large" color="purple">
           button
         </Button>
-        <Button variant="solid" size="large" color="red" isLoading>
+        <Button variant="solid" size="large" color="red">
           button
         </Button>
-        <Button variant="solid" size="large" color="sky" isLoading>
+        <Button variant="solid" size="large" color="sky">
           button
         </Button>
-        <Button variant="solid" size="large" color="yellow" isLoading>
+        <Button variant="solid" size="large" color="yellow">
           button
         </Button>
       </Flex>
 
       {/* outline Button */}
       <Flex>
-        <Button variant="outline" size="large" color="blue" isLoading>
+        <Button variant="outline" size="large" color="blue">
           button
         </Button>
-        <Button variant="outline" size="large" color="gray" isLoading>
+        <Button variant="outline" size="large" color="gray">
           button
         </Button>
-        <Button variant="outline" size="large" color="green" isLoading>
+        <Button variant="outline" size="large" color="green">
           button
         </Button>
-        <Button variant="outline" size="large" color="lime" isLoading>
+        <Button variant="outline" size="large" color="lime">
           button
         </Button>
-        <Button variant="outline" size="large" color="mint" isLoading>
+        <Button variant="outline" size="large" color="mint">
           button
         </Button>
-        <Button variant="outline" size="large" color="orange" isLoading>
+        <Button variant="outline" size="large" color="orange">
           button
         </Button>
-        <Button variant="outline" size="large" color="pink" isLoading>
+        <Button variant="outline" size="large" color="pink">
           button
         </Button>
-        <Button variant="outline" size="large" color="purple" isLoading>
+        <Button variant="outline" size="large" color="purple">
           button
         </Button>
-        <Button variant="outline" size="large" color="red" isLoading>
+        <Button variant="outline" size="large" color="red">
           button
         </Button>
-        <Button variant="outline" size="large" color="sky" isLoading>
+        <Button variant="outline" size="large" color="sky">
           button
         </Button>
-        <Button variant="outline" size="large" color="yellow" isLoading>
+        <Button variant="outline" size="large" color="yellow">
           button
         </Button>
       </Flex>
 
       {/* ghost Button */}
       <Flex>
-        <Button variant="ghost" size="large" color="blue" isLoading>
+        <Button variant="ghost" size="large" color="blue">
           button
         </Button>
-        <Button variant="ghost" size="large" color="gray" isLoading>
+        <Button variant="ghost" size="large" color="gray">
           button
         </Button>
-        <Button variant="ghost" size="large" color="green" isLoading>
+        <Button variant="ghost" size="large" color="green">
           button
         </Button>
-        <Button variant="ghost" size="large" color="lime" isLoading>
+        <Button variant="ghost" size="large" color="lime">
           button
         </Button>
-        <Button variant="ghost" size="large" color="mint" isLoading>
+        <Button variant="ghost" size="large" color="mint">
           button
         </Button>
-        <Button variant="ghost" size="large" color="orange" isLoading>
+        <Button variant="ghost" size="large" color="orange">
           button
         </Button>
-        <Button variant="ghost" size="large" color="pink" isLoading>
+        <Button variant="ghost" size="large" color="pink">
           button
         </Button>
-        <Button variant="ghost" size="large" color="purple" isLoading>
+        <Button variant="ghost" size="large" color="purple">
           button
         </Button>
-        <Button variant="ghost" size="large" color="red" isLoading>
+        <Button variant="ghost" size="large" color="red">
           button
         </Button>
-        <Button variant="ghost" size="large" color="sky" isLoading>
+        <Button variant="ghost" size="large" color="sky">
           button
         </Button>
-        <Button variant="ghost" size="large" color="yellow" isLoading>
+        <Button variant="ghost" size="large" color="yellow">
           button
         </Button>
       </Flex>

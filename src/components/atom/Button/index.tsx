@@ -12,7 +12,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariantType;
   color?: AccentColorType;
   fullWidth?: boolean;
-  isLoading?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) => {
@@ -21,8 +20,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) 
     size = 'medium',
     radius = 'small',
     fullWidth = true,
-    isLoading,
-    children,
     variant = 'soft',
     color = 'blue',
     ...rest
@@ -40,10 +37,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) 
       variant={variant}
       color={color}
       {...rest}
-    >
-      {/* {isLoading && <Loader />} */}
-      {children}
-    </ButtonComponent>
+    />
   );
 });
 
