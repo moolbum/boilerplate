@@ -377,6 +377,85 @@ const getSurfaceButtonStyle = (color: AccentColorType) => {
     }
   `;
 };
+// TODO
+const getGhostButtonStyle = (color: AccentColorType) => {
+  let defaultBackground = colors.white;
+  let activeBackground;
+  let hoverBackground;
+  let fontColor;
+
+  switch (color) {
+    case 'blue':
+      hoverBackground = colors.blue200;
+      activeBackground = colors.blue300;
+      fontColor = colors.blue1000;
+      break;
+    case 'gray':
+      hoverBackground = colors.gray200;
+      activeBackground = colors.gray300;
+      fontColor = colors.gray1000;
+      break;
+    case 'green':
+      hoverBackground = colors.green200;
+      activeBackground = colors.green300;
+      fontColor = colors.green1000;
+      break;
+    case 'lime':
+      hoverBackground = colors.lime200;
+      activeBackground = colors.lime300;
+      fontColor = colors.lime1000;
+      break;
+    case 'mint':
+      hoverBackground = colors.mint200;
+      activeBackground = colors.mint300;
+      fontColor = colors.mint1000;
+      break;
+    case 'orange':
+      hoverBackground = colors.orange200;
+      activeBackground = colors.orange300;
+      fontColor = colors.orange1000;
+      break;
+    case 'pink':
+      hoverBackground = colors.pink200;
+      activeBackground = colors.pink300;
+      fontColor = colors.pink1000;
+      break;
+    case 'purple':
+      hoverBackground = colors.purple200;
+      activeBackground = colors.purple300;
+      fontColor = colors.purple1000;
+      break;
+    case 'red':
+      hoverBackground = colors.red200;
+      activeBackground = colors.red300;
+      fontColor = colors.red1000;
+      break;
+    case 'sky':
+      hoverBackground = colors.sky200;
+      activeBackground = colors.sky300;
+      fontColor = colors.sky1000;
+      break;
+    case 'yellow':
+      hoverBackground = colors.yellow200;
+      activeBackground = colors.yellow300;
+      fontColor = colors.yellow1000;
+      break;
+  }
+
+  return css`
+    border: none;
+    cursor: pointer;
+    background: ${defaultBackground};
+    color: ${fontColor};
+
+    &:hover {
+      background: ${hoverBackground};
+    }
+    &:active {
+      background: ${activeBackground};
+    }
+  `;
+};
 
 export const getButtonVariant = (variant: ButtonVariantType, color: AccentColorType) => {
   switch (variant) {
@@ -389,7 +468,7 @@ export const getButtonVariant = (variant: ButtonVariantType, color: AccentColorT
     case 'surface':
       return getSurfaceButtonStyle(color);
     case 'ghost':
-      return;
+      return getGhostButtonStyle(color);
   }
 };
 

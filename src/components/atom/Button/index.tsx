@@ -60,7 +60,10 @@ const ButtonComponent = styled.button<{
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.1s ease-in-out;
+  transition:
+    background-color 0.1s ease-in-out,
+    background-color 0.1s ease-in-out;
+
   border-radius: ${({ radius }) => borderRadius[radius]};
 
   ${({ variant, color }) => getButtonVariant(variant, color)}
