@@ -9,6 +9,7 @@ import Badge from '@/components/atom/Badge';
 import SectionCard from '@/components/molecule/Card';
 import Grid from '@/components/molecule/Grid';
 import Button from '@/components/atom/Button';
+import TextArea from '@/components/atom/TextArea';
 
 function MainPage() {
   return (
@@ -243,6 +244,8 @@ function MainPage() {
           button
         </Button>
       </Flex>
+
+      <TextArea />
     </Flex>
   );
 }
