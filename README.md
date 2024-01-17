@@ -31,7 +31,7 @@ yarn start
 **molecule**
 
 - Card
-- Callout 🛠️
+- Callout
 - Flex
 - Form 🛠️
 - Grid
