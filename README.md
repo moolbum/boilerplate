@@ -18,7 +18,7 @@ yarn start
 - Badge
 - Button
 - Checkbox 🛠️
-- Dialog 🛠️
+- Dialog
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Input 🛠️
 - Radio 🛠️
