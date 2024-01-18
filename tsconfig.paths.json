@@ -8,8 +8,7 @@
       "@/page/*": ["src/page/*"],
       "@/assets/*": ["src/assets/*"],
       "@/routes/*": ["src/routes/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@utils/*": ["src/utils/*"],
+      "@/utils/*": ["src/utils/*"],
       "@src/*": ["src/*"]
     }
   }
