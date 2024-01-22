@@ -21,7 +21,7 @@ function MainPage() {
   const renderDialogOverride = () => {
     if (isDialogOpen === 'OVERRIDE_OPEN') {
       return (
-        <Dialog open title="Title" onOpenChange={() => setIsDialogOpen('OPEN_TEST')}>
+        <Dialog open={true} title="Title" onClose={() => setIsDialogOpen('OPEN_TEST')}>
           <div>모달 중첩</div>
         </Dialog>
       );
@@ -33,7 +33,17 @@ function MainPage() {
   const renderDialog = () => {
     if (isDialogOpen === 'OPEN_TEST' || isDialogOpen === 'OVERRIDE_OPEN') {
       return (
-        <Dialog open title="Title" onOpenChange={() => setIsDialogOpen(null)}>
+        <Dialog
+          open={true}
+          title="OPEN_TEST"
+          onOpen={() => {
+            console.log('열릴때 추가 로직 ?? ::');
+          }}
+          onClose={() => {
+            console.log('닫힐때 추가 로직 ::');
+            setIsDialogOpen(null);
+          }}
+        >
           <div>
             오픈 이라네
             <Button size="large" color="blue" onClick={() => setIsDialogOpen('OVERRIDE_OPEN')}>
@@ -289,7 +299,6 @@ function MainPage() {
         </div>
 
         <Button
-          fullWidth={false}
           onClick={() => {
             setIsDialogOpen('OPEN_TEST');
           }}

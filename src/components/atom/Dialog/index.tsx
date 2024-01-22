@@ -1,4 +1,15 @@
-import React, { HTMLAttributes, PropsWithChildren, ReactNode, createContext, useContext, useLayoutEffect } from 'react';
+import React, {
+  HTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import Typo from '../Typo';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
@@ -20,8 +31,8 @@ function DialogRoot({ children, open = false, onOpenChange }: PropsWithChildren<
   return <DialogContext.Provider value={{ open, onOpenChange }}>{children}</DialogContext.Provider>;
 }
 
-/** Dialog Toggle */
-function DialogCloseToggle({ children }: PropsWithChildren) {
+/** Dialog Close */
+function DialogCloseButton({ children }: PropsWithChildren) {
   const { onOpenChange } = useContext(DialogContext as React.Context<DialogContextProps>);
 
   return <button onClick={() => onOpenChange()}>{children}</button>;
@@ -57,13 +68,14 @@ const QDialog = Object.assign(DialogRoot, {
   Content: DialogContent,
   Portal: DialogPortal,
   Overlay: DialogOverlay,
-  CloseButton: DialogCloseToggle,
+  CloseButton: DialogCloseButton,
 });
 
 // Dialog
 interface DialogProps {
   open: boolean;
-  onOpenChange: () => void;
+  onClose: () => void;
+  onOpen?: () => void;
   title?: string;
   isCloseButton?: boolean;
   rightAccessary?: ReactNode;
@@ -71,14 +83,25 @@ interface DialogProps {
 }
 function Dialog({
   open = false,
-  onOpenChange,
+  onOpen,
+  onClose,
   title,
   rightAccessary,
   children,
   footer,
   isCloseButton,
 }: PropsWithChildren<DialogProps>) {
+  const hasRunLayoutEffect = useRef(false);
+
   useLayoutEffect(() => {
+    if (!hasRunLayoutEffect.current) {
+      onOpen?.();
+      hasRunLayoutEffect.current = true;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     if (open) {
       document.body.setAttribute('style', 'overflow: hidden');
     } else {
@@ -91,7 +114,7 @@ function Dialog({
   }, [open]);
 
   return (
-    <QDialog open={open} onOpenChange={onOpenChange}>
+    <QDialog open={open} onOpenChange={onClose}>
       <QDialog.Portal>
         <StyledOverlay />
 
