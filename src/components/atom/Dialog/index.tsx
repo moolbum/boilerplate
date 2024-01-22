@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
 import { colors } from '@/styles/color';
 import useToggleProvider from '@/hooks/useToggleProvider';
+import { borderRadius } from '@/styles/radius';
 
 interface DialogContextProps {
   isOpen: boolean;
@@ -81,20 +82,31 @@ function Dialog({
       <QDialog.Portal>
         <StyledOverlay />
 
-        <StyledHeader>
-          <Typo>{title}</Typo>
-          {rightAccessary}
-          {isCloseButton && <QDialog.CloseButton />}
-        </StyledHeader>
+        <DialogContainer>
+          <StyledHeader>
+            <Typo>{title}</Typo>
+            {rightAccessary}
+            {isCloseButton && <QDialog.CloseButton />}
+          </StyledHeader>
 
-        <StyledContent>{children}</StyledContent>
-        <StyledFooter>{footer}</StyledFooter>
+          <QDialog.Content>{children}</QDialog.Content>
+          <StyledFooter>{footer}</StyledFooter>
+        </DialogContainer>
       </QDialog.Portal>
     </QDialog>
   );
 }
 
 export default Dialog;
+
+const DialogContainer = styled.section`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: ${colors.white};
+  border-radius: ${borderRadius.medium};
+`;
 
 const StyledOverlay = styled(QDialog.Overlay)`
   position: fixed;
@@ -108,10 +120,6 @@ const StyledHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-const StyledContent = styled(QDialog.Content)`
-  background: ${colors.white};
 `;
 
 const StyledFooter = styled.div``;

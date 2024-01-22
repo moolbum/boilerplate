@@ -21,8 +21,8 @@ function MainPage() {
   const renderDialog = () => {
     if (isDialogOpen === 'OPEN_TEST') {
       return (
-        <Dialog open onOpenChange={() => setIsDialogOpen(null)}>
-          <div>오픈</div>
+        <Dialog open title="Title" onOpenChange={() => setIsDialogOpen(null)}>
+          <div>오픈 이라네</div>
         </Dialog>
       );
     }
@@ -269,13 +269,11 @@ function MainPage() {
           </Callout>
         </div>
 
-        <Button onClick={() => setIsDialogOpen('OPEN_TEST')}>Dialog Open</Button>
+        <Button fullWidth={false} onClick={() => setIsDialogOpen('OPEN_TEST')}>
+          Dialog Open
+        </Button>
       </Flex>
       {renderDialog()}
-
-      <Dialog>
-        <div>그냥 열림? </div>
-      </Dialog>
     </>
   );
 }
