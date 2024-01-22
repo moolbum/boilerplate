@@ -13,19 +13,35 @@ import TextArea from '@/components/atom/TextArea';
 import Callout from '@/components/molecule/Callout';
 import Dialog from '@/components/atom/Dialog';
 
-type DialogState = null | 'OPEN_TEST';
+type DialogState = null | 'OPEN_TEST' | 'OVERRIDE_OPEN';
 
 function MainPage() {
   const [isDialogOpen, setIsDialogOpen] = useState<DialogState>(null);
 
-  const renderDialog = () => {
-    if (isDialogOpen === 'OPEN_TEST') {
+  const renderDialogOverride = () => {
+    if (isDialogOpen === 'OVERRIDE_OPEN') {
       return (
-        <Dialog open title="Title" onOpenChange={() => setIsDialogOpen(null)}>
-          <div>오픈 이라네</div>
+        <Dialog open title="Title" onOpenChange={() => setIsDialogOpen('OPEN_TEST')}>
+          <div>모달 중첩</div>
         </Dialog>
       );
     }
+  };
+
+  const renderDialog = () => {
+    if (isDialogOpen === 'OPEN_TEST' || isDialogOpen === 'OVERRIDE_OPEN') {
+      return (
+        <Dialog open title="Title" onOpenChange={() => setIsDialogOpen(null)}>
+          <div>
+            오픈 이라네
+            <Button size="large" color="blue" onClick={() => setIsDialogOpen('OVERRIDE_OPEN')}>
+              모달 오픈
+            </Button>
+          </div>
+        </Dialog>
+      );
+    }
+    return;
   };
 
   return (
@@ -269,11 +285,17 @@ function MainPage() {
           </Callout>
         </div>
 
-        <Button fullWidth={false} onClick={() => setIsDialogOpen('OPEN_TEST')}>
+        <Button
+          fullWidth={false}
+          onClick={() => {
+            setIsDialogOpen('OPEN_TEST');
+          }}
+        >
           Dialog Open
         </Button>
       </Flex>
       {renderDialog()}
+      {renderDialogOverride()}
     </>
   );
 }
