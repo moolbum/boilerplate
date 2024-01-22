@@ -14,7 +14,7 @@ yarn start
 
 **atom**
 
-- Alert Dialog 🛠️
+- Alert Dialog
 - Badge
 - Button
 - Checkbox 🛠️
