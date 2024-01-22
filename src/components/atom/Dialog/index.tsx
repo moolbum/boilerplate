@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, PropsWithChildren, ReactNode, createContext, useContext, useEffect } from 'react';
+import React, { HTMLAttributes, PropsWithChildren, ReactNode, createContext, useContext, useLayoutEffect } from 'react';
 import Typo from '../Typo';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
@@ -16,7 +16,7 @@ interface DialogMainProps {
   onOpenChange: () => void;
 }
 const DialogContext = createContext<DialogContextProps | undefined>(undefined);
-function DialogRoot({ children, open, onOpenChange }: PropsWithChildren<DialogMainProps>) {
+function DialogRoot({ children, open = false, onOpenChange }: PropsWithChildren<DialogMainProps>) {
   return <DialogContext.Provider value={{ open, onOpenChange }}>{children}</DialogContext.Provider>;
 }
 
@@ -36,16 +36,16 @@ function DialogPortal({ children }: PropsWithChildren) {
 
 /** Dialog Overlay */
 function DialogOverlay(props: HTMLAttributes<HTMLDivElement>) {
-  const { onOpenChange, open } = useContext(DialogContext as React.Context<DialogContextProps>);
+  const { onOpenChange } = useContext(DialogContext as React.Context<DialogContextProps>);
 
-  return open ? (
+  return (
     <div
       {...props}
       onClick={() => {
         onOpenChange();
       }}
     />
-  ) : null;
+  );
 }
 
 /** Dialog Content */
@@ -70,7 +70,7 @@ interface DialogProps {
   footer?: ReactNode;
 }
 function Dialog({
-  open,
+  open = false,
   onOpenChange,
   title,
   rightAccessary,
@@ -78,19 +78,15 @@ function Dialog({
   footer,
   isCloseButton,
 }: PropsWithChildren<DialogProps>) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (open) {
-      document.body.style.cssText = `
-      position: fixed; 
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;`;
+      document.body.setAttribute('style', 'overflow: hidden');
+    } else {
+      document.body.setAttribute('style', 'overflow: auto');
     }
 
     return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      document.body.setAttribute('style', 'overflow: auto');
     };
   }, [open]);
 
@@ -98,6 +94,8 @@ function Dialog({
     <QDialog open={open} onOpenChange={onOpenChange}>
       <QDialog.Portal>
         <StyledOverlay />
+
+        {/* Dialog Contents */}
         <DialogContainer>
           <StyledHeader>
             <Typo>{title}</Typo>

@@ -26,6 +26,8 @@ function MainPage() {
         </Dialog>
       );
     }
+
+    return null;
   };
 
   const renderDialog = () => {
@@ -41,7 +43,8 @@ function MainPage() {
         </Dialog>
       );
     }
-    return;
+
+    return null;
   };
 
   return (
