@@ -15,6 +15,7 @@ import { styled } from 'styled-components';
 import Typo from '../Typo';
 import Button from '../Button';
 import Flex from '@/components/molecule/Flex';
+import { zIndex } from '@/styles/zIndex';
 
 interface AlertDialogContextProps {
   open?: boolean;
@@ -174,6 +175,7 @@ const AlertDialogContainer = styled.section`
   transform: translate(-50%, -50%);
   background: ${colors.white};
   border-radius: ${borderRadius.medium};
+  z-index: ${zIndex.alertDialogContent};
 `;
 
 const StyledOverlay = styled(QAlertDialog.Overlay)`
@@ -182,6 +184,7 @@ const StyledOverlay = styled(QAlertDialog.Overlay)`
   background: ${colors.greyOpacity600};
   width: 100%;
   height: 100%;
+  z-index: ${zIndex.alertDialogOverlay};
 `;
 
 const StyledHeader = styled.div`

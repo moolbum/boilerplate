@@ -13,6 +13,7 @@ import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
 import { colors } from '@/styles/color';
 import { borderRadius } from '@/styles/radius';
+import { zIndex } from '@/styles/zIndex';
 
 interface DialogContextProps {
   open?: boolean;
@@ -168,6 +169,7 @@ const DialogContainer = styled.section`
   transform: translate(-50%, -50%);
   background: ${colors.white};
   border-radius: ${borderRadius.medium};
+  z-index: ${zIndex.dialogContent};
 `;
 
 const StyledOverlay = styled(QDialog.Overlay)`
@@ -176,6 +178,7 @@ const StyledOverlay = styled(QDialog.Overlay)`
   background: ${colors.greyOpacity600};
   width: 100%;
   height: 100%;
+  z-index: ${zIndex.dialogOverlay};
 `;
 
 const StyledHeader = styled.div`
