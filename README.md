@@ -27,7 +27,7 @@ yarn start
 - Radio 🛠️
 - Switch
 - Select 🛠️
-- Typo
+- Typo 🛠️
 - TextArea
 - Toast
 
