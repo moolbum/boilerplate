@@ -1,4 +1,4 @@
-import { AccentColorType } from '@/styles/color';
+import { AccentColorType, colors } from '@/styles/color';
 import { ButtonSizeType } from '@/styles/size';
 import { RadiusType, borderRadius } from '@/styles/radius';
 import React, { ButtonHTMLAttributes, forwardRef, useId } from 'react';
@@ -54,11 +54,8 @@ const ButtonComponent = styled.button<{
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  transition:
-    background-color 0.1s ease-in-out,
-    background-color 0.1s ease-in-out;
-
   border-radius: ${({ radius }) => borderRadius[radius]};
+  transition: background-color 0.1s ease-in-out;
 
   ${({ variant, color }) => getButtonVariant(variant, color)}
   ${({ size }) => getButtonSize(size)}
@@ -67,4 +64,10 @@ const ButtonComponent = styled.button<{
     css`
       width: 100%;
     `}
+
+    &:disabled {
+    color: ${colors.gray700};
+    background: ${colors.gray300};
+    cursor: not-allowed;
+  }
 `;

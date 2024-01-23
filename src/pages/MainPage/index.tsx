@@ -230,7 +230,7 @@ function MainPage() {
 
         {/* solid Button */}
         <Flex>
-          <Button variant="solid" size="large" color="blue">
+          <Button variant="solid" size="large" color="blue" disabled>
             button
           </Button>
           <Button variant="solid" size="large" color="gray">
