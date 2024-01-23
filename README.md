@@ -23,7 +23,7 @@ yarn start
 - Checkbox 🛠️
 - Dialog
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
-- Input 🛠️
+- Input
 - Radio 🛠️
 - Switch
 - Select 🛠️
