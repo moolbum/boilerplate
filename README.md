@@ -14,7 +14,7 @@ yarn start
 
 **atom**
 
-- Alert Dialog
+- AlertDialog
 - Badge
 - Button
 - Checkbox 🛠️
@@ -30,11 +30,13 @@ yarn start
 
 **molecule**
 
+- Accordion 🛠️
 - Card
 - Callout
 - Flex
 - Form 🛠️
 - Grid
+- Tabs 🛠️
 
 ## Package
 
