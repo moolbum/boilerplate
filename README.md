@@ -29,7 +29,7 @@ yarn start
 - Select 🛠️
 - Typo
 - TextArea
-- Toast 🛠️
+- Toast
 
 **molecule**
 
