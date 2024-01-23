@@ -76,7 +76,6 @@ Radix UI의 color 디자인 시스템을 참고해서만든 컬러시스템
 
 ```sh
 .github
-.vscode
 public
 src
   |-- assets
@@ -89,10 +88,8 @@ src
   |-- pages
   |-- routes
   |-- styles
-  |
   |-- App.tsx
   |__ index.tsx
-
 .env.development
 .env.local
 .env.production
