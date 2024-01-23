@@ -122,10 +122,8 @@ function Dialog({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === 'Escape') {
-        const topModalClose = dialogStack[dialogStack.length - 1];
-        if (topModalClose) {
-          topModalClose();
-        }
+        const topDialogClose = dialogStack[dialogStack.length - 1];
+        topDialogClose && topDialogClose();
       }
     };
 
