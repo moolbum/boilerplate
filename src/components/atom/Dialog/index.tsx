@@ -3,12 +3,10 @@ import React, {
   PropsWithChildren,
   ReactNode,
   createContext,
-  useCallback,
   useContext,
   useEffect,
   useLayoutEffect,
   useRef,
-  useState,
 } from 'react';
 import Typo from '../Typo';
 import { createPortal } from 'react-dom';
@@ -89,27 +87,26 @@ function Dialog({
   rightAccessary,
   children,
   footer,
-  isCloseButton,
+  isCloseButton = true,
 }: PropsWithChildren<DialogProps>) {
-  const hasRunLayoutEffect = useRef(false);
+  const isReady = useRef(false);
 
   useLayoutEffect(() => {
-    if (!hasRunLayoutEffect.current) {
+    if (!isReady.current) {
       onOpen?.();
-      hasRunLayoutEffect.current = true;
+      isReady.current = true;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onOpen]);
 
   useEffect(() => {
     if (open) {
-      document.body.setAttribute('style', 'overflow: hidden');
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.setAttribute('style', 'overflow: auto');
+      document.body.style.overflow = 'auto';
     }
 
     return () => {
-      document.body.setAttribute('style', 'overflow: auto');
+      document.body.style.overflow = 'auto';
     };
   }, [open]);
 
@@ -123,7 +120,7 @@ function Dialog({
           <StyledHeader>
             <Typo>{title}</Typo>
             {rightAccessary}
-            {isCloseButton && <QDialog.CloseButton />}
+            {isCloseButton && <QDialog.CloseButton>X</QDialog.CloseButton>}
           </StyledHeader>
 
           <QDialog.Content>{children}</QDialog.Content>
