@@ -92,7 +92,7 @@ function Dialog({
 }: PropsWithChildren<DialogProps>) {
   const isReady = useRef(false);
 
-  // onOpen;
+  // OnOpen;
   useLayoutEffect(() => {
     if (!isReady.current) {
       onOpen?.();
@@ -100,7 +100,7 @@ function Dialog({
     }
   }, [onOpen]);
 
-  // Cleanup unMounts
+  // Cleanup unmounts
   useEffect(() => {
     return () => {
       dialogStack = [];
@@ -108,18 +108,17 @@ function Dialog({
     };
   }, []);
 
-  // OverLay Scroll
+  // OverLay scroll lock, current dialogStack
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
       dialogStack.push(onClose);
     } else {
-      document.body.style.overflow = 'auto';
       dialogStack.pop();
     }
   }, [open, onClose]);
 
-  // keyDown
+  // KeyDown Escape
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === 'Escape') {
