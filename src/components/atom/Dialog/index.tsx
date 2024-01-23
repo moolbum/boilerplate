@@ -16,24 +16,24 @@ import { borderRadius } from '@/styles/radius';
 
 interface DialogContextProps {
   open?: boolean;
-  onOpenChange: () => void;
+  onClose: () => void;
 }
 
 /** Dialog Root 최상단 컴포넌트*/
-interface DialogMainProps {
+interface DialogMainProps extends HTMLAttributes<HTMLDivElement> {
   open: boolean;
-  onOpenChange: () => void;
+  onClose: () => void;
 }
 const DialogContext = createContext<DialogContextProps | undefined>(undefined);
-function DialogRoot({ children, open = false, onOpenChange }: PropsWithChildren<DialogMainProps>) {
-  return <DialogContext.Provider value={{ open, onOpenChange }}>{children}</DialogContext.Provider>;
+function DialogRoot({ children, open = false, onClose }: PropsWithChildren<DialogMainProps>) {
+  return <DialogContext.Provider value={{ open, onClose }}>{children}</DialogContext.Provider>;
 }
 
 /** Dialog Close */
 function DialogCloseButton({ children }: PropsWithChildren) {
-  const { onOpenChange } = useContext(DialogContext as React.Context<DialogContextProps>);
+  const { onClose } = useContext(DialogContext as React.Context<DialogContextProps>);
 
-  return <button onClick={() => onOpenChange()}>{children}</button>;
+  return <button onClick={() => onClose()}>{children}</button>;
 }
 
 /** Dialog Portal */
@@ -45,13 +45,13 @@ function DialogPortal({ children }: PropsWithChildren) {
 
 /** Dialog Overlay */
 function DialogOverlay(props: HTMLAttributes<HTMLDivElement>) {
-  const { onOpenChange } = useContext(DialogContext as React.Context<DialogContextProps>);
+  const { onClose } = useContext(DialogContext as React.Context<DialogContextProps>);
 
   return (
     <div
       {...props}
       onClick={() => {
-        onOpenChange();
+        onClose();
       }}
     />
   );
@@ -69,6 +69,7 @@ const QDialog = Object.assign(DialogRoot, {
   CloseButton: DialogCloseButton,
 });
 
+let dialogStack: Array<() => void> = [];
 // Dialog
 interface DialogProps {
   open: boolean;
@@ -91,6 +92,7 @@ function Dialog({
 }: PropsWithChildren<DialogProps>) {
   const isReady = useRef(false);
 
+  // onOpen;
   useLayoutEffect(() => {
     if (!isReady.current) {
       onOpen?.();
@@ -98,20 +100,56 @@ function Dialog({
     }
   }, [onOpen]);
 
+  // Cleanup when component unmounts
+  useEffect(() => {
+    return () => {
+      dialogStack = [];
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  // Reset modalStack when all modals are closed
+  useEffect(() => {
+    if (!open && dialogStack.length === 0) {
+      dialogStack = [];
+    }
+  }, [open]);
+
+  // OverLay Scroll
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
+      dialogStack.push(onClose);
     } else {
       document.body.style.overflow = 'auto';
+      dialogStack.pop();
+    }
+  }, [open, onClose]);
+
+  // keyDown
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.code === 'Escape') {
+        const topModalClose = dialogStack[dialogStack.length - 1];
+        if (topModalClose) {
+          topModalClose();
+        }
+      }
+    };
+
+    if (open) {
+      document.body.addEventListener('keydown', handleKeyDown);
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      if (open) {
+        document.body.removeEventListener('keydown', handleKeyDown);
+      }
     };
   }, [open]);
 
   return (
-    <QDialog open={open} onOpenChange={onClose}>
+    <QDialog open={open} onClose={onClose}>
       <QDialog.Portal>
         <StyledOverlay />
 
@@ -147,7 +185,7 @@ const StyledOverlay = styled(QDialog.Overlay)`
   inset: 0;
   background: ${colors.greyOpacity600};
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 
 const StyledHeader = styled.div`

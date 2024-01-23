@@ -14,14 +14,17 @@ import Callout from '@/components/molecule/Callout';
 import Dialog from '@/components/atom/Dialog';
 
 type DialogState = null | 'OPEN_TEST' | 'OVERRIDE_OPEN';
+type AlertDialogState = null | 'ALERT_OPEN';
 
 function MainPage() {
-  const [isDialogOpen, setIsDialogOpen] = useState<DialogState>(null);
+  const [dialogState, setDialogState] = useState<DialogState>(null);
+  const [alertDialogState, setAlertDialogState] = useState<AlertDialogState>(null);
 
+  // Dialog
   const renderDialogOverride = () => {
-    if (isDialogOpen === 'OVERRIDE_OPEN') {
+    if (dialogState === 'OVERRIDE_OPEN') {
       return (
-        <Dialog open={true} title="Title" onClose={() => setIsDialogOpen('OPEN_TEST')}>
+        <Dialog open title="Title" onClose={() => setDialogState('OPEN_TEST')}>
           <div>모달 중첩</div>
         </Dialog>
       );
@@ -29,24 +32,23 @@ function MainPage() {
 
     return null;
   };
-
   const renderDialog = () => {
-    if (isDialogOpen === 'OPEN_TEST' || isDialogOpen === 'OVERRIDE_OPEN') {
+    if (dialogState === 'OPEN_TEST' || dialogState === 'OVERRIDE_OPEN') {
       return (
         <Dialog
-          open={true}
+          open
           title="OPEN_TEST"
           onOpen={() => {
             console.log('열릴때 추가 로직 ?? ::');
           }}
           onClose={() => {
             console.log('닫힐때 추가 로직 ::');
-            setIsDialogOpen(null);
+            setDialogState(null);
           }}
         >
           <div>
             오픈 이라네
-            <Button size="large" color="blue" onClick={() => setIsDialogOpen('OVERRIDE_OPEN')}>
+            <Button size="large" color="blue" onClick={() => setDialogState('OVERRIDE_OPEN')}>
               모달 오픈
             </Button>
           </div>
@@ -55,6 +57,11 @@ function MainPage() {
     }
 
     return null;
+  };
+
+  // Alert Dialog
+  const renderAlertDialog = () => {
+    return '';
   };
 
   return (
@@ -297,17 +304,27 @@ function MainPage() {
             <Typo>test</Typo>
           </Callout>
         </div>
-
-        <Button
-          onClick={() => {
-            setIsDialogOpen('OPEN_TEST');
-          }}
-        >
-          Dialog Open
-        </Button>
       </Flex>
+
+      {/* Dialog, Alert Dialog */}
+      <Button
+        onClick={() => {
+          setDialogState('OPEN_TEST');
+        }}
+      >
+        Dialog Open
+      </Button>
+      <Button
+        color="red"
+        onClick={() => {
+          setAlertDialogState('ALERT_OPEN');
+        }}
+      >
+        Alert Dialog Open
+      </Button>
       {renderDialog()}
       {renderDialogOverride()}
+      {renderAlertDialog()}
     </>
   );
 }
