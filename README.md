@@ -71,3 +71,39 @@ Radix UI의 color 디자인 시스템을 참고해서만든 컬러시스템
 
 - [Radix Color Scales](https://www.radix-ui.com/colors/docs/palette-composition/scales)
 - [Radix Color Understanding the scale](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale#steps-35-component-backgrounds)
+
+## Folder Tree
+
+```sh
+.github
+.vscode
+public
+src
+  |-- assets
+  |     |-- fonts
+  |     |-- icons
+  |-- component
+  |     |-- atom
+  |     |-- molecule
+  |     |__ organism
+  |-- pages
+  |-- routes
+  |-- styles
+  |
+  |-- App.tsx
+  |__ index.tsx
+
+.env.development
+.env.local
+.env.production
+.eslintrc
+.gitignore
+.prettierrc.js
+.package.json
+craco.config.js
+svg.d.ts
+tsconfig.json
+tsconfig.paths.json
+yarn.lock
+README.md
+```

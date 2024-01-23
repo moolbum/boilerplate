@@ -1,7 +1,7 @@
 import { RouteObject } from 'react-router-dom';
 import PATH from './path';
 import MainPage from '../pages/MainPage';
-import ProtectedPublicRoute from '../components/template/ProtectedPublicRoute';
+import ProtectedPublicRoute from '../components/organism/ProtectedPublicRoute';
 
 const publicRoute: RouteObject[] = [
   {
