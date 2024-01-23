@@ -12,6 +12,7 @@ import Button from '@/components/atom/Button';
 import TextArea from '@/components/atom/TextArea';
 import Callout from '@/components/molecule/Callout';
 import Dialog from '@/components/atom/Dialog';
+import AlertDialog from '@/components/atom/AlertDialog';
 
 type DialogState = null | 'OPEN_TEST' | 'OVERRIDE_OPEN';
 type AlertDialogState = null | 'ALERT_OPEN';
@@ -39,7 +40,7 @@ function MainPage() {
           open
           title="OPEN_TEST"
           onOpen={() => {
-            console.log('열릴때 추가 로직 ?? ::');
+            console.log('열릴때 추가 로직 ::');
           }}
           onClose={() => {
             console.log('닫힐때 추가 로직 ::');
@@ -61,7 +62,15 @@ function MainPage() {
 
   // Alert Dialog
   const renderAlertDialog = () => {
-    return '';
+    if (alertDialogState === 'ALERT_OPEN') {
+      return (
+        <AlertDialog open title="Hello world" onOk={() => {}} onClose={() => setAlertDialogState(null)}>
+          안녕하세요
+        </AlertDialog>
+      );
+    }
+
+    return null;
   };
 
   return (

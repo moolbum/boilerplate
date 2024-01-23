@@ -69,8 +69,8 @@ const QDialog = Object.assign(DialogRoot, {
   CloseButton: DialogCloseButton,
 });
 
-let dialogStack: Array<() => void> = [];
 // Dialog
+let dialogStack: Array<() => void> = [];
 interface DialogProps {
   open: boolean;
   onClose: () => void;
