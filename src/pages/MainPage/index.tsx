@@ -14,6 +14,7 @@ import Callout from '@/components/molecule/Callout';
 import Dialog from '@/components/atom/Dialog';
 import AlertDialog from '@/components/atom/AlertDialog';
 import Switch from '@/components/atom/Switch';
+import Input from '@/components/atom/Input';
 
 type DialogState = null | 'OPEN_TEST' | 'OVERRIDE_OPEN';
 type AlertDialogState = null | 'ALERT_OPEN';
@@ -22,6 +23,7 @@ function MainPage() {
   const [dialogState, setDialogState] = useState<DialogState>(null);
   const [alertDialogState, setAlertDialogState] = useState<AlertDialogState>(null);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const [input, setInput] = useState('');
 
   // Dialog
   const renderDialogOverride = () => {
@@ -78,6 +80,16 @@ function MainPage() {
   return (
     <>
       <Flex direction="column">
+        <Input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onClear={() => setInput('')}
+          prefix="P"
+          suffix="S"
+          allowClear
+        />
+        <Input value={input} onChange={e => setInput(e.target.value)} />
+
         <Typo as="h1" role="title" fontWeight="semibold" color="red500">
           h1 MainPage
         </Typo>
