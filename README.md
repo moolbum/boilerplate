@@ -7,6 +7,9 @@ eslint, prettier, font, 컴포넌트, 색상, 폴더구조, 패키지 템플릿
 
 ```sh
 yarn install
+```
+
+```sh
 yarn start
 ```
 
