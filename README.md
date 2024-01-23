@@ -25,7 +25,7 @@ yarn start
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Input 🛠️
 - Radio 🛠️
-- Switch 🛠️
+- Switch
 - Select 🛠️
 - Typo
 - TextArea
