@@ -100,20 +100,13 @@ function Dialog({
     }
   }, [onOpen]);
 
-  // Cleanup when component unmounts
+  // Cleanup unMounts
   useEffect(() => {
     return () => {
       dialogStack = [];
       document.body.style.overflow = 'auto';
     };
   }, []);
-
-  // Reset modalStack when all modals are closed
-  useEffect(() => {
-    if (!open && dialogStack.length === 0) {
-      dialogStack = [];
-    }
-  }, [open]);
 
   // OverLay Scroll
   useEffect(() => {
