@@ -1,4 +1,5 @@
 export const zIndex = {
+  switch: 10,
   dialogOverlay: 900,
   dialogContent: 1000,
   alertDialogOverlay: 1100,

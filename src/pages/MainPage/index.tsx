@@ -13,6 +13,7 @@ import TextArea from '@/components/atom/TextArea';
 import Callout from '@/components/molecule/Callout';
 import Dialog from '@/components/atom/Dialog';
 import AlertDialog from '@/components/atom/AlertDialog';
+import Switch from '@/components/atom/Switch';
 
 type DialogState = null | 'OPEN_TEST' | 'OVERRIDE_OPEN';
 type AlertDialogState = null | 'ALERT_OPEN';
@@ -20,6 +21,7 @@ type AlertDialogState = null | 'ALERT_OPEN';
 function MainPage() {
   const [dialogState, setDialogState] = useState<DialogState>(null);
   const [alertDialogState, setAlertDialogState] = useState<AlertDialogState>(null);
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
 
   // Dialog
   const renderDialogOverride = () => {
@@ -88,6 +90,36 @@ function MainPage() {
           Under Line 20
         </Typo>
         <Typo>Under Line</Typo>
+
+        <Switch
+          checked={isSwitchOn}
+          onChange={checked => {
+            setIsSwitchOn(checked);
+          }}
+        />
+        <Switch
+          checked={isSwitchOn}
+          onChange={checked => {
+            setIsSwitchOn(checked);
+          }}
+          size="medium"
+        />
+        <Switch
+          checked={isSwitchOn}
+          onChange={checked => {
+            setIsSwitchOn(checked);
+          }}
+          size="large"
+        />
+
+        <Switch
+          checked={isSwitchOn}
+          onChange={checked => {
+            setIsSwitchOn(checked);
+          }}
+          size="medium"
+          disabled={true}
+        />
 
         <Flex gap={8}>
           <Typo as="h1" typo="h1" fontWeight="bold">
