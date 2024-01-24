@@ -1,8 +1,7 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, forwardRef } from 'react';
 
-interface RadioProps extends HTMLAttributes<HTMLInputElement> {}
-function Radio(props: RadioProps) {
-  return <input type="radio" {...props} />;
-}
+const Radio = forwardRef<HTMLInputElement, HTMLAttributes<HTMLInputElement>>((props, forwardedRef) => {
+  return <input ref={forwardedRef} type="radio" {...props} />;
+});
 
 export default Radio;
