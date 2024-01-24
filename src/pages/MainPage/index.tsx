@@ -15,8 +15,9 @@ import {
   Card,
   Grid,
   Callout,
+  Radio,
 } from '@/components/atoms';
-import { AlertDialog } from '@/components/molecules';
+import { AlertDialog, RadioGroup } from '@/components/molecules';
 
 function MainPage() {
   const [isTestDialogOpen, setIsTestDialogOpen] = useState<boolean>(false);
@@ -104,6 +105,16 @@ function MainPage() {
   return (
     <>
       <Flex direction="column">
+        <Radio />
+        <RadioGroup
+          name="radio"
+          option={[
+            { label: '라벨_1', value: 'label_1' },
+            { label: '라벨_2', value: 'label_2' },
+            { label: '라벨_3', value: 'label_3' },
+            { label: '라벨_4', value: 'label_4', props: { disabled: true } },
+          ]}
+        />
         <Input
           value={input}
           onChange={e => setInput(e.target.value)}
