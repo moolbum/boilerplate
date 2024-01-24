@@ -120,8 +120,8 @@ function Dialog({
             {isCloseButton && <QDialog.CloseButton>X</QDialog.CloseButton>}
           </StyledHeader>
 
-          <QDialog.Content>{children}</QDialog.Content>
-          <StyledFooter>{footer}</StyledFooter>
+          <StyledContent>{children}</StyledContent>
+          {footer}
         </DialogContainer>
       </QDialog.Portal>
     </QDialog>
@@ -131,10 +131,13 @@ function Dialog({
 export default Dialog;
 
 const DialogContainer = styled.section`
+  display: flex;
+  flex-direction: column;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  max-height: calc(100vh - 200px);
   background: ${colors.white};
   border-radius: ${borderRadius.medium};
   z-index: ${zIndex.dialogContent};
@@ -146,7 +149,7 @@ const StyledOverlay = styled(QDialog.Overlay)`
   background: ${colors.greyOpacity600};
   width: 100%;
   height: 100%;
-  z-index: ${zIndex.dialogOverlay};
+  z-index: ${zIndex.dialogContent};
 `;
 
 const StyledHeader = styled.div`
@@ -155,4 +158,6 @@ const StyledHeader = styled.div`
   justify-content: space-between;
 `;
 
-const StyledFooter = styled.div``;
+const StyledContent = styled(QDialog.Content)`
+  overflow: auto;
+`;

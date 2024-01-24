@@ -40,9 +40,22 @@ function MainPage() {
           console.log('닫힐때 추가 로직 ::');
           setIsTestDialogOpen(false);
         }}
+        footer={<div>footer</div>}
       >
         <div>
-          오픈 이라네
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
+          <Typo>오픈 이라네</Typo>
           <Button
             size="large"
             color="blue"
