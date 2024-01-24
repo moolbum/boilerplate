@@ -28,7 +28,7 @@ yarn start
 - Grid
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Input
-- Radio 🛠️
+- Radio
 - Switch
 - Tabs 🛠️
 - Typo
