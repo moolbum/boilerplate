@@ -1,8 +1,7 @@
 import React from 'react';
 import GlobalStyle from './styles/globalStyle';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import publicRoute from './routes/public';
-import privateRoute from './routes/private';
+import { privateRoute, publicRoute } from './routes';
 
 const router = createBrowserRouter([...publicRoute, ...privateRoute]);
 

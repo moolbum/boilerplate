@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TableSvg from '@/assets/icons/icon-table-placeholder.svg';
+import { TablePlaceholderSvg } from '@/assets/icons';
 import { Typo, Badge, Button, LucideIcon, RadixIcon, LocalIcon, Input, Switch, TextArea } from '@/components/atom';
 import { AlertDialog, Callout, Flex, Dialog, Grid, Card } from '@/components/molecule';
 
@@ -126,7 +126,7 @@ function MainPage() {
           </Typo>
           <RadixIcon name="ActivityLogIcon" size={16} />
           <LucideIcon name="ALargeSmall" size={16} />
-          <LocalIcon name={TableSvg} size={16} />
+          <LocalIcon name={TablePlaceholderSvg} size={16} />
         </Flex>
 
         <Flex>
