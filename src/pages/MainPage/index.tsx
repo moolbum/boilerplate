@@ -19,9 +19,11 @@ import {
 } from '@/components/atoms';
 import { AlertDialog, RadioGroup } from '@/components/molecules';
 
+type DialogState = null | 'DAFAULT' | 'OVERRIDE';
+
 function MainPage() {
-  const [isTestDialogOpen, setIsTestDialogOpen] = useState<boolean>(false);
-  const [isOverriedDialogOpen, setIsOverriedDialogOpen] = useState<boolean>(false);
+  const [dialogState, setDialogState] = useState<DialogState>(null);
+
   const [isAlertDialogOpen, setIsAlertDialogOpen] = useState<boolean>(false);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [input, setInput] = useState('');
@@ -29,48 +31,37 @@ function MainPage() {
   // Dialog
   const renderOverriedDialog = () => {
     return (
-      <Dialog open={isOverriedDialogOpen} title="Title" onClose={() => setIsOverriedDialogOpen(false)}>
+      <Dialog open={dialogState === 'OVERRIDE'} title="Title" onClose={() => setDialogState('DAFAULT')}>
         <div>모달 중첩</div>
       </Dialog>
     );
   };
 
-  const renderTestDialog = () => {
+  const renderDefaultDialog = () => {
     return (
       <Dialog
-        open={isTestDialogOpen}
+        open={dialogState === 'DAFAULT' || dialogState === 'OVERRIDE'}
         title="DEFAULT_TEST"
         onClose={() => {
           console.log('닫힐때 추가 로직 ::');
-          setIsTestDialogOpen(false);
+          setDialogState(null);
         }}
         footer={<div>footer</div>}
       >
         <div>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
-          <Typo>오픈 이라네</Typo>
           <Typo>오픈 이라네</Typo>
           <Button
             size="large"
             color="blue"
             onClick={() => {
               console.log('열릴때 중첩 모달 추가 로직 ::');
-              setIsOverriedDialogOpen(true);
+              setDialogState('OVERRIDE');
             }}
           >
             모달 오픈
           </Button>
         </div>
+
         {renderOverriedDialog()}
       </Dialog>
     );
@@ -397,7 +388,7 @@ function MainPage() {
       {/* Dialog, Alert Dialog */}
       <Button
         onClick={() => {
-          setIsTestDialogOpen(true);
+          setDialogState('DAFAULT');
           console.log('열릴때 추가 로직 ::');
         }}
       >
@@ -411,7 +402,7 @@ function MainPage() {
       >
         Alert Dialog Open
       </Button>
-      {renderTestDialog()}
+      {renderDefaultDialog()}
       {renderAlertDialog()}
     </>
   );
