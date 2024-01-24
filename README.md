@@ -22,7 +22,7 @@ yarn start
 - Button
 - Card
 - Callout
-- Checkbox 🛠️
+- Checkbox
 - Dialog
 - Flex
 - Grid
