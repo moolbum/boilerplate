@@ -11,9 +11,12 @@ import {
   Input,
   Switch,
   TextArea,
-  AlertDialog,
+  Flex,
+  Card,
+  Grid,
+  Callout,
 } from '@/components/atoms';
-import { Callout, Flex, Grid, Card } from '@/components/molecules';
+import { AlertDialog } from '@/components/molecules';
 
 function MainPage() {
   const [isTestDialogOpen, setIsTestDialogOpen] = useState<boolean>(false);

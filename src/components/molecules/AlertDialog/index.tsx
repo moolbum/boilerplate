@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, PropsWithChildren, createContext, useContext, useEffect } from 'react';
-import Typo from '../Typo';
+import Typo from '../../atoms/Typo';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
 import { colors } from '@/styles/color';
