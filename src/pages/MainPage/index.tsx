@@ -3,13 +3,10 @@ import { TablePlaceholderSvg } from '@/assets/icons';
 import { Typo, Badge, Button, LucideIcon, RadixIcon, LocalIcon, Input, Switch, TextArea } from '@/components/atom';
 import { AlertDialog, Callout, Flex, Dialog, Grid, Card } from '@/components/molecule';
 
-type AlertDialogState = null | 'ALERT_OPEN';
-
 function MainPage() {
   const [isTestDialogOpen, setIsTestDialogOpen] = useState<boolean>(false);
   const [isOverriedDialogOpen, setIsOverriedDialogOpen] = useState<boolean>(false);
-
-  const [alertDialogState, setAlertDialogState] = useState<AlertDialogState>(null);
+  const [isAlertDialogOpen, setIsAlertDialogOpen] = useState<boolean>(false);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [input, setInput] = useState('');
 
@@ -52,15 +49,28 @@ function MainPage() {
 
   // Alert Dialog
   const renderAlertDialog = () => {
-    if (alertDialogState === 'ALERT_OPEN') {
-      return (
-        <AlertDialog open title="Hello world" onOk={() => {}} onClose={() => setAlertDialogState(null)}>
-          안녕하세요
-        </AlertDialog>
-      );
-    }
-
-    return null;
+    return (
+      <AlertDialog open={isAlertDialogOpen} title="Hello world" onClose={() => setIsAlertDialogOpen(false)}>
+        안녕하세요
+        <Flex direction="row" gap={8}>
+          <Button
+            onClick={() => {
+              console.log('confirm ::');
+              setIsAlertDialogOpen(false);
+            }}
+          >
+            ✅
+          </Button>
+          <Button
+            onClick={() => {
+              setIsAlertDialogOpen(false);
+            }}
+          >
+            ❌
+          </Button>
+        </Flex>
+      </AlertDialog>
+    );
   };
 
   return (
@@ -357,7 +367,7 @@ function MainPage() {
       <Button
         color="red"
         onClick={() => {
-          setAlertDialogState('ALERT_OPEN');
+          setIsAlertDialogOpen(true);
         }}
       >
         Alert Dialog Open

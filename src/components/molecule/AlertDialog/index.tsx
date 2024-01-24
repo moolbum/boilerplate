@@ -1,20 +1,9 @@
-import { colors } from '@/styles/color';
-import { borderRadius } from '@/styles/radius';
-import React, {
-  HTMLAttributes,
-  PropsWithChildren,
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-} from 'react';
+import React, { HTMLAttributes, PropsWithChildren, createContext, useContext, useEffect } from 'react';
+import Typo from '../../atom/Typo';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
-import Typo from '../../atom/Typo';
-import Button from '../../atom/Button';
-import Flex from '@/components/molecule/Flex';
+import { colors } from '@/styles/color';
+import { borderRadius } from '@/styles/radius';
 import { zIndex } from '@/styles/zIndex';
 
 interface AlertDialogContextProps {
@@ -32,21 +21,21 @@ function AlertDialogRoot({ children, open = false, onClose }: PropsWithChildren<
   return <AlertDialogContext.Provider value={{ open, onClose }}>{children}</AlertDialogContext.Provider>;
 }
 
-/** AlertDialog Close */
+/** Dialog Close */
 function AlertDialogCloseButton({ children }: PropsWithChildren) {
   const { onClose } = useContext(AlertDialogContext as React.Context<AlertDialogContextProps>);
 
   return <button onClick={() => onClose()}>{children}</button>;
 }
 
-/** AlertDialog Portal */
+/** Dialog Portal */
 function AlertDialogPortal({ children }: PropsWithChildren) {
   const { open } = useContext(AlertDialogContext as React.Context<AlertDialogContextProps>);
 
   return open ? createPortal(<>{children}</>, document.body) : null;
 }
 
-/** AlertDialog Overlay */
+/** Dialog Overlay */
 function AlertDialogOverlay(props: HTMLAttributes<HTMLDivElement>) {
   const { onClose } = useContext(AlertDialogContext as React.Context<AlertDialogContextProps>);
 
@@ -60,7 +49,7 @@ function AlertDialogOverlay(props: HTMLAttributes<HTMLDivElement>) {
   );
 }
 
-/** AlertDialog Content */
+/** Dialog Content */
 function AlertDialogContent(props: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) {
   return <div {...props} />;
 }
@@ -72,52 +61,28 @@ const QAlertDialog = Object.assign(AlertDialogRoot, {
   CloseButton: AlertDialogCloseButton,
 });
 
-/** AlertDialog  */
-let alertDialogStack: Array<() => void> = [];
+// Dialog
 interface AlertDialogProps {
   open: boolean;
   onClose: () => void;
-  onOk?: () => void;
-  onOpen?: () => void;
   title?: string;
   isCloseButton?: boolean;
-  rightAccessary?: ReactNode;
 }
 function AlertDialog({
   open = false,
-  onOpen,
-  onOk,
   onClose,
   title,
-  rightAccessary,
   children,
   isCloseButton = true,
 }: PropsWithChildren<AlertDialogProps>) {
-  const isReady = useRef(false);
-
-  // OnOpen;
-  useLayoutEffect(() => {
-    if (!isReady.current) {
-      onOpen?.();
-      isReady.current = true;
-    }
-  }, [onOpen]);
-
-  // Cleanup unmounts
-  useEffect(() => {
-    return () => {
-      alertDialogStack = [];
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
   // OverLay scroll lock, current dialogStack
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
-      alertDialogStack.push(onClose);
-    } else {
-      alertDialogStack.pop();
+
+      return () => {
+        document.body.style.overflow = 'auto';
+      };
     }
   }, [open, onClose]);
 
@@ -125,42 +90,33 @@ function AlertDialog({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === 'Escape') {
-        const topDialogClose = alertDialogStack[alertDialogStack.length - 1];
-        topDialogClose && topDialogClose();
+        onClose();
       }
     };
 
     if (open) {
       document.body.addEventListener('keydown', handleKeyDown);
-    }
 
-    return () => {
-      if (open) {
+      return () => {
         document.body.removeEventListener('keydown', handleKeyDown);
-      }
-    };
-  }, [open]);
+      };
+    }
+  }, [onClose, open]);
 
   return (
     <QAlertDialog open={open} onClose={onClose}>
       <QAlertDialog.Portal>
         <StyledOverlay />
 
-        {/* Alert Dialog Contents */}
-        <AlertDialogContainer>
+        {/* AlertDialog Contents */}
+        <DialogContainer>
           <StyledHeader>
             <Typo>{title}</Typo>
-            {rightAccessary}
             {isCloseButton && <QAlertDialog.CloseButton>X</QAlertDialog.CloseButton>}
           </StyledHeader>
 
           <QAlertDialog.Content>{children}</QAlertDialog.Content>
-
-          <Flex direction="row" gap={8}>
-            {onOk && <Button>✅</Button>}
-            <Button onClick={onClose}>❌</Button>
-          </Flex>
-        </AlertDialogContainer>
+        </DialogContainer>
       </QAlertDialog.Portal>
     </QAlertDialog>
   );
@@ -168,14 +124,14 @@ function AlertDialog({
 
 export default AlertDialog;
 
-const AlertDialogContainer = styled.section`
+const DialogContainer = styled.section`
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background: ${colors.white};
   border-radius: ${borderRadius.medium};
-  z-index: ${zIndex.alertDialogContent};
+  z-index: ${zIndex.dialogContent};
 `;
 
 const StyledOverlay = styled(QAlertDialog.Overlay)`
@@ -184,7 +140,7 @@ const StyledOverlay = styled(QAlertDialog.Overlay)`
   background: ${colors.greyOpacity600};
   width: 100%;
   height: 100%;
-  z-index: ${zIndex.alertDialogOverlay};
+  z-index: ${zIndex.dialogOverlay};
 `;
 
 const StyledHeader = styled.div`
