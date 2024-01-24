@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import { TablePlaceholderSvg } from '@/assets/icons';
-import { Typo, Badge, Button, LucideIcon, RadixIcon, LocalIcon, Input, Switch, TextArea } from '@/components/atom';
-import { AlertDialog, Callout, Flex, Dialog, Grid, Card } from '@/components/molecule';
+import {
+  Typo,
+  Badge,
+  Button,
+  LucideIcon,
+  Dialog,
+  RadixIcon,
+  LocalIcon,
+  Input,
+  Switch,
+  TextArea,
+  AlertDialog,
+} from '@/components/atom';
+import { Callout, Flex, Grid, Card } from '@/components/molecule';
 
 function MainPage() {
   const [isTestDialogOpen, setIsTestDialogOpen] = useState<boolean>(false);
