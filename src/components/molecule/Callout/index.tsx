@@ -2,7 +2,7 @@ import { ColorType, colors } from '@/styles/color';
 import { CalloutSizeType } from '@/styles/size';
 import React, { HTMLAttributes, PropsWithChildren, ReactNode, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { getCalloutSize } from './utils/style';
+import { getCalloutSize } from './style';
 
 interface CalloutProps extends HTMLAttributes<HTMLDivElement> {
   size?: CalloutSizeType;

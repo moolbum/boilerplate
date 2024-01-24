@@ -12,8 +12,8 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
-import Typo from '../Typo';
-import Button from '../Button';
+import Typo from '../../atom/Typo';
+import Button from '../../atom/Button';
 import Flex from '@/components/molecule/Flex';
 import { zIndex } from '@/styles/zIndex';
 

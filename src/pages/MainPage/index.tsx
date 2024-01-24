@@ -1,20 +1,7 @@
 import React, { useState } from 'react';
-import LocalIcon from '@/components/atom/Icons/LocalIcon';
-import LucideIcon from '@/components/atom/Icons/LucideIcon';
-import RadixIcon from '@/components/atom/Icons/RadixIcon';
-import Typo from '@/components/atom/Typo';
 import TableSvg from '@/assets/icons/icon-table-placeholder.svg';
-import Flex from '@/components/molecule/Flex';
-import Badge from '@/components/atom/Badge';
-import SectionCard from '@/components/molecule/Card';
-import Grid from '@/components/molecule/Grid';
-import Button from '@/components/atom/Button';
-import TextArea from '@/components/atom/TextArea';
-import Callout from '@/components/molecule/Callout';
-import Dialog from '@/components/atom/Dialog';
-import AlertDialog from '@/components/atom/AlertDialog';
-import Switch from '@/components/atom/Switch';
-import Input from '@/components/atom/Input';
+import { Typo, Badge, Button, LucideIcon, RadixIcon, LocalIcon, Input, Switch, TextArea } from '@/components/atom';
+import { AlertDialog, Callout, Flex, Dialog, Grid, Card } from '@/components/molecule';
 
 type DialogState = null | 'OPEN_TEST' | 'OVERRIDE_OPEN';
 type AlertDialogState = null | 'ALERT_OPEN';
@@ -153,7 +140,7 @@ function MainPage() {
           </Badge>
         </Flex>
 
-        <SectionCard>SectionCard</SectionCard>
+        <Card>Card</Card>
 
         <Grid>
           <Grid.Col columnSpan={4}>

@@ -4,7 +4,7 @@ import { RadiusType, borderRadius } from '@/styles/radius';
 import React, { ButtonHTMLAttributes, forwardRef, useId } from 'react';
 import { ButtonVariantType } from '@/styles/variant';
 import styled, { css } from 'styled-components';
-import { getButtonSize, getButtonVariant } from './utils/style';
+import { getButtonSize, getButtonVariant } from './style';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSizeType;

@@ -1,7 +1,7 @@
 import { BadgeSizeType, CommonSizeType } from '@/styles/size';
 import React, { HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { getCardSize } from './utils/style';
+import { getCardSize } from './style';
 import { colors } from '@/styles/color';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {

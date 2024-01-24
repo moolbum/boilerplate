@@ -3,7 +3,7 @@ import { BadgeSizeType } from '@/styles/size';
 import { borderRadius, RadiusType } from '@/styles/radius';
 import React, { HTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
-import { getBadgeSize, getBadgeVariant } from './utils/style';
+import { getBadgeSize, getBadgeVariant } from './style';
 import { BadgeVariantType } from '@/styles/variant';
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
