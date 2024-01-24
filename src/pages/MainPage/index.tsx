@@ -3,52 +3,51 @@ import { TablePlaceholderSvg } from '@/assets/icons';
 import { Typo, Badge, Button, LucideIcon, RadixIcon, LocalIcon, Input, Switch, TextArea } from '@/components/atom';
 import { AlertDialog, Callout, Flex, Dialog, Grid, Card } from '@/components/molecule';
 
-type DialogState = null | 'OPEN_TEST' | 'OVERRIDE_OPEN';
 type AlertDialogState = null | 'ALERT_OPEN';
 
 function MainPage() {
-  const [dialogState, setDialogState] = useState<DialogState>(null);
+  const [isTestDialogOpen, setIsTestDialogOpen] = useState<boolean>(false);
+  const [isOverriedDialogOpen, setIsOverriedDialogOpen] = useState<boolean>(false);
+
   const [alertDialogState, setAlertDialogState] = useState<AlertDialogState>(null);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [input, setInput] = useState('');
 
   // Dialog
-  const renderDialogOverride = () => {
-    if (dialogState === 'OVERRIDE_OPEN') {
-      return (
-        <Dialog open title="Title" onClose={() => setDialogState('OPEN_TEST')}>
-          <div>모달 중첩</div>
-        </Dialog>
-      );
-    }
-
-    return null;
+  const renderOverriedDialog = () => {
+    return (
+      <Dialog open={isOverriedDialogOpen} title="Title" onClose={() => setIsOverriedDialogOpen(false)}>
+        <div>모달 중첩</div>
+      </Dialog>
+    );
   };
-  const renderDialog = () => {
-    if (dialogState === 'OPEN_TEST' || dialogState === 'OVERRIDE_OPEN') {
-      return (
-        <Dialog
-          open
-          title="OPEN_TEST"
-          onOpen={() => {
-            console.log('열릴때 추가 로직 ::');
-          }}
-          onClose={() => {
-            console.log('닫힐때 추가 로직 ::');
-            setDialogState(null);
-          }}
-        >
-          <div>
-            오픈 이라네
-            <Button size="large" color="blue" onClick={() => setDialogState('OVERRIDE_OPEN')}>
-              모달 오픈
-            </Button>
-          </div>
-        </Dialog>
-      );
-    }
 
-    return null;
+  const renderTestDialog = () => {
+    return (
+      <Dialog
+        open={isTestDialogOpen}
+        title="DEFAULT_TEST"
+        onClose={() => {
+          console.log('닫힐때 추가 로직 ::');
+          setIsTestDialogOpen(false);
+        }}
+      >
+        <div>
+          오픈 이라네
+          <Button
+            size="large"
+            color="blue"
+            onClick={() => {
+              console.log('열릴때 중첩 모달 추가 로직 ::');
+              setIsOverriedDialogOpen(true);
+            }}
+          >
+            모달 오픈
+          </Button>
+        </div>
+        {renderOverriedDialog()}
+      </Dialog>
+    );
   };
 
   // Alert Dialog
@@ -349,7 +348,8 @@ function MainPage() {
       {/* Dialog, Alert Dialog */}
       <Button
         onClick={() => {
-          setDialogState('OPEN_TEST');
+          setIsTestDialogOpen(true);
+          console.log('열릴때 추가 로직 ::');
         }}
       >
         Dialog Open
@@ -362,8 +362,7 @@ function MainPage() {
       >
         Alert Dialog Open
       </Button>
-      {renderDialog()}
-      {renderDialogOverride()}
+      {renderTestDialog()}
       {renderAlertDialog()}
     </>
   );

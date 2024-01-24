@@ -1,13 +1,4 @@
-import React, {
-  HTMLAttributes,
-  PropsWithChildren,
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-} from 'react';
+import React, { HTMLAttributes, PropsWithChildren, ReactNode, createContext, useContext, useEffect } from 'react';
 import Typo from '../../atom/Typo';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
@@ -71,11 +62,9 @@ const QDialog = Object.assign(DialogRoot, {
 });
 
 // Dialog
-let dialogStack: Array<() => void> = [];
 interface DialogProps {
   open: boolean;
   onClose: () => void;
-  onOpen?: () => void;
   title?: string;
   isCloseButton?: boolean;
   rightAccessary?: ReactNode;
@@ -83,7 +72,6 @@ interface DialogProps {
 }
 function Dialog({
   open = false,
-  onOpen,
   onClose,
   title,
   rightAccessary,
@@ -91,31 +79,14 @@ function Dialog({
   footer,
   isCloseButton = true,
 }: PropsWithChildren<DialogProps>) {
-  const isReady = useRef(false);
-
-  // OnOpen;
-  useLayoutEffect(() => {
-    if (!isReady.current) {
-      onOpen?.();
-      isReady.current = true;
-    }
-  }, [onOpen]);
-
-  // Cleanup unmounts
-  useEffect(() => {
-    return () => {
-      dialogStack = [];
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
   // OverLay scroll lock, current dialogStack
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
-      dialogStack.push(onClose);
-    } else {
-      dialogStack.pop();
+
+      return () => {
+        document.body.style.overflow = 'auto';
+      };
     }
   }, [open, onClose]);
 
@@ -123,21 +94,18 @@ function Dialog({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === 'Escape') {
-        const topDialogClose = dialogStack[dialogStack.length - 1];
-        topDialogClose && topDialogClose();
+        onClose();
       }
     };
 
     if (open) {
       document.body.addEventListener('keydown', handleKeyDown);
-    }
 
-    return () => {
-      if (open) {
+      return () => {
         document.body.removeEventListener('keydown', handleKeyDown);
-      }
-    };
-  }, [open]);
+      };
+    }
+  }, [onClose, open]);
 
   return (
     <QDialog open={open} onClose={onClose}>
