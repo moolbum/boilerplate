@@ -81,10 +81,10 @@ src
   |-- assets
   |     |-- fonts
   |     |-- icons
-  |-- component
-  |     |-- atom
-  |     |-- molecule
-  |     |__ organism
+  |-- components
+  |     |-- atoms
+  |     |-- molecules
+  |     |__ organisms
   |-- pages
   |-- routes
   |-- styles
