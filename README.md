@@ -17,11 +17,12 @@ yarn start
 
 **atom**
 
-- AlertDialog 🛠️
+- AlertDialog
+- Accordion 🛠️
 - Badge
 - Button
 - Checkbox 🛠️
-- Dialog 🛠️
+- Dialog
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Input
 - Radio 🛠️
@@ -33,7 +34,6 @@ yarn start
 
 **molecule**
 
-- Accordion 🛠️
 - Card
 - Callout
 - Flex
