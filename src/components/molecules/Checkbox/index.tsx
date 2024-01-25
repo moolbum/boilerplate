@@ -4,12 +4,15 @@ import styled from 'styled-components';
 
 const CHECKBOX_DEFAULT_GAP = 4;
 
-export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'onChange'> {
+export type CheckboxValueType = string;
+
+export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  value: CheckboxValueType;
   label?: ReactNode | string;
   direction?: CSSProperties['flexDirection'];
   alignItems?: CSSProperties['alignItems'];
   gap?: number;
-  onChange?: (value: InputHTMLAttributes<HTMLInputElement>['value']) => void;
+  onCheckChange?: (value: CheckboxValueType) => void;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
@@ -20,11 +23,12 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
     gap = CHECKBOX_DEFAULT_GAP,
     alignItems = 'center',
     onChange,
+    onCheckChange,
     ...rest
   } = props;
 
-  const handleCheckboxChange = (value: InputHTMLAttributes<HTMLInputElement>['value']) => {
-    onChange?.(value);
+  const handleCheckboxChange = (value: CheckboxValueType) => {
+    onCheckChange?.(value);
   };
 
   const renderLabel = () => {
@@ -43,8 +47,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
     <CheckboxComponent direction={direction} alignItems={alignItems} gap={gap}>
       <input
         ref={forwardedRef}
-        id={value?.toString()}
-        onChange={() => handleCheckboxChange(value)}
+        id={value}
+        onChange={e => {
+          onChange?.(e);
+          handleCheckboxChange(value as CheckboxValueType);
+        }}
         {...rest}
         type="checkbox"
       />

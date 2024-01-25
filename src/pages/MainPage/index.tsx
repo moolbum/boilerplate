@@ -26,6 +26,7 @@ function MainPage() {
   const [isAlertDialogOpen, setIsAlertDialogOpen] = useState<boolean>(false);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [input, setInput] = useState('');
+  const [selectValues, setSelectValues] = useState<string[]>([]);
 
   // Dialog
   const renderOverriedDialog = () => {
@@ -92,13 +93,17 @@ function MainPage() {
     );
   };
 
+  const handleCheckboxChange = (value?: string[]) => {
+    value && setSelectValues(value);
+  };
+
   return (
     <>
       <Flex direction="column">
-        <Radio label="radio_1" value="RADIO_1" onChange={value => console.log(value)} />
+        <Radio label="radio_1" value="RADIO_1" onValueChange={value => console.log(value)} />
         <RadioGroup
           name="radio"
-          onChange={value => console.log('value', value)}
+          onValueChange={value => console.log('value', value)}
           option={[
             { label: '라벨_1', value: 'label_1' },
             { label: '라벨_2', value: 'label_2' },
@@ -114,9 +119,15 @@ function MainPage() {
           ]}
         />
 
-        <Checkbox label="checkbox" value="checkbox" onChange={value => console.log(value)} />
+        <Checkbox
+          label="checkbox"
+          value="체크박스_1"
+          onCheckChange={value => console.log('checkChange', value)}
+          onChange={e => console.log(e.target)}
+        />
         <CheckboxGroup
-          onChange={value => console.log(value)}
+          value={selectValues}
+          onChange={e => handleCheckboxChange(e)}
           name="checkbox"
           option={[
             { label: '체크박스_1', value: 'checkbox_1' },

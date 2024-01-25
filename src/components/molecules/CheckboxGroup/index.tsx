@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import styled from 'styled-components';
 import Checkbox, { CheckboxProps } from '@/components/molecules/Checkbox';
 
@@ -9,31 +9,41 @@ interface CheckboxGroupProps {
   direction?: CSSProperties['flexDirection'];
   name: string;
   gap?: number;
-  onChange: (value: CheckboxProps['value']) => void;
+  value?: CheckboxProps['value'][];
+  onChange?: (value: CheckboxProps['value'][]) => void;
 }
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { direction = 'row', gap = CHECKBOX_GROUP_DEFAULT_GAP, option, name, onChange, ...rest } = props;
+  const { direction = 'row', gap = CHECKBOX_GROUP_DEFAULT_GAP, option, name, onChange, value, ...rest } = props;
 
-  const handleCheckboxChange = (value: CheckboxProps['value']) => {
-    onChange(value);
+  const [checkboxValues, setCheckboxValues] = useState<CheckboxProps['value'][]>(value ?? []);
+
+  const handleCheckboxChange = (selectValue: CheckboxProps['value']) => {
+    setCheckboxValues(prev => {
+      const updatedValues = prev.includes(selectValue)
+        ? prev.filter(value => value !== selectValue)
+        : [...prev, selectValue];
+
+      onChange?.(updatedValues);
+
+      return updatedValues;
+    });
   };
 
   return (
     <CheckboxGroupComponent direction={direction} gap={gap} {...rest}>
-      {option.map(({ label, value, ...props }, idx) => {
-        return (
-          <Checkbox
-            key={idx.toString()}
-            name={name}
-            value={value}
-            label={label}
-            id={value?.toString()}
-            onChange={handleCheckboxChange}
-            {...props}
-          />
-        );
-      })}
+      {option.map(({ label, value, ...checkboxProps }) => (
+        <Checkbox
+          key={value?.toString()}
+          name={name}
+          value={value}
+          label={label}
+          id={value?.toString()}
+          onChange={() => handleCheckboxChange(value)}
+          checked={checkboxValues.includes(value)}
+          {...checkboxProps}
+        />
+      ))}
     </CheckboxGroupComponent>
   );
 };
