@@ -22,13 +22,11 @@ yarn start
 - Button
 - Card
 - Callout
-- Checkbox
 - Dialog
 - Flex
 - Grid
 - Icon: radix-icon, lucide-react, local(HTMLImageElement)
 - Input
-- Radio
 - Switch
 - Tabs 🛠️
 - Typo
@@ -38,8 +36,11 @@ yarn start
 **molecule**
 
 - AlertDialog
+- Checkbox
+- CheckboxGroup
 - DropDown 🛠️
 - Form 🛠️
+- Radio
 - RadioGroup
 - Select: Single, Multiple, Search 🛠️
 
