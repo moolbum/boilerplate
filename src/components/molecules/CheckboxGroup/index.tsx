@@ -9,16 +9,29 @@ interface CheckboxGroupProps {
   direction?: CSSProperties['flexDirection'];
   name: string;
   gap?: number;
+  onChange: (value: CheckboxProps['value']) => void;
 }
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { direction = 'row', gap = CHECKBOX_GROUP_DEFAULT_GAP, option, name, ...rest } = props;
+  const { direction = 'row', gap = CHECKBOX_GROUP_DEFAULT_GAP, option, name, onChange, ...rest } = props;
+
+  const handleCheckboxChange = (value: CheckboxProps['value']) => {
+    onChange(value);
+  };
 
   return (
     <CheckboxGroupComponent direction={direction} gap={gap} {...rest}>
       {option.map(({ label, value, ...props }, idx) => {
         return (
-          <Checkbox key={idx.toString()} name={name} value={value} label={label} id={value?.toString()} {...props} />
+          <Checkbox
+            key={idx.toString()}
+            name={name}
+            value={value}
+            label={label}
+            id={value?.toString()}
+            onChange={handleCheckboxChange}
+            {...props}
+          />
         );
       })}
     </CheckboxGroupComponent>

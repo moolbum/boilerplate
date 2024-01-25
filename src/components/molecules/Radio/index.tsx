@@ -9,13 +9,13 @@ export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   direction?: CSSProperties['flexDirection'];
   alignItems?: CSSProperties['alignItems'];
   gap?: number;
-  onChange?: (value: RadioProps['value']) => void;
+  onChange?: (value: InputHTMLAttributes<HTMLInputElement>['value']) => void;
 }
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
   const { label, value, direction = 'row', gap = RADIO_DEFAULT_GAP, alignItems = 'center', onChange, ...rest } = props;
 
-  const handleRadioChange = (value: RadioProps['value']) => {
+  const handleRadioChange = (value: InputHTMLAttributes<HTMLInputElement>['value']) => {
     onChange?.(value);
   };
 

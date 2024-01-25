@@ -29,7 +29,7 @@ const RadioGroup = (props: RadioGroupProps) => {
             value={value}
             label={label}
             id={value?.toString()}
-            onChange={() => handleRadioChange(value)}
+            onChange={handleRadioChange}
             {...props}
           />
         );
