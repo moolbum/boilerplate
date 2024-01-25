@@ -16,7 +16,7 @@ import {
   Grid,
   Callout,
 } from '@/components/atoms';
-import { AlertDialog, Checkbox, Radio, RadioGroup } from '@/components/molecules';
+import { AlertDialog, Checkbox, CheckboxGroup, Radio, RadioGroup } from '@/components/molecules';
 
 type DialogState = null | 'DAFAULT' | 'OVERRIDE';
 
@@ -112,6 +112,22 @@ function MainPage() {
               value: 'label_3',
             },
             { label: '라벨_4', value: 'label_4', disabled: true },
+          ]}
+        />
+        <CheckboxGroup
+          name="checkbox"
+          option={[
+            { label: '체크박스_1', value: 'checkbox_1' },
+            { label: '체크박스_2', value: 'checkbox_2' },
+            {
+              label: (
+                <label htmlFor="label_3">
+                  <div>체크박스_3</div>
+                </label>
+              ),
+              value: 'label_3',
+              disabled: true,
+            },
           ]}
         />
         <Input
