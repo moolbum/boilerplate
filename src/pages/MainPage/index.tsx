@@ -96,10 +96,10 @@ function MainPage() {
     <>
       <Flex direction="column">
         <Checkbox label="checkbox" value="checkbox" gap={10} />
-        <Radio label={<div>"test!!"</div>} />
-        <Radio label="test!!" value={1} />
+        <Radio label="radio_1" value="RADIO_1" onChange={value => console.log(value)} />
         <RadioGroup
           name="radio"
+          onChange={value => console.log('value', value)}
           option={[
             { label: '라벨_1', value: 'label_1' },
             { label: '라벨_2', value: 'label_2' },

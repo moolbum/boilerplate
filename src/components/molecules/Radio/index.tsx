@@ -4,15 +4,20 @@ import styled from 'styled-components';
 
 const RADIO_DEFAULT_GAP = 4;
 
-export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'onChange'> {
   label?: ReactNode | string;
   direction?: CSSProperties['flexDirection'];
   alignItems?: CSSProperties['alignItems'];
   gap?: number;
+  onChange?: (value: RadioProps['value']) => void;
 }
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
-  const { label, value, direction = 'row', gap = RADIO_DEFAULT_GAP, alignItems = 'center', ...rest } = props;
+  const { label, value, direction = 'row', gap = RADIO_DEFAULT_GAP, alignItems = 'center', onChange, ...rest } = props;
+
+  const handleRadioChange = (value: RadioProps['value']) => {
+    onChange?.(value);
+  };
 
   const renderLabel = () => {
     if (typeof label === 'string') {
@@ -28,7 +33,13 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
 
   return (
     <RadioComponent direction={direction} alignItems={alignItems} gap={gap}>
-      <input ref={forwardedRef} id={value?.toString()} {...rest} type="radio" />
+      <input
+        ref={forwardedRef}
+        id={value?.toString()}
+        onChange={() => handleRadioChange(value)}
+        {...rest}
+        type="radio"
+      />
       {renderLabel()}
     </RadioComponent>
   );

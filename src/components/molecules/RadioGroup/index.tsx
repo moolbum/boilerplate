@@ -9,15 +9,30 @@ interface RadioGroupProps {
   direction?: CSSProperties['flexDirection'];
   name: string;
   gap?: number;
+  onChange: (value: RadioProps['value']) => void;
 }
 
 const RadioGroup = (props: RadioGroupProps) => {
-  const { direction = 'row', gap = RADIO_GROUP_DEFAULT_GAP, option, name, ...rest } = props;
+  const { direction = 'row', gap = RADIO_GROUP_DEFAULT_GAP, option, name, onChange, ...rest } = props;
+
+  const handleRadioChange = (value: RadioProps['value']) => {
+    onChange(value);
+  };
 
   return (
     <RadioGroupComponent direction={direction} gap={gap} {...rest}>
-      {option.map(({ label, value, ...props }, idx) => {
-        return <Radio key={idx.toString()} name={name} value={value} label={label} id={value?.toString()} {...props} />;
+      {option.map(({ label, value, ...props }) => {
+        return (
+          <Radio
+            key={value?.toString()}
+            name={name}
+            value={value}
+            label={label}
+            id={value?.toString()}
+            onChange={() => handleRadioChange(value)}
+            {...props}
+          />
+        );
       })}
     </RadioGroupComponent>
   );
