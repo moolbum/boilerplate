@@ -16,7 +16,7 @@ import {
   Grid,
   Callout,
 } from '@/components/atoms';
-import { AlertDialog, Radio, RadioGroup } from '@/components/molecules';
+import { AlertDialog, Checkbox, Radio, RadioGroup } from '@/components/molecules';
 
 type DialogState = null | 'DAFAULT' | 'OVERRIDE';
 
@@ -95,6 +95,7 @@ function MainPage() {
   return (
     <>
       <Flex direction="column">
+        <Checkbox label="checkbox" value="checkbox" gap={10} />
         <Radio label={<div>"test!!"</div>} />
         <Radio label="test!!" value={1} />
         <RadioGroup

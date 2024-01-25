@@ -1,17 +1,18 @@
+import { Typo } from '@/components/atoms';
 import React, { CSSProperties, InputHTMLAttributes, ReactNode, forwardRef } from 'react';
 import styled from 'styled-components';
-import Typo from '../../atoms/Typo';
 
 const RADIO_DEFAULT_GAP = 4;
 
-export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: ReactNode | string;
   direction?: CSSProperties['flexDirection'];
+  alignItems?: CSSProperties['alignItems'];
   gap?: number;
 }
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
-  const { label, value, direction = 'row', gap = RADIO_DEFAULT_GAP, ...rest } = props;
+  const { label, value, direction = 'row', gap = RADIO_DEFAULT_GAP, alignItems = 'center', ...rest } = props;
 
   const renderLabel = () => {
     if (typeof label === 'string') {
@@ -26,8 +27,8 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
   };
 
   return (
-    <RadioComponent direction={direction} gap={gap}>
-      <input ref={forwardedRef} type="radio" id={value?.toString()} {...rest} />
+    <RadioComponent direction={direction} alignItems={alignItems} gap={gap}>
+      <input ref={forwardedRef} id={value?.toString()} {...rest} type="radio" />
       {renderLabel()}
     </RadioComponent>
   );
@@ -35,7 +36,11 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
 
 export default Radio;
 
-const RadioComponent = styled.div<{ direction: CSSProperties['flexDirection']; gap: number }>`
+const RadioComponent = styled.div<{
+  direction: CSSProperties['flexDirection'];
+  alignItems: CSSProperties['alignItems'];
+  gap: number;
+}>`
   display: flex;
   align-items: center;
   flex-direction: ${({ direction }) => direction};
