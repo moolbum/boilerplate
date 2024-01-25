@@ -96,12 +96,20 @@ function MainPage() {
     <>
       <Flex direction="column">
         <Radio label={<div>"test!!"</div>} />
+        <Radio label="test!!" value={1} />
         <RadioGroup
           name="radio"
           option={[
             { label: '라벨_1', value: 'label_1' },
             { label: '라벨_2', value: 'label_2' },
-            { label: '라벨_3', value: 'label_3' },
+            {
+              label: (
+                <label htmlFor="label_3">
+                  <div>라벨_3</div>
+                </label>
+              ),
+              value: 'label_3',
+            },
             { label: '라벨_4', value: 'label_4', disabled: true },
           ]}
         />
