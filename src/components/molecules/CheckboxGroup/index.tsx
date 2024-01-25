@@ -1,6 +1,6 @@
 import React, { CSSProperties, useState } from 'react';
 import styled from 'styled-components';
-import Checkbox, { CheckboxProps } from '@/components/molecules/Checkbox';
+import Checkbox, { CheckboxProps } from '@/components/atoms/Checkbox';
 
 const CHECKBOX_GROUP_DEFAULT_GAP = 8;
 

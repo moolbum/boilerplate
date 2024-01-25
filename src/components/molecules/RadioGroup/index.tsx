@@ -1,4 +1,4 @@
-import Radio, { RadioProps } from '@/components/molecules/Radio';
+import Radio, { RadioProps } from '@/components/atoms/Radio';
 import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
