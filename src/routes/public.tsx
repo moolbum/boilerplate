@@ -2,7 +2,7 @@ import { RouteObject } from 'react-router-dom';
 import PATH from './path';
 import ProtectedPublicRoute from '../components/organisms/ProtectedPublicRoute';
 import { MainPage } from '@src/pages';
-import { MainPageLayout } from '@/components/templates';
+import { MainPageLayout } from '@/components/organisms';
 
 const publicRoute: RouteObject[] = [
   {
