@@ -13,15 +13,16 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => {
-  const { fullWidth = true, prefix, suffix, allowClear, onClear, isError = false, ...rest } = props;
+  const { fullWidth = true, prefix, suffix, allowClear, onClear, isError = false, disabled, ...rest } = props;
 
   const [isFocus, setIsFocus] = useState(false);
 
   return (
-    <InputComponent fullWidth={fullWidth} data-focus={isFocus} data-error={isError}>
+    <InputComponent fullWidth={fullWidth} data-focus={isFocus} data-error={isError} data-disabled={disabled}>
       {prefix}
       <StyledInput
         ref={forwardedRef}
+        disabled={disabled}
         {...rest}
         onFocus={() => {
           setIsFocus(true);
@@ -41,6 +42,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => 
 });
 
 export default Input;
+
+const StyledInput = styled.input`
+  border: none;
+  outline: none;
+`;
 
 const InputComponent = styled.div<{ fullWidth: boolean }>`
   display: flex;
@@ -66,11 +72,14 @@ const InputComponent = styled.div<{ fullWidth: boolean }>`
   &[data-error='true'] {
     border: 1px solid ${colors.red700};
   }
-`;
+  &[data-disabled='true'] {
+    background: ${colors.gray200};
 
-const StyledInput = styled.input`
-  border: none;
-  outline: none;
+    ${StyledInput} {
+      background: ${colors.gray200};
+      cursor: not-allowed;
+    }
+  }
 `;
 
 const Clear = styled.button`

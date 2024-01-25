@@ -24,6 +24,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
     alignItems = 'center',
     onChange,
     onCheckChange,
+    disabled,
     ...rest
   } = props;
 
@@ -44,7 +45,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
   };
 
   return (
-    <CheckboxComponent direction={direction} alignItems={alignItems} gap={gap}>
+    <CheckboxComponent direction={direction} alignItems={alignItems} gap={gap} data-disabled={disabled}>
       <input
         ref={forwardedRef}
         id={value.toString()}
@@ -52,6 +53,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
           onChange?.(e);
           handleCheckboxChange(value as CheckboxValueType);
         }}
+        disabled={disabled}
         {...rest}
         type="checkbox"
       />
@@ -71,6 +73,10 @@ const CheckboxComponent = styled.div<{
   align-items: ${({ alignItems }) => alignItems};
   flex-direction: ${({ direction }) => direction};
   gap: ${({ gap }) => gap}px;
+
+  &[data-disabled='true'] > * {
+    cursor: not-allowed;
+  }
 
   input {
     margin: 0;

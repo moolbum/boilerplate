@@ -21,6 +21,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
     alignItems = 'center',
     onChange,
     onValueChange,
+    disabled,
     ...rest
   } = props;
 
@@ -41,7 +42,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
   };
 
   return (
-    <RadioComponent direction={direction} alignItems={alignItems} gap={gap}>
+    <RadioComponent direction={direction} alignItems={alignItems} gap={gap} data-disabled={disabled}>
       <input
         ref={forwardedRef}
         id={value?.toString()}
@@ -49,6 +50,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
           onChange?.(e);
           handleRadioChange(value);
         }}
+        disabled={disabled}
         {...rest}
         type="radio"
       />
@@ -68,6 +70,10 @@ const RadioComponent = styled.div<{
   align-items: center;
   flex-direction: ${({ direction }) => direction};
   gap: ${({ gap }) => gap}px;
+
+  &[data-disabled='true'] > * {
+    cursor: not-allowed;
+  }
 
   input {
     margin: 0;

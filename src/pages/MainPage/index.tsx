@@ -148,7 +148,7 @@ function MainPage() {
           suffix={<div>데일</div>}
           allowClear
         />
-        <Input value={input} onChange={e => setInput(e.target.value)} />
+        <Input value={input} onChange={e => setInput(e.target.value)} disabled />
 
         <Typo as="h1" role="title" fontWeight="semibold" color="red500">
           h1 MainPage
