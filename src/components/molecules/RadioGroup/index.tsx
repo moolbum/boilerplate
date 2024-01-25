@@ -9,9 +9,11 @@ interface RadioGroupProps {
   name: string;
   gap?: number;
 }
-const RadioGroup = ({ direction = 'row', gap = RADIO_GROUP_DEFAULT_GAP, option, name }: RadioGroupProps) => {
+const RadioGroup = (props: RadioGroupProps) => {
+  const { direction = 'row', gap = RADIO_GROUP_DEFAULT_GAP, option, name, ...rest } = props;
+
   return (
-    <RadioGroupComponent direction={direction} gap={gap}>
+    <RadioGroupComponent direction={direction} gap={gap} {...rest}>
       {option.map(({ label, value, ...props }, idx) => {
         return <Radio key={idx.toString()} name={name} value={value} label={label} id={value?.toString()} {...props} />;
       })}
