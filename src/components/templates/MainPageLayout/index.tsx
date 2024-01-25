@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
-import { MainHeader } from '@/components/organisms';
 import styled from 'styled-components';
+import { MainHeader } from '@/components/organisms';
 
 function MainPageLayout({ children }: PropsWithChildren) {
   return (
