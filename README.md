@@ -13,6 +13,19 @@ yarn install
 yarn start
 ```
 
+## Package
+
+```sh
+Fetching: tanstack/react-query, axios
+Style: styled-componet, framer-motion
+Icon: radix-icon, lucide-react
+Router: react-router-dom
+Date: dayJS
+Code: eslint, prettier, typeScript
+Build: yarn, env-cmd, craco
+StateManagement: zustand, react-hook-form
+```
+
 ## Component
 
 **atom**
@@ -44,19 +57,6 @@ yarn start
 - Form 🛠️
 - RadioGroup
 - Select: Single, Multiple, Search 🛠️
-
-## Package
-
-```sh
-Fetching: tanstack/react-query, axios
-Style: styled-componet, framer-motion
-Icon: radix-icon, lucide-react
-Router: react-router-dom
-Date: dayJS
-Code: eslint, prettier, typeScript
-Build: yarn, env-cmd, craco
-StateManagement: zustand, react-hook-form
-```
 
 ## Font
 
