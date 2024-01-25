@@ -1,27 +1,18 @@
-import { Radio } from '@/components/atoms';
-import React, { CSSProperties, InputHTMLAttributes, ReactNode } from 'react';
+import Radio, { RadioProps } from '@/components/molecules/Radio';
+import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
 interface RadioGroupProps {
-  name: string;
-  option: {
-    label: ReactNode | string;
-    value: InputHTMLAttributes<HTMLInputElement>['value'];
-    props?: Omit<InputHTMLAttributes<HTMLInputElement>, 'value'>;
-  }[];
+  option: RadioProps[];
   direction?: CSSProperties['flexDirection'];
+  name?: string;
   gap?: number;
 }
 const RadioGroup = ({ direction = 'row', gap = 8, option, name }: RadioGroupProps) => {
   return (
     <RadioGroupComponent direction={direction} gap={gap}>
-      {option.map(({ label, value, props }, idx) => {
-        return (
-          <RadioItem key={idx.toString()}>
-            <Radio name={name} value={value} id={value?.toString()} {...props} />
-            <label htmlFor={value?.toString()}>{label}</label>
-          </RadioItem>
-        );
+      {option.map(({ label, value, ...props }, idx) => {
+        return <Radio key={idx.toString()} name={name} value={value} label={label} id={value?.toString()} {...props} />;
       })}
     </RadioGroupComponent>
   );
@@ -34,5 +25,3 @@ const RadioGroupComponent = styled.div<{ direction: CSSProperties['flexDirection
   flex-direction: ${({ direction }) => direction};
   gap: ${({ gap }) => gap}px;
 `;
-
-const RadioItem = styled.div``;

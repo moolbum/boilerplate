@@ -15,9 +15,8 @@ import {
   Card,
   Grid,
   Callout,
-  Radio,
 } from '@/components/atoms';
-import { AlertDialog, RadioGroup } from '@/components/molecules';
+import { AlertDialog, Radio, RadioGroup } from '@/components/molecules';
 
 type DialogState = null | 'DAFAULT' | 'OVERRIDE';
 
@@ -96,14 +95,14 @@ function MainPage() {
   return (
     <>
       <Flex direction="column">
-        <Radio />
+        <Radio label={<div>"test!!"</div>} />
         <RadioGroup
           name="radio"
           option={[
             { label: '라벨_1', value: 'label_1' },
             { label: '라벨_2', value: 'label_2' },
             { label: '라벨_3', value: 'label_3' },
-            { label: '라벨_4', value: 'label_4', props: { disabled: true } },
+            { label: '라벨_4', value: 'label_4', disabled: true },
           ]}
         />
         <Input
