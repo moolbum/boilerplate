@@ -136,8 +136,8 @@ function MainPage() {
           value={input}
           onChange={e => setInput(e.target.value)}
           onClear={() => setInput('')}
-          prefix="P"
-          suffix="S"
+          prefix={<div>웨이드</div>}
+          suffix={<div>데일</div>}
           allowClear
         />
         <Input value={input} onChange={e => setInput(e.target.value)} />

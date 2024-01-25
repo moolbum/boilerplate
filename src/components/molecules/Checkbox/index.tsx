@@ -23,7 +23,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
     ...rest
   } = props;
 
-  const handleRadioChange = (value: InputHTMLAttributes<HTMLInputElement>['value']) => {
+  const handleCheckboxChange = (value: InputHTMLAttributes<HTMLInputElement>['value']) => {
     onChange?.(value);
   };
 
@@ -44,7 +44,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
       <input
         ref={forwardedRef}
         id={value?.toString()}
-        onChange={() => handleRadioChange(value)}
+        onChange={() => handleCheckboxChange(value)}
         {...rest}
         type="checkbox"
       />
