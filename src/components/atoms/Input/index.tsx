@@ -19,7 +19,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => 
 
   return (
     <InputComponent fullWidth={fullWidth} data-focus={isFocus} data-error={isError} data-disabled={disabled}>
-      {prefix}
+      <div className="prefix">{prefix}</div>
       <StyledInput
         ref={forwardedRef}
         disabled={disabled}
@@ -32,11 +32,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => 
         }}
       />
       {allowClear && (
-        <Clear type="button" onClick={onClear}>
+        <button className="clear-button" type="button" onClick={onClear}>
           ❌
-        </Clear>
+        </button>
       )}
-      {suffix}
+      <div className="suffix">{suffix}</div>
     </InputComponent>
   );
 });
@@ -80,10 +80,16 @@ const InputComponent = styled.div<{ fullWidth: boolean }>`
       cursor: not-allowed;
     }
   }
-`;
 
-const Clear = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
+  .prefix,
+  .suffix {
+    flex-shrink: 0;
+  }
+
+  .clear-button {
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
 `;
