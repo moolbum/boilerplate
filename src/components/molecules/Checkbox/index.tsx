@@ -47,7 +47,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forw
     <CheckboxComponent direction={direction} alignItems={alignItems} gap={gap}>
       <input
         ref={forwardedRef}
-        id={value}
+        id={value.toString()}
         onChange={e => {
           onChange?.(e);
           handleCheckboxChange(value as CheckboxValueType);
