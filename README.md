@@ -30,7 +30,7 @@ yarn start
 - Input
 - Radio
 - Switch
-- Tabs 🛠️
+- Tabs
 - Typo
 - TextArea
 - Toast 🛠️
