@@ -28,7 +28,8 @@ StateManagement: zustand, react-hook-form
 
 ## Component
 
-**atom**
+**atoms**
+가장 작은 단위의 컴포넌트
 
 - Accordion 🛠️
 - Badge
@@ -48,15 +49,28 @@ StateManagement: zustand, react-hook-form
 - TextArea
 - Toast 🛠️
 
-**molecule**
+**molecules**
+`atoms`의 컴포넌트를 하나 이상 사용한 컴포넌트
 
 - AlertDialog
-
 - CheckboxGroup
 - DropDown 🛠️
 - Form 🛠️
 - RadioGroup
 - Select: Single, Multiple, Search 🛠️
+
+**organisms**
+프로젝트의 도메인이 포함된 컴포넌트
+
+- MainHeader 🛠️
+- ProtectedPublicRoute
+- SideNav 🛠️
+
+**templates**
+`organisms`의 컴포넌트를 하나 이상 사용한 컴포넌트
+
+- MainPageLayout 🛠️
+- SubPageLayout 🛠️
 
 ## Font
 
