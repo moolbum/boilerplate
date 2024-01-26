@@ -7,6 +7,7 @@ export { default as LocalIcon } from './Icons/LocalIcon';
 export { default as LucideIcon } from './Icons/LucideIcon';
 export { default as RadixIcon } from './Icons/RadixIcon';
 export { default as Input } from './Input';
+export type { default as InputProps } from './Input/types';
 export { default as Switch } from './Switch';
 export type { default as SwitchProps } from './Switch/types';
 export { default as TextArea } from './TextArea';

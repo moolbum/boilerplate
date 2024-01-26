@@ -1,16 +1,8 @@
 import { colors } from '@/styles/color';
 import { borderRadius } from '@/styles/radius';
-import React, { InputHTMLAttributes, ReactNode, forwardRef, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
-  fullWidth?: boolean;
-  prefix?: ReactNode;
-  suffix?: ReactNode;
-  allowClear?: boolean;
-  onClear?: () => void;
-  isError?: boolean;
-}
+import InputProps from './types';
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => {
   const { fullWidth = true, prefix, suffix, allowClear, onClear, isError = false, disabled, ...rest } = props;
