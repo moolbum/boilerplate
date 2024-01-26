@@ -17,7 +17,7 @@ yarn start
 
 ```sh
 Fetching: tanstack/react-query, axios
-Style: styled-componet, framer-motion
+Ui: styled-componet, framer-motion, storybook
 Icon: radix-icon, lucide-react
 Router: react-router-dom
 Date: dayJS
