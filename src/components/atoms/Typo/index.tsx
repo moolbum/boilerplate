@@ -1,19 +1,8 @@
-import React, { HTMLAttributes, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { fontWeights, getFontFamily, typography, TypographyType } from '@/styles/typography';
 import { ColorType, colors } from '@/styles/color';
-
-interface TypoProps extends HTMLAttributes<HTMLElement> {
-  as?: keyof HTMLElementTagNameMap;
-  color?: ColorType;
-  typo?: TypographyType;
-  fontWeight?: keyof typeof fontWeights;
-
-  // Under Line
-  isUnderLine?: boolean;
-  underLineThickness?: number;
-  underlineOffset?: number;
-}
+import TypoProps from './types';
 
 const Typo = forwardRef<HTMLElement, TypoProps>((props, forwardedRef) => {
   const {
