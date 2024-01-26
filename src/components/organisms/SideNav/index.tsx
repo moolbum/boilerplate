@@ -1,7 +1,7 @@
 import React from 'react';
 
 function SideNav() {
-  return <nav />;
+  return <aside />;
 }
 
 export default SideNav;

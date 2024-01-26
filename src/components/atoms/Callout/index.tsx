@@ -35,6 +35,7 @@ const Callout = forwardRef<HTMLDivElement, PropsWithChildren<CalloutProps>>((pro
       borderColor={borderColor}
       fullWidth={fullWidth}
       size={size}
+      role="note"
       {...rest}
     >
       {icon && <figure onClick={iconOnClick}>{icon}</figure>}
