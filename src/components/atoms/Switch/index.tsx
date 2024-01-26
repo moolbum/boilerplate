@@ -1,6 +1,6 @@
 import { ColorType, colors } from '@/styles/color';
 import { borderRadius } from '@/styles/radius';
-import { CommonSizeType } from '@/styles/size';
+import { CommonSizeType } from '@src/types/size';
 import { zIndex } from '@/styles/zIndex';
 import React, { InputHTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';

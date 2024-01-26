@@ -1,5 +1,5 @@
 import { ColorType, colors } from '@/styles/color';
-import { CalloutSizeType } from '@/styles/size';
+import { CalloutSizeType } from '@src/types/size';
 import React, { HTMLAttributes, PropsWithChildren, ReactNode, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { getCalloutSize } from './style';

@@ -1,4 +1,4 @@
-import { BadgeSizeType, CommonSizeType } from '@/styles/size';
+import { BadgeSizeType, CommonSizeType } from '@src/types/size';
 import React, { HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { getCardSize } from './style';

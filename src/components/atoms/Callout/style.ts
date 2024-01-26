@@ -1,4 +1,4 @@
-import { CalloutSizeType } from '@/styles/size';
+import { CalloutSizeType } from '@src/types/size';
 import { css } from 'styled-components';
 
 // getCalloutSize

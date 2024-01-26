@@ -1,5 +1,5 @@
 import { AccentColorType } from '@/styles/color';
-import { BadgeSizeType } from '@/styles/size';
+import { BadgeSizeType } from '@src/types/size';
 import { borderRadius, RadiusType } from '@/styles/radius';
 import React, { HTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';

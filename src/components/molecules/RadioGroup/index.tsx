@@ -20,7 +20,7 @@ const RadioGroup = (props: RadioGroupProps) => {
   };
 
   return (
-    <RadioGroupComponent direction={direction} gap={gap} {...rest}>
+    <RadioGroupComponent direction={direction} gap={gap} role="group" {...rest}>
       {option.map(({ label, value, ...radioProps }) => {
         return (
           <Radio
