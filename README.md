@@ -44,7 +44,7 @@ StateManagement: zustand, react-hook-form
 - Input
 - Radio
 - Switch
-- Tabs
+- Tabs 🛠️
 - Typo
 - TextArea
 - Toast 🛠️
