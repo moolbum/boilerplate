@@ -1,5 +1,5 @@
-import Radio, { RadioProps } from '@/components/atoms/Radio';
 import React, { CSSProperties } from 'react';
+import { Radio, RadioProps } from '@/components/atoms';
 import styled from 'styled-components';
 
 const RADIO_GROUP_DEFAULT_GAP = 8;
