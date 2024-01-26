@@ -1,18 +1,10 @@
+import React, { forwardRef } from 'react';
 import { ColorType, colors } from '@/styles/color';
 import { borderRadius } from '@/styles/radius';
 import { CommonSizeType } from '@src/types/size';
 import { zIndex } from '@/styles/zIndex';
-import React, { InputHTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
-
-interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'size'> {
-  checked: boolean;
-  onChange?: (checked: boolean) => void;
-  color?: ColorType;
-  defaultColor?: ColorType;
-  disabledColor?: ColorType;
-  size?: CommonSizeType;
-}
+import { SwitchProps } from './types';
 
 const Switch = forwardRef<HTMLDivElement, SwitchProps>((props, forwardedRef) => {
   const {

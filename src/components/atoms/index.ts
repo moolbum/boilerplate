@@ -7,6 +7,7 @@ export { default as LucideIcon } from './Icons/LucideIcon';
 export { default as RadixIcon } from './Icons/RadixIcon';
 export { default as Input } from './Input';
 export { default as Switch } from './Switch';
+export type { default as SwitchProps } from './Switch/types';
 export { default as TextArea } from './TextArea';
 export { default as Flex } from './Flex';
 export { default as Card } from './Card';
