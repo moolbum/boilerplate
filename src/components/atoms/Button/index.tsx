@@ -1,18 +1,11 @@
+import React, { forwardRef, useId } from 'react';
 import { AccentColorType, colors } from '@/styles/color';
 import { ButtonSizeType } from '@src/types/size';
 import { RadiusType, borderRadius } from '@/styles/radius';
-import React, { ButtonHTMLAttributes, forwardRef, useId } from 'react';
 import { ButtonVariantType } from '@/styles/variant';
 import styled, { css } from 'styled-components';
 import { getButtonSize, getButtonVariant } from './style';
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: ButtonSizeType;
-  radius?: RadiusType;
-  variant?: ButtonVariantType;
-  color?: AccentColorType;
-  fullWidth?: boolean;
-}
+import ButtonProps from './types';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) => {
   const {
