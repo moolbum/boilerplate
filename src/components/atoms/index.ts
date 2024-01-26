@@ -10,6 +10,7 @@ export { default as Input } from './Input';
 export { default as Switch } from './Switch';
 export type { default as SwitchProps } from './Switch/types';
 export { default as TextArea } from './TextArea';
+export type { default as TextAreaProps } from './TextArea/types';
 export { default as Flex } from './Flex';
 export { default as Card } from './Card';
 export { default as Grid } from './Grid';
