@@ -1,18 +1,9 @@
 import { ColorType, colors } from '@/styles/color';
 import { CalloutSizeType } from '@src/types/size';
-import React, { HTMLAttributes, PropsWithChildren, ReactNode, forwardRef } from 'react';
+import React, { PropsWithChildren, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { getCalloutSize } from './style';
-
-interface CalloutProps extends HTMLAttributes<HTMLDivElement> {
-  size?: CalloutSizeType;
-  icon?: ReactNode;
-  iconOnClick?: () => void;
-  gap?: number;
-  backgroundColor?: ColorType;
-  borderColor?: ColorType;
-  fullWidth?: boolean;
-}
+import CalloutProps from './types';
 
 const Callout = forwardRef<HTMLDivElement, PropsWithChildren<CalloutProps>>((props, forwardedRef) => {
   const {

@@ -1,5 +1,7 @@
 import { Switch, SwitchProps } from '@/components/atoms';
 
-export const StorybookSwitch = (props: SwitchProps) => {
+const StorybookSwitch = (props: SwitchProps) => {
   return <Switch {...props} />;
 };
+
+export default StorybookSwitch;
