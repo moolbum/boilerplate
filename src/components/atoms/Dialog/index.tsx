@@ -108,7 +108,7 @@ function Dialog({
   }, [onClose, open]);
 
   return (
-    <QDialog open={open} onClose={onClose}>
+    <QDialog open={open} onClose={onClose} role="dialog">
       <QDialog.Portal>
         <StyledOverlay />
 

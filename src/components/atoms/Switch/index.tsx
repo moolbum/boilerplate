@@ -27,7 +27,7 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>((props, forwardedRef) => 
   } = props;
 
   return (
-    <SwitchComponent ref={forwardedRef} size={size}>
+    <SwitchComponent ref={forwardedRef} size={size} role="switch">
       <HiddenSwitch
         type="checkbox"
         checked={checked}

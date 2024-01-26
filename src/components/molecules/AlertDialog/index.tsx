@@ -104,7 +104,7 @@ function AlertDialog({
   }, [onClose, open]);
 
   return (
-    <QAlertDialog open={open} onClose={onClose}>
+    <QAlertDialog open={open} onClose={onClose} role="alertdialog">
       <QAlertDialog.Portal>
         <StyledOverlay />
 
