@@ -105,6 +105,7 @@ src
   |     |__ organisms
   |-- pages
   |-- routes
+  |-- stories
   |-- styles
   |-- App.tsx
   |__ index.tsx
