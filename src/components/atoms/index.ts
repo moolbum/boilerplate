@@ -16,6 +16,7 @@ export { default as TextArea } from './TextArea';
 export type { default as TextAreaProps } from './TextArea/types';
 export { default as Flex } from './Flex';
 export { default as Card } from './Card';
+export type { default as CardProps } from './Card/types';
 export { default as Grid } from './Grid';
 export { default as Callout } from './Callout';
 export type { default as CalloutProps } from './Callout/types';
