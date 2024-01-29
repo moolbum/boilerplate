@@ -13,7 +13,7 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>((props, forwardedRef) => 
     disabled,
     color = 'blue800',
     size = 'small',
-    defaultColor = 'gray500',
+    unCheckedColor = 'gray500',
     disabledColor = 'gray700',
     ...rest
   } = props;
@@ -42,7 +42,7 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>((props, forwardedRef) => 
         data-disabled={disabled}
         onClick={() => !disabled && onChange?.(!checked)}
         color={color}
-        defaultColor={defaultColor}
+        unCheckedColor={unCheckedColor}
         disabledColor={disabledColor}
         type="button"
       />
@@ -116,13 +116,13 @@ const StyledSwitch = styled.div<{ size: CommonSizeType }>`
   }
 `;
 
-const SwitchSlider = styled.button<{ defaultColor: ColorType; disabledColor: ColorType; color: ColorType }>`
+const SwitchSlider = styled.button<{ unCheckedColor: ColorType; disabledColor: ColorType; color: ColorType }>`
   position: absolute;
   inset: 0;
   border: none;
   width: 100%;
   border-radius: 32px;
-  background: ${({ defaultColor }) => colors[defaultColor]};
+  background: ${({ unCheckedColor }) => colors[unCheckedColor]};
   z-index: ${zIndex.switch - 1};
   cursor: pointer;
   transition: 0.3s;

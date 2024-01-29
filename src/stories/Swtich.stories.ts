@@ -18,6 +18,10 @@ const meta = {
       options: Object.entries(colors).map(color => color[0]),
       control: { type: 'select' },
     },
+    unCheckedColor: {
+      options: Object.entries(colors).map(color => color[0]),
+      control: { type: 'select' },
+    },
     disabledColor: {
       options: Object.entries(colors).map(color => color[0]),
       control: { type: 'select' },
@@ -33,5 +37,8 @@ export const Primary: Story = {
     checked: true,
     disabled: false,
     size: 'small',
+    color: 'blue800',
+    unCheckedColor: 'gray500',
+    disabledColor: 'gray700',
   },
 };

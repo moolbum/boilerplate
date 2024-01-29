@@ -6,7 +6,7 @@ export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   checked: boolean;
   onChange?: (checked: boolean) => void;
   color?: ColorType;
-  defaultColor?: ColorType;
+  unCheckedColor?: ColorType;
   disabledColor?: ColorType;
   size?: CommonSizeType;
 }
