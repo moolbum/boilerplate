@@ -1,17 +1,9 @@
-import React, { CSSProperties, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import Checkbox, { CheckboxProps } from '@/components/atoms/Checkbox';
+import { Checkbox, CheckboxProps } from '@/components/atoms';
+import { CheckboxGroupProps } from './types';
 
 const CHECKBOX_GROUP_DEFAULT_GAP = 8;
-
-interface CheckboxGroupProps {
-  option: CheckboxProps[];
-  direction?: CSSProperties['flexDirection'];
-  name: string;
-  gap?: number;
-  value?: CheckboxProps['value'][];
-  onChange?: (value: CheckboxProps['value'][]) => void;
-}
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
   const { direction = 'row', gap = CHECKBOX_GROUP_DEFAULT_GAP, option, name, onChange, value, ...rest } = props;
@@ -50,7 +42,10 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
 
 export default CheckboxGroup;
 
-const CheckboxGroupComponent = styled.div<{ direction: CSSProperties['flexDirection']; gap: CSSProperties['gap'] }>`
+const CheckboxGroupComponent = styled.div<{
+  direction: CheckboxGroupProps['direction'];
+  gap: CheckboxGroupProps['gap'];
+}>`
   display: flex;
   flex-direction: ${({ direction }) => direction};
   gap: ${({ gap }) => gap}px;

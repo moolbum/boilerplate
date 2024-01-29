@@ -1,16 +1,9 @@
-import React, { CSSProperties } from 'react';
-import { Radio, RadioProps } from '@/components/atoms';
+import React from 'react';
 import styled from 'styled-components';
+import { Radio, RadioProps } from '@/components/atoms';
+import { RadioGroupProps } from './types';
 
 const RADIO_GROUP_DEFAULT_GAP = 8;
-
-interface RadioGroupProps {
-  option: RadioProps[];
-  direction?: CSSProperties['flexDirection'];
-  name: string;
-  gap?: number;
-  onValueChange: (value: RadioProps['value']) => void;
-}
 
 const RadioGroup = (props: RadioGroupProps) => {
   const { direction = 'row', gap = RADIO_GROUP_DEFAULT_GAP, option, name, onValueChange, ...rest } = props;
@@ -40,7 +33,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 
 export default RadioGroup;
 
-const RadioGroupComponent = styled.div<{ direction: CSSProperties['flexDirection']; gap: CSSProperties['gap'] }>`
+const RadioGroupComponent = styled.div<{ direction: RadioGroupProps['direction']; gap: RadioGroupProps['gap'] }>`
   display: flex;
   flex-direction: ${({ direction }) => direction};
   gap: ${({ gap }) => gap}px;

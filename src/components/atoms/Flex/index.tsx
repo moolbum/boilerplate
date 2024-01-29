@@ -1,6 +1,6 @@
 import React, { CSSProperties, forwardRef } from 'react';
 import styled from 'styled-components';
-import FlexProps from './types';
+import { FlexProps } from './types';
 
 const Flex = forwardRef<HTMLDivElement, FlexProps>((props, forwardedRef) => {
   const { gap = 8, direction = 'row', align = 'baseline', ...rest } = props;

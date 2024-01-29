@@ -1,19 +1,8 @@
-import { Typo } from '@/components/atoms';
-import React, { CSSProperties, InputHTMLAttributes, ReactNode, forwardRef } from 'react';
+import React, { CSSProperties, forwardRef } from 'react';
+import { CheckboxProps, CheckboxValueType, Typo } from '@/components/atoms';
 import styled from 'styled-components';
 
 const CHECKBOX_DEFAULT_GAP = 4;
-
-export type CheckboxValueType = string;
-
-export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
-  value: CheckboxValueType;
-  label?: ReactNode | string;
-  direction?: CSSProperties['flexDirection'];
-  alignItems?: CSSProperties['alignItems'];
-  gap?: number;
-  onCheckChange?: (value: CheckboxValueType) => void;
-}
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
   const {
