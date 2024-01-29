@@ -1,6 +1,7 @@
 export { default as Badge } from './Badge';
 export type { default as BadgeProps } from './Badge/types';
 export { default as Button } from './Button';
+export type { default as ButtonProps } from './Button/types';
 export { default as Dialog } from './Dialog';
 export { default as Typo } from './Typo';
 export type { default as TypoProps } from './Typo/types';
