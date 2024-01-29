@@ -9,8 +9,16 @@ eslint, prettier, font, 컴포넌트, 색상, 폴더구조, 패키지 템플릿
 yarn install
 ```
 
+#### local start
+
 ```sh
 yarn start
+```
+
+#### storybook start
+
+```sh
+yarn storybook
 ```
 
 ## Package
