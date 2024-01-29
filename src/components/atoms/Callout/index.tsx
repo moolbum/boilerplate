@@ -3,7 +3,7 @@ import { CalloutSizeType } from '@src/types/size';
 import React, { PropsWithChildren, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { getCalloutSize } from './style';
-import CalloutProps from './types';
+import { CalloutProps } from './types';
 
 const Callout = forwardRef<HTMLDivElement, PropsWithChildren<CalloutProps>>((props, forwardedRef) => {
   const {

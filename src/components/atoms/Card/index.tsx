@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { getCardSize } from './style';
 import { colors } from '@/styles/color';
-import CardProps from './types';
+import { CardProps } from './types';
 
 const Card = forwardRef<HTMLDivElement, CardProps>((props, forwardedRef) => {
   const { children, fullWidth, ...rest } = props;

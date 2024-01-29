@@ -1,7 +1,6 @@
-import { Typo } from '@/components/atoms';
+import { RadioProps, Typo } from '@/components/atoms';
 import React, { CSSProperties, InputHTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
-import RadioProps from './types';
 
 const RADIO_DEFAULT_GAP = 4;
 

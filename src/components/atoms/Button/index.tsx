@@ -5,7 +5,7 @@ import { RadiusType, borderRadius } from '@/styles/radius';
 import { ButtonVariantType } from '@/styles/variant';
 import styled, { css } from 'styled-components';
 import { getButtonSize, getButtonVariant } from './style';
-import ButtonProps from './types';
+import { ButtonProps } from './types';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) => {
   const {

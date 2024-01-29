@@ -13,5 +13,3 @@ export interface TypoProps extends HTMLAttributes<HTMLElement> {
   underLineThickness?: number;
   underlineOffset?: number;
 }
-
-export default TypoProps;

@@ -10,5 +10,3 @@ export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   disabledColor?: ColorType;
   size?: CommonSizeType;
 }
-
-export default SwitchProps;

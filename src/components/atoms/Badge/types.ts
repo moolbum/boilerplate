@@ -4,11 +4,9 @@ import { BadgeVariantType } from '@/styles/variant';
 import { BadgeSizeType } from '@src/types/size';
 import { HTMLAttributes } from 'react';
 
-interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   size?: Exclude<BadgeSizeType, 'large'>;
   radius?: Exclude<RadiusType, 'full'>;
   variant?: BadgeVariantType;
   color?: AccentColorType;
 }
-
-export default BadgeProps;

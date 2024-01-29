@@ -2,7 +2,7 @@ import { ColorType } from '@/styles/color';
 import { CalloutSizeType } from '@src/types/size';
 import { HTMLAttributes, ReactNode } from 'react';
 
-interface CalloutProps extends HTMLAttributes<HTMLDivElement> {
+export interface CalloutProps extends HTMLAttributes<HTMLDivElement> {
   size?: CalloutSizeType;
   icon?: ReactNode;
   iconOnClick?: () => void;
@@ -11,5 +11,3 @@ interface CalloutProps extends HTMLAttributes<HTMLDivElement> {
   borderColor?: ColorType;
   fullWidth?: boolean;
 }
-
-export default CalloutProps;

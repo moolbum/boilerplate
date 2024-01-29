@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { fontWeights, getFontFamily, typography, TypographyType } from '@/styles/typography';
 import { ColorType, colors } from '@/styles/color';
-import TypoProps from './types';
+import { TypoProps } from './types';
 
 const Typo = forwardRef<HTMLElement, TypoProps>((props, forwardedRef) => {
   const {
