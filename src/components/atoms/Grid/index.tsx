@@ -18,18 +18,22 @@ const GridRow = forwardRef<HTMLDivElement, GridRowProps>((props, forwardedRef) =
   );
 });
 
+const getGridRowTemplteStyle = (columnCount: GridRowProps['columnCount']) => {
+  return css`
+    grid-template-columns: repeat(${columnCount}, 1fr);
+  `;
+};
+
 const StyledGridRow = styled.div<{
-  columnCount: number;
-  rowGap: number;
-  columnGap: number;
-  fullWidth?: boolean;
+  columnCount: GridRowProps['columnCount'];
+  rowGap: GridRowProps['rowGap'];
+  columnGap: GridRowProps['columnGap'];
+  fullWidth?: GridRowProps['fullWidth'];
 }>`
   display: grid;
   grid-gap: ${({ rowGap, columnGap }) => `${rowGap}px ${columnGap}px`};
 
-  ${({ columnCount }) => css`
-    grid-template-columns: repeat(${columnCount}, 1fr);
-  `};
+  ${({ columnCount }) => getGridRowTemplteStyle(columnCount)};
   ${({ fullWidth }) =>
     fullWidth &&
     css`

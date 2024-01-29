@@ -1,60 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import StorybookFlex from './Flex';
+import StorybookGrid from './Grid';
 
 const meta = {
   title: 'Grid',
-  component: StorybookFlex,
+  component: StorybookGrid,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    direction: {
-      options: [
-        'column',
-        'column-reverse',
-        'row',
-        'row-reverse',
-        '-moz-initial',
-        'inherit',
-        'initial',
-        'revert',
-        'revert-layer',
-        'unset',
-      ],
-      control: { type: 'radio' },
-    },
-    align: {
-      options: [
-        'baseline',
-        'normal',
-        'center',
-        'end',
-        'flex-end',
-        'flex-start',
-        'self-end',
-        'self-start',
-        'start',
-        'stretch',
-        '-moz-initial',
-        'inherit',
-        'initial',
-        'revert',
-        'revert-layer',
-        'unset',
-      ],
-      control: { type: 'radio' },
-    },
-  },
-} satisfies Meta<typeof StorybookFlex>;
+  argTypes: {},
+} satisfies Meta<typeof StorybookGrid>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    gap: 8,
-    direction: 'row',
-    align: 'baseline',
+    rowGap: 8,
+    columnGap: 8,
+    columnCount: 12,
+    fullWidth: false,
+    columnSpan: 3,
   },
 };

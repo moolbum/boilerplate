@@ -1,34 +1,27 @@
-import { Grid, GridRowProps, Typo } from '@/components/atoms';
+import { Grid, GridColumnProps, GridRowProps, Typo } from '@/components/atoms';
 import { colors } from '@/styles/color';
 import { borderRadius } from '@/styles/radius';
 import styled from 'styled-components';
 
-const StorybookGrid = (props: GridRowProps) => {
+interface StorybookGridProps extends GridRowProps, GridColumnProps {}
+
+const StorybookGrid = (props: StorybookGridProps) => {
+  const { columnSpan } = props;
+
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
       <Grid {...props}>
-        <Grid.Col>
-          <Div>
-            <Typo fontWeight="bold" typo="h3">
-              1
-            </Typo>
-          </Div>
-        </Grid.Col>
-        {/* <Div>
-          <Typo fontWeight="bold" typo="h3">
-            1
-          </Typo>
-        </Div>
-        <Div style={{ height: '100px' }}>
-          <Typo fontWeight="bold" typo="h3">
-            2
-          </Typo>
-        </Div>
-        <Div style={{ height: '70px' }}>
-          <Typo fontWeight="bold" typo="h3">
-            3
-          </Typo>
-        </Div> */}
+        {Array.from({ length: 12 }).map((_, idx) => {
+          return (
+            <Grid.Col key={idx} columnSpan={columnSpan}>
+              <Div>
+                <Typo fontWeight="bold" typo="h3">
+                  {idx + 1}
+                </Typo>
+              </Div>
+            </Grid.Col>
+          );
+        })}
       </Grid>
     </div>
   );
