@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Swtich from './Swtich';
+import StorybookSwitch from './Swtich';
 import { colors } from '@/styles/color';
 
 const meta = {
   title: 'Swtich',
-  component: Swtich,
+  component: StorybookSwitch,
   parameters: {
     layout: 'centered',
   },
@@ -27,7 +27,7 @@ const meta = {
       control: { type: 'select' },
     },
   },
-} satisfies Meta<typeof Swtich>;
+} satisfies Meta<typeof StorybookSwitch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
