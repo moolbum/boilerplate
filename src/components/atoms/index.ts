@@ -15,6 +15,7 @@ export type { default as SwitchProps } from './Switch/types';
 export { default as TextArea } from './TextArea';
 export type { default as TextAreaProps } from './TextArea/types';
 export { default as Flex } from './Flex';
+export type { default as FlexProps } from './Flex/types';
 export { default as Card } from './Card';
 export type { default as CardProps } from './Card/types';
 export { default as Grid } from './Grid';

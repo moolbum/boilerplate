@@ -32,7 +32,7 @@ export const Primary: Story = {
   args: {
     size: 'medium',
     gap: 8,
-    icon: 'Icon',
+    icon: '📌',
     children: 'Text',
     backgroundColor: 'gray100',
     borderColor: 'gray200',
