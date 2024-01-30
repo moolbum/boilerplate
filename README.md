@@ -100,8 +100,18 @@ Radix UI의 color 디자인 시스템을 참고해서만든 컬러시스템
 
 ## Folder Tree
 
+각 폴더별 내 `index` 파일을 가지고있어야 합니다. 절대경로로 import 할시 가독성을 좋게하기위해 (stories 폴더제외)
+예시
+
+```jsx
+import { TablePlaceholderSvg } from '@/assets/icons';
+import { Typo, Badge, Card, Grid, Callout, Checkbox, Radio } from '@/components/atoms';
+import { AlertDialog, CheckboxGroup, RadioGroup } from '@/components/molecules';
+```
+
 ```sh
 .github
+.storybook
 public
 src
   |-- assets
@@ -110,7 +120,8 @@ src
   |-- components
   |     |-- atoms
   |     |-- molecules
-  |     |__ organisms
+  |     |-- organisms
+  |     |__ templates
   |-- pages
   |-- routes
   |-- stories
