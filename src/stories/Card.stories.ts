@@ -4,9 +4,6 @@ import StorybookCard from './Card';
 const meta = {
   title: 'Card',
   component: StorybookCard,
-  parameters: {
-    layout: 'fullscreen',
-  },
   tags: ['autodocs'],
   argTypes: {
     size: {

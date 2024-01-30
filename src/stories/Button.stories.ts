@@ -4,9 +4,6 @@ import StorybookButton from './Button';
 const meta = {
   title: 'Button',
   component: StorybookButton,
-  parameters: {
-    layout: 'fullscreen',
-  },
   tags: ['autodocs'],
   argTypes: {
     size: {
