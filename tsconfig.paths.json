@@ -8,7 +8,6 @@
       "@/assets/*": ["src/assets/*"],
       "@/routes/*": ["src/routes/*"],
       "@/utils/*": ["src/utils/*"],
-      "@/stories/*": ["src/stories/*"],
       "@src/*": ["src/*"]
     }
   }
