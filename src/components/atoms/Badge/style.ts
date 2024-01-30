@@ -1,7 +1,7 @@
 import { AccentColorType, colors } from '@/styles/color';
 import { BadgeSizeType } from '@src/types/size';
 import { typography } from '@/styles/typography';
-import { BadgeVariantType } from '@/styles/variant';
+import { BadgeVariantType } from '@src/types/variant';
 import { css } from 'styled-components';
 
 // getBadgeVariant;

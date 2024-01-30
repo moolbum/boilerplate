@@ -1,7 +1,7 @@
 import React from 'react';
-import GlobalStyle from './styles/globalStyle';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { publicRoute } from './routes';
+import { GlobalStyle } from './styles';
 
 const router = createBrowserRouter([...publicRoute]);
 

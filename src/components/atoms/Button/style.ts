@@ -1,7 +1,7 @@
 import { AccentColorType, colors } from '@/styles/color';
 import { ButtonSizeType } from '@src/types/size';
 import { typography } from '@/styles/typography';
-import { ButtonVariantType } from '@/styles/variant';
+import { ButtonVariantType } from '@src/types/variant';
 import { css } from 'styled-components';
 
 // getButtonVariant;

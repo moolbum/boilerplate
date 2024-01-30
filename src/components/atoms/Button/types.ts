@@ -1,6 +1,6 @@
 import { AccentColorType } from '@/styles/color';
 import { RadiusType } from '@/styles/radius';
-import { ButtonVariantType } from '@/styles/variant';
+import { ButtonVariantType } from '@src/types/variant';
 import { ButtonSizeType } from '@src/types/size';
 import { ButtonHTMLAttributes } from 'react';
 
