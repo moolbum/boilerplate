@@ -6,7 +6,7 @@ import { SwitchProps } from './types';
 
 const Switch = forwardRef<HTMLDivElement, SwitchProps>((props, forwardedRef) => {
   const {
-    checked,
+    checked = false,
     onChange,
     disabled,
     color = 'blue800',

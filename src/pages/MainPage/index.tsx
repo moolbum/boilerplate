@@ -29,7 +29,7 @@ function MainPage() {
   const [isAlertDialogOpen, setIsAlertDialogOpen] = useState<boolean>(false);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [input, setInput] = useState('');
-  const [selectValues, setSelectValues] = useState<string[]>([]);
+  const [selectValues, setSelectValues] = useState<string[]>(['checkbox_1']);
 
   const handleCheckboxChange = (value: string[]) => {
     setSelectValues(value);
@@ -136,11 +136,7 @@ function MainPage() {
             { label: '체크박스_1', value: 'checkbox_1' },
             { label: '체크박스_2', value: 'checkbox_2' },
             {
-              label: (
-                <label htmlFor="label_3">
-                  <div>체크박스_3</div>
-                </label>
-              ),
+              label: '체크박스_3',
               value: 'label_3',
               disabled: true,
             },
