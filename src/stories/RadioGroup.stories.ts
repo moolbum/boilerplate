@@ -21,6 +21,7 @@ const meta = {
       ],
       control: { type: 'radio' },
     },
+    name: { description: 'RadioGroup 필수값' },
   },
 } satisfies Meta<typeof StorybookRadioGroup>;
 
