@@ -6,5 +6,6 @@ export interface RadioGroupProps {
   direction?: CSSProperties['flexDirection'];
   name: string;
   gap?: number;
-  onValueChange: (value: RadioProps['value']) => void;
+  value?: RadioProps['value'];
+  onValueChange: (value: string) => void;
 }

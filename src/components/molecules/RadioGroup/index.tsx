@@ -1,14 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { RadioGroupProps } from './types';
-import { Radio, RadioProps } from '@/components/atoms';
+import { Radio } from '@/components/atoms';
 
 const RADIO_GROUP_DEFAULT_GAP = 8;
 
 const RadioGroup = (props: RadioGroupProps) => {
-  const { direction = 'row', gap = RADIO_GROUP_DEFAULT_GAP, option, name, onValueChange, ...rest } = props;
+  const {
+    direction = 'row',
+    gap = RADIO_GROUP_DEFAULT_GAP,
+    option,
+    name,
+    onValueChange,
+    value: radioGroupValue,
+    ...rest
+  } = props;
 
-  const handleRadioChange = (value: RadioProps['value']) => {
+  const handleRadioChange = (value: string) => {
     onValueChange(value);
   };
 
@@ -23,6 +31,7 @@ const RadioGroup = (props: RadioGroupProps) => {
             value={value}
             label={label}
             onValueChange={handleRadioChange}
+            checked={value === radioGroupValue}
             {...radioProps}
           />
         );

@@ -24,7 +24,7 @@ const meta = {
       ],
       control: { type: 'radio' },
     },
-    align: {
+    alignItems: {
       options: [
         'baseline',
         'normal',
@@ -55,6 +55,6 @@ export const Primary: Story = {
   args: {
     gap: 8,
     direction: 'row',
-    align: 'baseline',
+    alignItems: 'baseline',
   },
 };

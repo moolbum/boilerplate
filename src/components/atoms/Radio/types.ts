@@ -5,5 +5,5 @@ export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   direction?: CSSProperties['flexDirection'];
   alignItems?: CSSProperties['alignItems'];
   gap?: number;
-  onValueChange?: (value: InputHTMLAttributes<HTMLInputElement>['value']) => void;
+  onValueChange?: (value: string) => void;
 }

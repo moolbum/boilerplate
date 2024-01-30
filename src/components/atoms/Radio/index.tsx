@@ -18,7 +18,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
   } = props;
 
   const handleRadioChange = (value: InputHTMLAttributes<HTMLInputElement>['value']) => {
-    onValueChange?.(value);
+    onValueChange?.(value as string);
   };
 
   const renderLabel = () => {
@@ -37,12 +37,14 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedR
     <RadioComponent direction={direction} alignItems={alignItems} gap={gap} data-disabled={disabled}>
       <input
         ref={forwardedRef}
+        value={value}
         id={value?.toString()}
         onChange={e => {
           onChange?.(e);
           handleRadioChange(value);
         }}
         disabled={disabled}
+        checked={value === rest.checked}
         {...rest}
         type="radio"
       />

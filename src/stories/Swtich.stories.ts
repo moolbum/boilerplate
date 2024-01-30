@@ -34,7 +34,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    checked: true,
     disabled: false,
     size: 'small',
     color: 'blue800',

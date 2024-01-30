@@ -25,6 +25,7 @@ type DialogState = null | 'DAFAULT' | 'OVERRIDE';
 function MainPage() {
   const [dialogState, setDialogState] = useState<DialogState>(null);
 
+  const [radio, setRadio] = useState('10');
   const [isAlertDialogOpen, setIsAlertDialogOpen] = useState<boolean>(false);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [input, setInput] = useState('');
@@ -100,17 +101,20 @@ function MainPage() {
   };
 
   console.log('selectValues ::', selectValues);
-
+  console.log('radio', radio);
   return (
     <>
       <Flex direction="column">
         <Radio label="radio_1" value={1} onValueChange={value => console.log(value)} />
         <RadioGroup
           name="radio"
-          onValueChange={value => console.log('value', value)}
+          value={radio}
+          onValueChange={value => {
+            setRadio(value);
+          }}
           option={[
-            { label: '라벨_1', value: 10 },
-            { label: '라벨_2', value: 20 },
+            { label: '라벨_1', value: '10' },
+            { label: '라벨_2', value: '20' },
             {
               label: (
                 <label htmlFor="label_3">
@@ -146,8 +150,8 @@ function MainPage() {
           value={input}
           onChange={e => setInput(e.target.value)}
           onClear={() => setInput('')}
-          prefix={<div>웨이드</div>}
-          suffix={<div>데일</div>}
+          prefix={<div>데일1</div>}
+          suffix={<div>데일2</div>}
           allowClear
         />
         <Input value={input} onChange={e => setInput(e.target.value)} disabled />
