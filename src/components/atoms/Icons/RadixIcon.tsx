@@ -1,7 +1,7 @@
 import React from 'react';
 import * as icons from '@radix-ui/react-icons';
 import { IconProps } from '@radix-ui/react-icons/dist/types';
-import { ColorType, colors } from '@/styles/color';
+import { ColorType, colors } from '@src/styles';
 
 export interface RadixIconProps extends IconProps {
   name: keyof typeof icons;

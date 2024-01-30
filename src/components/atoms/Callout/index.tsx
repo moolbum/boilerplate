@@ -1,7 +1,7 @@
-import { ColorType, colors } from '@/styles/color';
-import { CalloutSizeType } from '@src/types/size';
 import React, { PropsWithChildren, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
+import { ColorType, colors } from '@src/styles';
+import { CalloutSizeType } from '@src/types';
 import { getCalloutSize } from './style';
 import { CalloutProps } from './types';
 

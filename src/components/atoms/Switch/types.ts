@@ -1,6 +1,6 @@
-import { ColorType } from '@/styles/color';
-import { CommonSizeType } from '@src/types/size';
 import { InputHTMLAttributes } from 'react';
+import { ColorType } from '@src/styles';
+import { CommonSizeType } from '@src/types/size';
 
 export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'size'> {
   checked: boolean;

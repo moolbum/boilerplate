@@ -1,8 +1,8 @@
-import { BadgeSizeType } from '@src/types/size';
 import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
+import { colors } from '@src/styles';
+import { BadgeSizeType } from '@src/types';
 import { getCardSize } from './style';
-import { colors } from '@/styles/color';
 import { CardProps } from './types';
 
 const Card = forwardRef<HTMLDivElement, CardProps>((props, forwardedRef) => {

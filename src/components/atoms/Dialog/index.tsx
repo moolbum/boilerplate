@@ -1,10 +1,8 @@
 import React, { HTMLAttributes, PropsWithChildren, ReactNode, createContext, useContext, useEffect } from 'react';
-import Typo from '../Typo';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
-import { colors } from '@/styles/color';
-import { borderRadius } from '@/styles/radius';
-import { zIndex } from '@/styles/zIndex';
+import { borderRadius, colors, zIndex } from '@src/styles';
+import Typo from '../Typo';
 
 interface DialogContextProps {
   open?: boolean;

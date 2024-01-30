@@ -1,7 +1,6 @@
-import { colors } from '@/styles/color';
-import { borderRadius } from '@/styles/radius';
 import React, { forwardRef, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { borderRadius, colors } from '@src/styles';
 import { InputProps } from './types';
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => {

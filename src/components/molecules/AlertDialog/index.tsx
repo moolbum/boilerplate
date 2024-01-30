@@ -1,9 +1,7 @@
 import React, { HTMLAttributes, PropsWithChildren, createContext, useContext, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
-import { colors } from '@/styles/color';
-import { borderRadius } from '@/styles/radius';
-import { zIndex } from '@/styles/zIndex';
+import { borderRadius, colors, zIndex } from '@src/styles';
 import { Typo } from '@/components/atoms';
 
 interface AlertDialogContextProps {

@@ -1,6 +1,6 @@
-import { ColorType } from '@/styles/color';
-import { CalloutSizeType } from '@src/types/size';
 import { HTMLAttributes, ReactNode } from 'react';
+import { ColorType } from '@src/styles';
+import { CalloutSizeType } from '@src/types/size';
 
 export interface CalloutProps extends HTMLAttributes<HTMLDivElement> {
   size?: CalloutSizeType;

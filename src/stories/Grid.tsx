@@ -1,7 +1,6 @@
-import { Grid, GridColumnProps, GridRowProps, Typo } from '@/components/atoms';
-import { colors } from '@/styles/color';
-import { borderRadius } from '@/styles/radius';
 import styled from 'styled-components';
+import { Grid, GridColumnProps, GridRowProps, Typo } from '@/components/atoms';
+import { borderRadius, colors } from '@src/styles';
 
 interface StorybookGridProps extends GridRowProps, GridColumnProps {}
 

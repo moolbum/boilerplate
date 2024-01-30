@@ -1,6 +1,6 @@
 import React, { CSSProperties, forwardRef } from 'react';
-import { CheckboxProps, CheckboxValueType, Typo } from '@/components/atoms';
 import styled from 'styled-components';
+import { CheckboxProps, CheckboxValueType, Typo } from '@/components/atoms';
 
 const CHECKBOX_DEFAULT_GAP = 4;
 

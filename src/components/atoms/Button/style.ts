@@ -1,8 +1,6 @@
-import { AccentColorType, colors } from '@/styles/color';
-import { ButtonSizeType } from '@src/types/size';
-import { typography } from '@/styles/typography';
-import { ButtonVariantType } from '@src/types/variant';
 import { css } from 'styled-components';
+import { AccentColorType, colors, typography } from '@src/styles';
+import { ButtonSizeType, ButtonVariantType } from '@src/types';
 
 // getButtonVariant;
 const getSoftButtonStyle = (color: AccentColorType) => {

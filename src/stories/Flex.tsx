@@ -1,6 +1,6 @@
 import { Flex, FlexProps, Typo } from '@/components/atoms';
-import { colors } from '@/styles/color';
-import { borderRadius } from '@/styles/radius';
+import { borderRadius, colors } from '@src/styles';
+
 import styled from 'styled-components';
 
 const StorybookFlex = (props: FlexProps) => {

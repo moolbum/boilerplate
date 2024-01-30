@@ -1,11 +1,9 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { BadgeSizeType } from '@src/types/size';
-import { borderRadius, RadiusType } from '@/styles/radius';
+import { AccentColorType, RadiusType, borderRadius } from '@src/styles';
+import { BadgeSizeType, BadgeVariantType } from '@src/types';
 import { getBadgeSize, getBadgeVariant } from './style';
-import { BadgeVariantType } from '@src/types/variant';
 import { BadgeProps } from './types';
-import { AccentColorType } from '@/styles/color';
 
 const Badge = forwardRef<HTMLSpanElement, BadgeProps>((props, forwardedRef) => {
   const { size = 'small', color = 'blue', variant = 'soft', radius = 'small', ...rest } = props;

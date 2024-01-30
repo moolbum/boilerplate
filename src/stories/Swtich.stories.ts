@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { colors } from '@src/styles';
 import StorybookSwitch from './Swtich';
-import { colors } from '@/styles/color';
 
 const meta = {
   title: 'Swtich',

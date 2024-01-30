@@ -1,8 +1,6 @@
-import { AccentColorType, colors } from '@/styles/color';
-import { BadgeSizeType } from '@src/types/size';
-import { typography } from '@/styles/typography';
-import { BadgeVariantType } from '@src/types/variant';
 import { css } from 'styled-components';
+import { BadgeVariantType, BadgeSizeType } from '@src/types';
+import { AccentColorType, colors, typography } from '@src/styles';
 
 // getBadgeVariant;
 const getSoftBadgeStyle = (color: AccentColorType) => {

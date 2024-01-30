@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { colors } from '@/styles/color';
+import { colors } from '@src/styles';
 import StorybookCallout from './Callout';
 
 const meta = {

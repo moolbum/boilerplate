@@ -1,6 +1,6 @@
-import { ColorType, colors } from '@/styles/color';
-import { icons } from 'lucide-react';
 import { HTMLAttributes } from 'react';
+import { icons } from 'lucide-react';
+import { ColorType, colors } from '@src/styles';
 
 export interface LucideIconProps extends HTMLAttributes<HTMLOrSVGElement> {
   name: keyof typeof icons;

@@ -1,9 +1,7 @@
 import React, { forwardRef } from 'react';
-import { ColorType, colors } from '@/styles/color';
-import { borderRadius } from '@/styles/radius';
-import { CommonSizeType } from '@src/types/size';
-import { zIndex } from '@/styles/zIndex';
 import styled from 'styled-components';
+import { ColorType, borderRadius, colors, zIndex } from '@src/styles';
+import { CommonSizeType } from '@src/types';
 import { SwitchProps } from './types';
 
 const Switch = forwardRef<HTMLDivElement, SwitchProps>((props, forwardedRef) => {

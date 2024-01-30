@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Checkbox, CheckboxProps } from '@/components/atoms';
 import { CheckboxGroupProps } from './types';
+import { Checkbox, CheckboxProps } from '@/components/atoms';
 
 const CHECKBOX_GROUP_DEFAULT_GAP = 8;
 

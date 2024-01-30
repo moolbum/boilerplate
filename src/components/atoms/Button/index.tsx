@@ -1,9 +1,7 @@
 import React, { forwardRef, useId } from 'react';
-import { AccentColorType, colors } from '@/styles/color';
-import { ButtonSizeType } from '@src/types/size';
-import { RadiusType, borderRadius } from '@/styles/radius';
-import { ButtonVariantType } from '@src/types/variant';
 import styled, { css } from 'styled-components';
+import { AccentColorType, RadiusType, borderRadius, colors } from '@src/styles';
+import { ButtonSizeType, ButtonVariantType } from '@src/types';
 import { getButtonSize, getButtonVariant } from './style';
 import { ButtonProps } from './types';
 
