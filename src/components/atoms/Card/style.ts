@@ -1,5 +1,5 @@
-import { BadgeSizeType } from '@src/types/size';
 import { css } from 'styled-components';
+import { BadgeSizeType } from '@src/types/size';
 
 export const getCardSize = (size?: BadgeSizeType) => {
   let paddingSize;

@@ -1,5 +1,5 @@
-import { CalloutSizeType } from '@src/types/size';
 import { css } from 'styled-components';
+import { CalloutSizeType } from '@src/types/size';
 
 // getCalloutSize
 export const getCalloutSize = (size: CalloutSizeType) => {

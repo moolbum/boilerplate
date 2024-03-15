@@ -1,8 +1,16 @@
-import React, { forwardRef } from 'react';
+import React, { InputHTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
 import { ColorType, borderRadius, colors, zIndex } from '@src/styles';
 import { CommonSizeType } from '@src/types';
-import { SwitchProps } from './types';
+
+export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'size'> {
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
+  color?: ColorType;
+  unCheckedColor?: ColorType;
+  disabledColor?: ColorType;
+  size?: CommonSizeType;
+}
 
 const Switch = forwardRef<HTMLDivElement, SwitchProps>((props, forwardedRef) => {
   const {

@@ -24,7 +24,7 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
 
   return (
     <CheckboxGroupComponent direction={direction} gap={gap} role="group" {...rest}>
-      {option.map(({ label, value, ...checkboxProps }) => (
+      {option?.map(({ label, value, ...checkboxProps }) => (
         <Checkbox
           key={value?.toString()}
           name={name}

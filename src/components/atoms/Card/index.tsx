@@ -1,9 +1,13 @@
-import React, { forwardRef } from 'react';
+import React, { HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from '@src/styles';
-import { BadgeSizeType } from '@src/types';
+import { BadgeSizeType, CommonSizeType } from '@src/types';
 import { getCardSize } from './style';
-import { CardProps } from './types';
+
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
+  size?: CommonSizeType;
+  fullWidth?: boolean;
+}
 
 const Card = forwardRef<HTMLDivElement, CardProps>((props, forwardedRef) => {
   const { children, fullWidth, ...rest } = props;

@@ -20,7 +20,7 @@ import {
 } from '@/components/atoms';
 import { AlertDialog, CheckboxGroup, RadioGroup } from '@/components/molecules';
 
-type DialogState = null | 'DAFAULT' | 'OVERRIDE';
+type DialogState = null | 'DEFAULT' | 'OVERRIDE';
 
 function MainPage() {
   const [dialogState, setDialogState] = useState<DialogState>(null);
@@ -38,7 +38,7 @@ function MainPage() {
   // Dialog
   const renderOverriedDialog = () => {
     return (
-      <Dialog open={dialogState === 'OVERRIDE'} title="Title" onClose={() => setDialogState('DAFAULT')}>
+      <Dialog open={dialogState === 'OVERRIDE'} title="Title" onClose={() => setDialogState('DEFAULT')}>
         <div>모달 중첩</div>
       </Dialog>
     );
@@ -47,7 +47,7 @@ function MainPage() {
   const renderDefaultDialog = () => {
     return (
       <Dialog
-        open={dialogState === 'DAFAULT' || dialogState === 'OVERRIDE'}
+        open={dialogState === 'DEFAULT' || dialogState === 'OVERRIDE'}
         title="DEFAULT_TEST"
         onClose={() => {
           console.log('닫힐때 추가 로직 ::');
@@ -424,7 +424,7 @@ function MainPage() {
       {/* Dialog, Alert Dialog */}
       <Button
         onClick={() => {
-          setDialogState('DAFAULT');
+          setDialogState('DEFAULT');
           console.log('열릴때 추가 로직 ::');
         }}
       >

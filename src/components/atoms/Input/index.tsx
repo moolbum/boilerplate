@@ -1,7 +1,15 @@
-import React, { forwardRef, useState } from 'react';
+import React, { InputHTMLAttributes, ReactNode, forwardRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { borderRadius, colors } from '@src/styles';
-import { InputProps } from './types';
+
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
+  fullWidth?: boolean;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
+  allowClear?: boolean;
+  onClear?: () => void;
+  isError?: boolean;
+}
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => {
   const { fullWidth = true, prefix, suffix, allowClear, onClear, isError = false, disabled, ...rest } = props;

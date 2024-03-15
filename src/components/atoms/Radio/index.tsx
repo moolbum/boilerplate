@@ -1,6 +1,14 @@
-import React, { CSSProperties, InputHTMLAttributes, forwardRef } from 'react';
+import React, { CSSProperties, InputHTMLAttributes, ReactNode, forwardRef } from 'react';
 import styled from 'styled-components';
-import { RadioProps, Typo } from '@/components/atoms';
+import { Typo } from '@/components/atoms';
+
+export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  label?: ReactNode | string;
+  direction?: CSSProperties['flexDirection'];
+  alignItems?: CSSProperties['alignItems'];
+  gap?: number;
+  onValueChange?: (value: string) => void;
+}
 
 const RADIO_DEFAULT_GAP = 4;
 

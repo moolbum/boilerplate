@@ -1,8 +1,14 @@
-import React, { forwardRef } from 'react';
+import React, { HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { GridColumnProps, GridRowProps } from './types';
 
 // Grid Row
+export interface GridRowProps extends HTMLAttributes<HTMLDivElement> {
+  columnCount?: number;
+  fullWidth?: boolean;
+  rowGap?: number;
+  columnGap?: number;
+}
+
 const GridRow = forwardRef<HTMLDivElement, GridRowProps>((props, forwardedRef) => {
   const { columnCount = 12, rowGap = 8, columnGap = 8, fullWidth, ...rest } = props;
 
@@ -18,7 +24,7 @@ const GridRow = forwardRef<HTMLDivElement, GridRowProps>((props, forwardedRef) =
   );
 });
 
-const getGridRowTemplteStyle = (columnCount: GridRowProps['columnCount']) => {
+const getGridRowTemplateStyle = (columnCount: GridRowProps['columnCount']) => {
   return css`
     grid-template-columns: repeat(${columnCount}, 1fr);
   `;
@@ -33,7 +39,7 @@ const StyledGridRow = styled.div<{
   display: grid;
   grid-gap: ${({ rowGap, columnGap }) => `${rowGap}px ${columnGap}px`};
 
-  ${({ columnCount }) => getGridRowTemplteStyle(columnCount)};
+  ${({ columnCount }) => getGridRowTemplateStyle(columnCount)};
   ${({ fullWidth }) =>
     fullWidth &&
     css`
@@ -42,6 +48,10 @@ const StyledGridRow = styled.div<{
 `;
 
 // Grid Column
+export interface GridColumnProps extends HTMLAttributes<HTMLDivElement> {
+  columnSpan?: number;
+}
+
 const GridColumn = forwardRef<HTMLDivElement, GridColumnProps>((props, forwardedRef) => {
   const { columnSpan = 2, ...rest } = props;
   return <StyledGridColumn ref={forwardedRef} columnSpan={columnSpan} {...rest} />;

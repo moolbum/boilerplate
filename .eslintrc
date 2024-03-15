@@ -12,14 +12,40 @@
     "react/no-unused-state": "warn", // 사용되지 않는 state
     "react/jsx-key": "warn", // 반복문으로 생성하는 요소에 key 강제
     "react/self-closing-comp": "warn", // 셀프 클로징 태그 가능하면 적용
-    "react/jsx-curly-brace-presence": "warn" // jsx 내 불필요한 중괄호 금지
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["./"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    "react/jsx-curly-brace-presence": "warn", // jsx 내 불필요한 중괄호 금지
+
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "react*",
+            "group": "builtin"
+          },
+          {
+            "pattern": "react-*/**",
+            "group": "builtin"
+          },
+          { "pattern": "@src/**", "group": "external", "position": "after" },
+          { "pattern": "@routes/**", "group": "external", "position": "after" },
+          { "pattern": "@styles/**", "group": "external", "position": "after" },
+          { "pattern": "@assets/**", "group": "external", "position": "after" },
+          { "pattern": "@hooks", "group": "external", "position": "after" },
+          { "pattern": "@hooks/**", "group": "external", "position": "after" },
+          {
+            "pattern": "@components/**",
+            "group": "external",
+            "position": "after"
+          },
+          { "pattern": "@pages/**", "group": "external", "position": "after" }
+        ],
+
+        "pathGroupsExcludedImportTypes": ["react*"],
+        "alphabetize": {
+          "order": "asc"
+        }
       }
-    }
+    ],
+    "prettier/prettier": "error"
   }
 }
